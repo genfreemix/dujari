@@ -179,3 +179,11 @@ export function getFeatured(): Artwork[] {
 export function getByCategory(category: "bottle" | "panel"): Artwork[] {
   return artworks.filter((a) => a.category === category);
 }
+
+export function getAdjacentArtworks(id: string): { prev: Artwork | null; next: Artwork | null } {
+  const idx = artworks.findIndex((a) => a.id === id);
+  return {
+    prev: idx > 0 ? artworks[idx - 1] : null,
+    next: idx < artworks.length - 1 ? artworks[idx + 1] : null,
+  };
+}
