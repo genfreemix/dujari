@@ -30,40 +30,42 @@ export default function ArtworkPage() {
           {t("artwork.back")}
         </Link>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 mt-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 mt-8 items-start">
           {/* Image */}
-          <div
-            className="aspect-[3/4] w-full relative overflow-hidden"
-            style={{ backgroundColor: artwork.color }}
-          >
-            {artwork.image ? (
-              <img
-                src={artwork.image}
-                alt={artwork.title}
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            ) : (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-white/15 text-[100px] md:text-[160px] font-black uppercase select-none leading-none">
-                  {artwork.title.charAt(0)}
+          <div className="lg:sticky lg:top-24">
+            <div
+              className="w-full relative overflow-hidden"
+              style={{ backgroundColor: artwork.color, maxHeight: "calc(100vh - 8rem)" }}
+            >
+              {artwork.image ? (
+                <img
+                  src={artwork.image}
+                  alt={artwork.title}
+                  className="w-full h-auto max-h-[calc(100vh-8rem)] object-contain"
+                />
+              ) : (
+                <div className="aspect-[3/4] flex items-center justify-center">
+                  <span className="text-white/15 text-[100px] md:text-[160px] font-black uppercase select-none leading-none">
+                    {artwork.title.charAt(0)}
+                  </span>
+                </div>
+              )}
+
+              <div className="absolute top-6 left-6 flex gap-3">
+                <span className="bg-black/80 text-white/80 text-[10px] tracking-[0.3em] uppercase px-3 py-1.5 border border-white/10">
+                  {artwork.edition}
+                </span>
+                <span className="bg-black/80 text-white/80 text-[10px] tracking-[0.3em] uppercase px-3 py-1.5 border border-white/10">
+                  {categoryLabel}
                 </span>
               </div>
-            )}
 
-            <div className="absolute top-6 left-6 flex gap-3">
-              <span className="bg-black/80 text-white/80 text-[10px] tracking-[0.3em] uppercase px-3 py-1.5 border border-white/10">
-                {artwork.edition}
-              </span>
-              <span className="bg-black/80 text-white/80 text-[10px] tracking-[0.3em] uppercase px-3 py-1.5 border border-white/10">
-                {categoryLabel}
-              </span>
+              {!artwork.available && (
+                <div className="absolute top-6 right-6 bg-[#FF2D7B]/90 text-white text-[10px] tracking-[0.3em] uppercase px-4 py-2">
+                  {t("artwork.sold")}
+                </div>
+              )}
             </div>
-
-            {!artwork.available && (
-              <div className="absolute top-6 right-6 bg-[#FF2D7B]/90 text-white text-[10px] tracking-[0.3em] uppercase px-4 py-2">
-                {t("artwork.sold")}
-              </div>
-            )}
           </div>
 
           {/* Details */}
