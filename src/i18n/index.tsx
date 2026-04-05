@@ -113,9 +113,10 @@ const translations: Record<Locale, Record<string, string>> = {
     "contact.a4": "Absolutely. Tell us your vision — we'll make it happen.",
 
     // Inquiry
-    "inquiry.whatsapp": "Request via WhatsApp",
+    "inquiry.whatsapp": "WhatsApp",
     "inquiry.telegram": "Telegram",
-    "inquiry.email": "Email Inquiry",
+    "inquiry.email": "Email",
+    "inquiry.call": "Call",
 
     // Footer
     "footer.tagline": "Collectible pop-art objects. Each piece is unique. Each piece is a statement.",
@@ -205,9 +206,10 @@ const translations: Record<Locale, Record<string, string>> = {
     "contact.q4": "Можно заказать работу на заказ?",
     "contact.a4": "Конечно. Расскажите о вашей идее — мы реализуем.",
 
-    "inquiry.whatsapp": "Запрос через WhatsApp",
+    "inquiry.whatsapp": "WhatsApp",
     "inquiry.telegram": "Telegram",
-    "inquiry.email": "Написать на почту",
+    "inquiry.email": "Написать",
+    "inquiry.call": "Позвонить",
 
     "footer.tagline": "Коллекционные поп-арт объекты. Каждая работа уникальна. Каждая — заявление.",
     "footer.explore": "Навигация",
@@ -296,9 +298,10 @@ const translations: Record<Locale, Record<string, string>> = {
     "contact.q4": "Puis-je commander une pièce sur mesure ?",
     "contact.a4": "Absolument. Parlez-nous de votre vision — nous la réaliserons.",
 
-    "inquiry.whatsapp": "Demande via WhatsApp",
+    "inquiry.whatsapp": "WhatsApp",
     "inquiry.telegram": "Telegram",
-    "inquiry.email": "Demande par e-mail",
+    "inquiry.email": "E-mail",
+    "inquiry.call": "Appeler",
 
     "footer.tagline": "Objets pop-art de collection. Chaque pièce est unique. Chaque pièce est une déclaration.",
     "footer.explore": "Explorer",
