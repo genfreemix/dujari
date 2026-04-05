@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useT } from "@/i18n";
@@ -15,10 +16,17 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
           <div>
-            <h3 className="text-white font-black text-xl tracking-[0.3em] uppercase mb-4">
-              DUJARI
-            </h3>
-            <p className="text-white/40 text-sm leading-relaxed max-w-xs">
+            <Link href="/" className="inline-block mb-5 group">
+              <Image
+                src="/gallery/dujari-logo-demo.png"
+                alt="DUJARI logo"
+                width={420}
+                height={240}
+                className="h-auto w-[220px] md:w-[260px] object-contain opacity-95 transition-opacity duration-200 group-hover:opacity-100"
+                priority={false}
+              />
+            </Link>
+            <p className="text-white/40 text-sm leading-relaxed max-w-sm">
               {t("footer.tagline")}
             </p>
           </div>
