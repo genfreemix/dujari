@@ -31,6 +31,23 @@ export const artworks: Artwork[] = [
     edition: "1/1",
   },
   {
+    id: "whiskey-gun-and-roses",
+    title: "Whiskey Gun and Roses",
+    category: "bottle",
+    description: {
+      en: "Whiskey Gun and Roses is not a bottle.\nIt's the tension between aggression and seduction.\n\nThe gun here isn't about weapons.\nIt's a gesture. Pressure. Control.\n\nThe roses aren't about beauty.\nThey crawl outward, spreading, seizing space.\n\nThe gloss breaks.\nColor behaves unstably.\nThe surface doesn't hold — it pulses.\n\nThis is an object where the conflict is never resolved.\nIt stays inside — in the layers, in the form, in the feeling.\n\nMeta-noise here isn't background —\nit becomes the body of the work.\n\nEvery angle — a new point of tension.\nA new balance between attraction and threat.\n\nOriginal. No repeats.",
+      ru: "Whiskey Gun and Roses — это не бутылка.\nЭто напряжение между агрессией и соблазном!\n\nПистолет здесь — не про оружие.\nЭто жест. Давление. Контроль.\n\nРозы — не про красоту.\nОни лезут наружу, расползаются, перехватывают пространство.\n\nГлянец ломается.\nЦвет ведёт себя нестабильно.\nПоверхность не держится — она пульсирует.\n\nЭто объект, в котором конфликт не решается.\nОн остаётся внутри — в слоях, в форме, в ощущении.\n\nМета-шум здесь не фон —\nон становится телом работы.\n\nКаждый ракурс — новая точка напряжения.\nНовый баланс между притяжением и угрозой.\n\nОригинал. Без повторов.",
+      fr: "Whiskey Gun and Roses n'est pas une bouteille.\nC'est la tension entre agression et séduction.\n\nLe pistolet ici n'est pas une arme.\nC'est un geste. Une pression. Un contrôle.\n\nLes roses ne sont pas une question de beauté.\nElles rampent, se répandent, s'emparent de l'espace.\n\nLe vernis se brise.\nLa couleur se comporte de manière instable.\nLa surface ne tient pas — elle pulse.\n\nC'est un objet où le conflit ne se résout jamais.\nIl reste à l'intérieur — dans les couches, dans la forme, dans la sensation.\n\nLe méta-bruit ici n'est pas un fond —\nil devient le corps de l'œuvre.\n\nChaque angle — un nouveau point de tension.\nUn nouvel équilibre entre attraction et menace.\n\nOriginal. Sans répétitions."
+    },
+    price: "350 €",
+    dimensions: "30 × 10 cm",
+    year: 2025,
+    image: "/artworks/whiskey-gun-and-roses.jpg",
+    color: "#8B0000",
+    available: true,
+    edition: "1/1",
+  },
+  {
     id: "vodka-picasso",
     title: "Vodka Picasso",
     category: "bottle",
@@ -146,23 +163,6 @@ export const artworks: Artwork[] = [
     year: 2026,
     image: "/artworks/cherry-bomb.jpg",
     color: "#DC143C",
-    available: true,
-    edition: "1/1",
-  },
-  {
-    id: "whiskey-gun-and-roses",
-    title: "Whiskey Gun and Roses",
-    category: "bottle",
-    description: {
-      en: "Whiskey Gun and Roses is not a bottle.\nIt's the tension between aggression and seduction.\n\nThe gun here isn't about weapons.\nIt's a gesture. Pressure. Control.\n\nThe roses aren't about beauty.\nThey crawl outward, spreading, seizing space.\n\nThe gloss breaks.\nColor behaves unstably.\nThe surface doesn't hold — it pulses.\n\nThis is an object where the conflict is never resolved.\nIt stays inside — in the layers, in the form, in the feeling.\n\nMeta-noise here isn't background —\nit becomes the body of the work.\n\nEvery angle — a new point of tension.\nA new balance between attraction and threat.\n\nOriginal. No repeats.",
-      ru: "Whiskey Gun and Roses — это не бутылка.\nЭто напряжение между агрессией и соблазном!\n\nПистолет здесь — не про оружие.\nЭто жест. Давление. Контроль.\n\nРозы — не про красоту.\nОни лезут наружу, расползаются, перехватывают пространство.\n\nГлянец ломается.\nЦвет ведёт себя нестабильно.\nПоверхность не держится — она пульсирует.\n\nЭто объект, в котором конфликт не решается.\nОн остаётся внутри — в слоях, в форме, в ощущении.\n\nМета-шум здесь не фон —\nон становится телом работы.\n\nКаждый ракурс — новая точка напряжения.\nНовый баланс между притяжением и угрозой.\n\nОригинал. Без повторов.",
-      fr: "Whiskey Gun and Roses n'est pas une bouteille.\nC'est la tension entre agression et séduction.\n\nLe pistolet ici n'est pas une arme.\nC'est un geste. Une pression. Un contrôle.\n\nLes roses ne sont pas une question de beauté.\nElles rampent, se répandent, s'emparent de l'espace.\n\nLe vernis se brise.\nLa couleur se comporte de manière instable.\nLa surface ne tient pas — elle pulse.\n\nC'est un objet où le conflit ne se résout jamais.\nIl reste à l'intérieur — dans les couches, dans la forme, dans la sensation.\n\nLe méta-bruit ici n'est pas un fond —\nil devient le corps de l'œuvre.\n\nChaque angle — un nouveau point de tension.\nUn nouvel équilibre entre attraction et menace.\n\nOriginal. Sans répétitions."
-    },
-    price: "350 €",
-    dimensions: "30 × 10 cm",
-    year: 2025,
-    image: "/artworks/whiskey-gun-and-roses.jpg",
-    color: "#8B0000",
     available: true,
     edition: "1/1",
   },
