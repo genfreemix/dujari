@@ -30,7 +30,7 @@ export default function HeroSection() {
         <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.9] uppercase">
           Art you
           <br />
-          <span className="text-[#FF2D7B]">can&apos;t</span> ignore
+          <span className="text-[#FF2D7B]">can&apos;t</span>{" "}ignore
         </h1>
 
         {/* Sub */}

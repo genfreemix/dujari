@@ -22,7 +22,7 @@ export const artworks: Artwork[] = [
     price: "350 €",
     dimensions: "30 × 10 cm",
     year: 2025,
-    image: "/artworks/neon-rebellion.jpg",
+    image: "/artworks/whiskey-big-hand.jpg",
     color: "#FF2D7B",
     available: true,
     edition: "1/1",

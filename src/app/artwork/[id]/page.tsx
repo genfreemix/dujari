@@ -34,11 +34,19 @@ export default async function ArtworkPage({ params }: Props) {
             className="aspect-[3/4] w-full relative overflow-hidden"
             style={{ backgroundColor: artwork.color }}
           >
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-white/15 text-[100px] md:text-[160px] font-black uppercase select-none leading-none">
-                {artwork.title.charAt(0)}
-              </span>
-            </div>
+            {artwork.image ? (
+              <img
+                src={artwork.image}
+                alt={artwork.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            ) : (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <span className="text-white/15 text-[100px] md:text-[160px] font-black uppercase select-none leading-none">
+                  {artwork.title.charAt(0)}
+                </span>
+              </div>
+            )}
 
             {/* Status badges */}
             <div className="absolute top-6 left-6 flex gap-3">

@@ -14,17 +14,25 @@ export default function ArtworkCard({ artwork, priority }: Props) {
       href={`/artwork/${artwork.id}`}
       className="group relative block overflow-hidden bg-neutral-900"
     >
-      {/* Image placeholder */}
+      {/* Image */}
       <div
-        className="aspect-[3/4] w-full transition-transform duration-700 group-hover:scale-105"
+        className="aspect-[3/4] w-full relative transition-transform duration-700 group-hover:scale-105"
         style={{ backgroundColor: artwork.color }}
       >
-        {/* Placeholder art visual */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-white/20 text-6xl md:text-7xl font-black uppercase select-none">
-            {artwork.title.charAt(0)}
-          </span>
-        </div>
+        {artwork.image ? (
+          <img
+            src={artwork.image}
+            alt={artwork.title}
+            className="absolute inset-0 w-full h-full object-cover"
+            loading={priority ? "eager" : "lazy"}
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-white/20 text-6xl md:text-7xl font-black uppercase select-none">
+              {artwork.title.charAt(0)}
+            </span>
+          </div>
+        )}
       </div>
 
       {/* Hover overlay */}
