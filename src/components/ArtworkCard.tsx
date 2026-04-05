@@ -21,7 +21,7 @@ export default function ArtworkCard({ artwork, priority }: Props) {
     >
       {/* Image */}
       <div
-        className="aspect-[4/5] w-full relative transition-transform duration-700 group-hover:scale-105"
+        className="aspect-[5/6] w-full relative transition-transform duration-700 group-hover:scale-105"
         style={{ backgroundColor: artwork.color }}
       >
         {artwork.image ? (
