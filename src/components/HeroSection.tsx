@@ -1,9 +1,14 @@
+"use client";
+
 import Link from "next/link";
+import { useT } from "@/i18n";
 
 export default function HeroSection() {
+  const t = useT();
+
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
-      {/* Background visual — placeholder with gradient */}
+      {/* Background visual */}
       <div
         className="absolute inset-0 opacity-60"
         style={{
@@ -21,43 +26,38 @@ export default function HeroSection() {
       />
 
       <div className="relative z-10 text-center px-6 max-w-4xl">
-        {/* Tagline */}
         <p className="text-[#FF2D7B] text-xs md:text-sm tracking-[0.5em] uppercase mb-6 font-medium">
-          Collectible Pop-Art
+          {t("hero.tagline")}
         </p>
 
-        {/* Main headline */}
         <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.9] uppercase">
-          Art you
+          {t("hero.line1")}
           <br />
-          <span className="text-[#FF2D7B]">can&apos;t</span>{" "}ignore
+          <span className="text-[#FF2D7B]">{t("hero.line2_cant")}</span>{" "}{t("hero.line2_ignore")}
         </h1>
 
-        {/* Sub */}
         <p className="text-white/50 text-sm md:text-base mt-8 max-w-md mx-auto leading-relaxed">
-          Hand-painted bottles & panels. Each piece is unique. Each piece is a statement.
+          {t("hero.sub")}
         </p>
 
-        {/* CTA */}
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/gallery"
             className="inline-block bg-[#FF2D7B] text-white text-xs tracking-[0.3em] uppercase px-10 py-4 hover:bg-[#e0256b] transition-colors duration-200"
           >
-            View Collection
+            {t("hero.cta_collection")}
           </Link>
           <Link
             href="/artist"
             className="inline-block border border-white/20 text-white/70 text-xs tracking-[0.3em] uppercase px-10 py-4 hover:border-white/50 hover:text-white transition-all duration-200"
           >
-            Meet the Artist
+            {t("hero.cta_artist")}
           </Link>
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-        <span className="text-white/30 text-[10px] tracking-[0.3em] uppercase">Scroll</span>
+        <span className="text-white/30 text-[10px] tracking-[0.3em] uppercase">{t("hero.scroll")}</span>
         <div className="w-px h-8 bg-gradient-to-b from-white/30 to-transparent" />
       </div>
     </section>

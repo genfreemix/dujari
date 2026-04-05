@@ -1,3 +1,5 @@
+"use client";
+
 import ArtworkCard from "./ArtworkCard";
 import type { Artwork } from "@/data/artworks";
 

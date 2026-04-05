@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import type { Artwork } from "@/data/artworks";
+import { useI18n } from "@/i18n";
 
 interface Props {
   artwork: Artwork;
@@ -7,7 +10,9 @@ interface Props {
 }
 
 export default function ArtworkCard({ artwork, priority }: Props) {
+  const { locale, t } = useI18n();
   const isSold = !artwork.available;
+  const categoryLabel = artwork.category === "bottle" ? t("artwork.bottle") : t("artwork.panel");
 
   return (
     <Link
@@ -39,7 +44,7 @@ export default function ArtworkCard({ artwork, priority }: Props) {
       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-500 flex items-end">
         <div className="w-full p-4 md:p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
           <p className="text-[#FF2D7B] text-[10px] tracking-[0.3em] uppercase mb-1">
-            {artwork.category === "bottle" ? "Art Bottle" : "Art Panel"} · {artwork.edition}
+            {categoryLabel} · {artwork.edition}
           </p>
           <h3 className="text-white text-lg md:text-xl font-bold tracking-wide uppercase">
             {artwork.title}
@@ -51,7 +56,7 @@ export default function ArtworkCard({ artwork, priority }: Props) {
       {/* Sold badge */}
       {isSold && (
         <div className="absolute top-4 right-4 bg-black/80 text-white/60 text-[10px] tracking-[0.3em] uppercase px-3 py-1.5 border border-white/10">
-          Sold
+          {t("artwork.sold")}
         </div>
       )}
 

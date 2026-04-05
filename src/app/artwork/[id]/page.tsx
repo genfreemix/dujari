@@ -1,31 +1,33 @@
-import { artworks, getArtwork } from "@/data/artworks";
+"use client";
+
+import { useParams } from "next/navigation";
+import { getArtwork } from "@/data/artworks";
 import InquiryButton from "@/components/InquiryButton";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { useI18n } from "@/i18n";
 
-export function generateStaticParams() {
-  return artworks.map((a) => ({ id: a.id }));
-}
+export default function ArtworkPage() {
+  const params = useParams();
+  const { locale, t } = useI18n();
+  const artwork = getArtwork(params.id as string);
 
-interface Props {
-  params: Promise<{ id: string }>;
-}
+  if (!artwork) {
+    return (
+      <div className="pt-40 text-center text-white/40">Artwork not found</div>
+    );
+  }
 
-export default async function ArtworkPage({ params }: Props) {
-  const { id } = await params;
-  const artwork = getArtwork(id);
-
-  if (!artwork) notFound();
+  const description = artwork.description[locale] || artwork.description.en;
+  const categoryLabel = artwork.category === "bottle" ? t("artwork.bottle") : t("artwork.panel");
 
   return (
     <div className="pt-20 md:pt-24 bg-black min-h-screen">
       <div className="max-w-7xl mx-auto px-6 py-12 md:py-20">
-        {/* Back link */}
         <Link
           href="/gallery"
           className="text-white/40 text-xs tracking-[0.25em] uppercase hover:text-white/70 transition-colors mb-8 inline-block"
         >
-          ← Back to Gallery
+          {t("artwork.back")}
         </Link>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 mt-8">
@@ -48,19 +50,18 @@ export default async function ArtworkPage({ params }: Props) {
               </div>
             )}
 
-            {/* Status badges */}
             <div className="absolute top-6 left-6 flex gap-3">
               <span className="bg-black/80 text-white/80 text-[10px] tracking-[0.3em] uppercase px-3 py-1.5 border border-white/10">
                 {artwork.edition}
               </span>
               <span className="bg-black/80 text-white/80 text-[10px] tracking-[0.3em] uppercase px-3 py-1.5 border border-white/10">
-                {artwork.category === "bottle" ? "Art Bottle" : "Art Panel"}
+                {categoryLabel}
               </span>
             </div>
 
             {!artwork.available && (
               <div className="absolute top-6 right-6 bg-[#FF2D7B]/90 text-white text-[10px] tracking-[0.3em] uppercase px-4 py-2">
-                Sold
+                {t("artwork.sold")}
               </div>
             )}
           </div>
@@ -68,53 +69,50 @@ export default async function ArtworkPage({ params }: Props) {
           {/* Details */}
           <div className="flex flex-col justify-center">
             <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-3">
-              {artwork.category === "bottle" ? "Art Bottle" : "Art Panel"} · {artwork.year}
+              {categoryLabel} · {artwork.year}
             </p>
 
             <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-black tracking-tight uppercase mb-6">
               {artwork.title}
             </h1>
 
-            <p className="text-white/50 text-sm md:text-base leading-relaxed mb-8 max-w-lg">
-              {artwork.description}
-            </p>
+            <div className="text-white/50 text-sm md:text-base leading-relaxed mb-8 max-w-lg whitespace-pre-line">
+              {description}
+            </div>
 
-            {/* Details list */}
             <div className="border-t border-white/10 pt-6 mb-8 space-y-3">
               <div className="flex justify-between text-sm">
-                <span className="text-white/40">Price</span>
+                <span className="text-white/40">{t("artwork.price")}</span>
                 <span className="text-white font-bold">{artwork.price}</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-white/40">Dimensions</span>
+                <span className="text-white/40">{t("artwork.dimensions")}</span>
                 <span className="text-white/70">{artwork.dimensions}</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-white/40">Edition</span>
+                <span className="text-white/40">{t("artwork.edition")}</span>
                 <span className="text-white/70">{artwork.edition}</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-white/40">Year</span>
+                <span className="text-white/40">{t("artwork.year")}</span>
                 <span className="text-white/70">{artwork.year}</span>
               </div>
             </div>
 
-            {/* Scarcity note */}
             {artwork.available && (
               <div className="bg-white/5 border border-white/10 px-4 py-3 mb-8">
                 <p className="text-[#FF2D7B] text-xs tracking-wider uppercase font-medium">
-                  ⚡ Only 1 available — This is a unique original
+                  {t("artwork.scarcity")}
                 </p>
               </div>
             )}
 
-            {/* CTA */}
             {artwork.available ? (
               <InquiryButton artworkTitle={artwork.title} />
             ) : (
               <div className="border border-white/10 px-6 py-4 text-center">
                 <p className="text-white/40 text-xs tracking-[0.25em] uppercase">
-                  This piece has been claimed
+                  {t("artwork.claimed")}
                 </p>
               </div>
             )}
