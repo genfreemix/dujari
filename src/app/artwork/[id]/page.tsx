@@ -69,20 +69,20 @@ export default function ArtworkPage() {
           </div>
 
           {/* Details */}
-          <div className="flex flex-col justify-center">
+          <div className="lg:sticky lg:top-24 flex flex-col justify-center lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto">
             <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-3">
               {categoryLabel} · {artwork.year}
             </p>
 
-            <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-black tracking-tight uppercase mb-6">
+            <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-black tracking-tight uppercase mb-4">
               {artwork.title}
             </h1>
 
-            <div className="text-white/50 text-sm md:text-base leading-relaxed mb-8 max-w-lg whitespace-pre-line">
+            <div className="text-white/50 text-sm leading-relaxed mb-6 max-w-lg whitespace-pre-line">
               {description}
             </div>
 
-            <div className="border-t border-white/10 pt-6 mb-8 space-y-3">
+            <div className="border-t border-white/10 pt-4 mb-6 space-y-2">
               <div className="flex justify-between text-sm">
                 <span className="text-white/40">{t("artwork.price")}</span>
                 <span className="text-white font-bold">{artwork.price}</span>
@@ -102,7 +102,7 @@ export default function ArtworkPage() {
             </div>
 
             {artwork.available && (
-              <div className="bg-white/5 border border-white/10 px-4 py-3 mb-8">
+              <div className="bg-white/5 border border-white/10 px-4 py-2.5 mb-6">
                 <p className="text-[#FF2D7B] text-xs tracking-wider uppercase font-medium">
                   {t("artwork.scarcity")}
                 </p>
