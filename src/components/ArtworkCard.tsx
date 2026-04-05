@@ -7,21 +7,23 @@ import { useI18n } from "@/i18n";
 interface Props {
   artwork: Artwork;
   priority?: boolean;
+  className?: string;
+  imageClassName?: string;
 }
 
-export default function ArtworkCard({ artwork, priority }: Props) {
-  const { locale, t } = useI18n();
+export default function ArtworkCard({ artwork, priority, className, imageClassName }: Props) {
+  const { t } = useI18n();
   const isSold = !artwork.available;
   const categoryLabel = artwork.category === "bottle" ? t("artwork.bottle") : t("artwork.panel");
 
   return (
     <Link
       href={`/artwork/${artwork.id}`}
-      className="group relative block overflow-hidden bg-neutral-900"
+      className={`group relative block overflow-hidden bg-neutral-900 ${className ?? ""}`.trim()}
     >
       {/* Image */}
       <div
-        className="aspect-[5/6] w-full relative transition-transform duration-700 group-hover:scale-105"
+        className={`aspect-[5/6] w-full relative transition-transform duration-700 group-hover:scale-105 ${imageClassName ?? ""}`.trim()}
         style={{ backgroundColor: artwork.color }}
       >
         {artwork.image ? (
