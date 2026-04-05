@@ -26,18 +26,21 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="relative z-10 text-center px-6 max-w-4xl">
-        <div className="mb-7 md:mb-8 flex justify-center">
+      <div className="pointer-events-none absolute inset-x-0 top-16 md:top-20 z-0 flex justify-center px-6">
+        <div className="relative h-[180px] w-[300px] md:h-[240px] md:w-[420px] lg:h-[300px] lg:w-[540px]">
           <Image
             src="/gallery/dujari-logo-demo.png"
             alt="DUJARI demo logo"
-            width={900}
-            height={600}
+            fill
             priority
-            className="h-auto w-[240px] md:w-[320px] lg:w-[360px] object-contain opacity-95"
+            sizes="(min-width: 1024px) 540px, (min-width: 768px) 420px, 300px"
+            className="object-contain opacity-78 mix-blend-screen saturate-[1.05]"
           />
+          <div className="absolute inset-0 bg-radial-[circle_at_center] from-transparent via-transparent to-black/90" />
         </div>
+      </div>
 
+      <div className="relative z-10 text-center px-6 max-w-4xl pt-28 md:pt-36 lg:pt-44">
         <p className="text-[#FF2D7B] text-xs md:text-sm tracking-[0.5em] uppercase mb-6 font-medium">
           {t("hero.tagline")}
         </p>
