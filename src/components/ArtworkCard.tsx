@@ -59,13 +59,6 @@ export default function ArtworkCard({ artwork, priority }: Props) {
           {t("artwork.sold")}
         </div>
       )}
-
-      {/* Edition badge */}
-      {!isSold && (
-        <div className="absolute top-4 left-4 bg-black/80 text-white/80 text-[10px] tracking-[0.3em] uppercase px-3 py-1.5 border border-white/10">
-          {artwork.edition}
-        </div>
-      )}
     </Link>
   );
 }

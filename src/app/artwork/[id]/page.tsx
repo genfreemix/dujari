@@ -59,15 +59,6 @@ export default function ArtworkPage() {
                   </div>
                 )}
 
-                <div className="absolute top-4 left-4 flex gap-2">
-                  <span className="bg-black/80 text-white/80 text-[10px] tracking-[0.3em] uppercase px-2.5 py-1 border border-white/10">
-                    {artwork.edition}
-                  </span>
-                  <span className="bg-black/80 text-white/80 text-[10px] tracking-[0.3em] uppercase px-2.5 py-1 border border-white/10">
-                    {categoryLabel}
-                  </span>
-                </div>
-
                 {!artwork.available && (
                   <div className="absolute top-4 right-4 bg-[#FF2D7B]/90 text-white text-[10px] tracking-[0.3em] uppercase px-3 py-1.5">
                     {t("artwork.sold")}
