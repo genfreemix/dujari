@@ -51,7 +51,7 @@ export default function GalleryPage() {
 
       <GalleryGrid
         artworks={filtered}
-        sectionClassName="pt-14 md:pt-16"
+        sectionClassName="pt-16 md:pt-20"
         containerClassName={containerClassName}
         imageClassName="xl:h-[min(48.5vh,36.5rem)] xl:aspect-auto"
       />
