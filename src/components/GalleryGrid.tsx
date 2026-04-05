@@ -7,11 +7,23 @@ interface Props {
   artworks: Artwork[];
   title?: string;
   subtitle?: string;
+  sectionClassName?: string;
+  gridClassName?: string;
+  cardClassName?: string;
+  imageClassName?: string;
 }
 
-export default function GalleryGrid({ artworks, title, subtitle }: Props) {
+export default function GalleryGrid({
+  artworks,
+  title,
+  subtitle,
+  sectionClassName,
+  gridClassName,
+  cardClassName,
+  imageClassName,
+}: Props) {
   return (
-    <section className="bg-black pt-10 pb-6 md:pt-12 md:pb-8">
+    <section className={`bg-black pt-10 pb-6 md:pt-12 md:pb-8 ${sectionClassName ?? ""}`.trim()}>
       {(title || subtitle) && (
         <div className="max-w-7xl mx-auto px-6 mb-6 md:mb-8">
           {subtitle && (
@@ -28,12 +40,14 @@ export default function GalleryGrid({ artworks, title, subtitle }: Props) {
       )}
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-3 gap-y-10 md:gap-x-4 md:gap-y-12">
+        <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-3 gap-y-10 md:gap-x-4 md:gap-y-12 ${gridClassName ?? ""}`.trim()}>
           {artworks.map((artwork, i) => (
             <ArtworkCard
               key={artwork.id}
               artwork={artwork}
               priority={i < 3}
+              className={cardClassName}
+              imageClassName={imageClassName}
             />
           ))}
         </div>
