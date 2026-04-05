@@ -8,6 +8,7 @@ interface Props {
   title?: string;
   subtitle?: string;
   containerClassName?: string;
+  surfaceClassName?: string;
   sectionClassName?: string;
   gridClassName?: string;
   cardClassName?: string;
@@ -19,15 +20,17 @@ export default function GalleryGrid({
   title,
   subtitle,
   containerClassName,
+  surfaceClassName,
   sectionClassName,
   gridClassName,
   cardClassName,
   imageClassName,
 }: Props) {
   const resolvedContainerClassName = containerClassName ?? "max-w-7xl mx-auto px-6";
+  const resolvedSurfaceClassName = surfaceClassName ?? "bg-black";
 
   return (
-    <section className={`bg-black pt-10 pb-6 md:pt-12 md:pb-8 ${sectionClassName ?? ""}`.trim()}>
+    <section className={`${resolvedSurfaceClassName} pt-10 pb-6 md:pt-12 md:pb-8 ${sectionClassName ?? ""}`.trim()}>
       {(title || subtitle) && (
         <div className={`${resolvedContainerClassName} mb-6 md:mb-8`.trim()}>
           {subtitle && (

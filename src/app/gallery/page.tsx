@@ -27,8 +27,15 @@ export default function GalleryPage() {
   const activeFilterLabel = filters.find((item) => item.key === filter)?.label ?? t("gallery.filter_all");
 
   return (
-    <div className="bg-black pt-16 md:pt-20">
-      <section className="bg-black pt-6 md:pt-8 pb-0">
+    <div className="relative isolate min-h-screen overflow-hidden bg-black pt-16 md:pt-20">
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-45"
+        style={{ backgroundImage: "url('/gallery/gallery-background.jpg')" }}
+      />
+      <div className="absolute inset-0 bg-black/70" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,45,123,0.12),transparent_38%),linear-gradient(180deg,rgba(0,0,0,0.38)_0%,rgba(0,0,0,0.82)_100%)]" />
+
+      <section className="relative z-10 pt-6 md:pt-8 pb-0">
         <div className={containerClassName}>
           <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-3">
             {t("gallery.subtitle")}
@@ -58,13 +65,14 @@ export default function GalleryPage() {
       {filtered.length > 0 ? (
         <GalleryGrid
           artworks={filtered}
+          surfaceClassName="bg-transparent"
           sectionClassName="pt-16 md:pt-20"
           containerClassName={containerClassName}
           imageClassName="xl:h-[min(48.5vh,36.5rem)] xl:aspect-auto"
         />
       ) : (
-        <section className="bg-black pt-16 md:pt-20 pb-12 md:pb-16">
-          <div className={`${containerClassName} border border-white/10 bg-white/[0.03] px-6 py-10 md:px-10 md:py-14`}>
+        <section className="relative z-10 pt-16 md:pt-20 pb-12 md:pb-16">
+          <div className={`${containerClassName} border border-white/10 bg-black/45 backdrop-blur-[2px] px-6 py-10 md:px-10 md:py-14`}>
             <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-3">
               {activeFilterLabel}
             </p>
