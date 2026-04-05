@@ -53,7 +53,7 @@ export default function GalleryPage() {
         artworks={filtered}
         sectionClassName="pt-14 md:pt-16"
         containerClassName={containerClassName}
-        imageClassName="xl:h-[min(49.5vh,37rem)] xl:aspect-auto"
+        imageClassName="xl:h-[min(48.5vh,36.5rem)] xl:aspect-auto"
       />
     </div>
   );

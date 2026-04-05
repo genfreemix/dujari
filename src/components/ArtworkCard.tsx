@@ -23,7 +23,7 @@ export default function ArtworkCard({ artwork, priority, className, imageClassNa
     >
       {/* Image */}
       <div
-        className={`aspect-[5/6] w-full relative transition-transform duration-700 group-hover:scale-105 ${imageClassName ?? ""}`.trim()}
+        className={`aspect-[5/6] w-full relative ${imageClassName ?? ""}`.trim()}
         style={{ backgroundColor: artwork.color }}
       >
         {artwork.image ? (
