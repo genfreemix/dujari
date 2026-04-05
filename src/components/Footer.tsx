@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useT } from "@/i18n";
@@ -14,19 +13,16 @@ export default function Footer() {
   return (
     <footer className="bg-black border-t border-white/10 py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-[1.45fr_0.8fr_0.85fr] gap-10 md:gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-[1.25fr_0.8fr_0.85fr] gap-10 md:gap-8 items-start">
           <div>
-            <Link href="/" className="inline-block mb-5 group">
-              <div className="relative w-[270px] h-[120px] md:w-[340px] md:h-[150px] overflow-hidden">
-                <Image
-                  src="/gallery/dujari-logo-demo.png"
-                  alt="DUJARI logo"
-                  fill
-                  sizes="(min-width: 768px) 340px, 270px"
-                  className="object-cover object-center scale-[1.9] md:scale-[1.95] opacity-95 transition-opacity duration-200 group-hover:opacity-100"
-                  priority={false}
-                />
-              </div>
+            <Link href="/" className="inline-flex flex-col items-start mb-5 group">
+              <span className="text-[11px] tracking-[0.45em] uppercase text-[#FF2D7B] mb-3">
+                Collectible Pop-Art
+              </span>
+              <span className="text-white font-black text-4xl md:text-5xl tracking-[0.18em] uppercase leading-none transition-colors duration-200 group-hover:text-[#fff3da]">
+                DUJARI
+              </span>
+              <span className="mt-3 h-px w-28 bg-gradient-to-r from-[#FF2D7B] via-[#ff9b42] to-transparent" />
             </Link>
             <p className="text-white/50 text-base leading-relaxed max-w-md">
               {t("footer.tagline")}
