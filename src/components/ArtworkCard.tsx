@@ -30,7 +30,7 @@ export default function ArtworkCard({ artwork, priority, className, imageClassNa
           <img
             src={artwork.image}
             alt={artwork.title}
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-contain"
             loading={priority ? "eager" : "lazy"}
           />
         ) : (
