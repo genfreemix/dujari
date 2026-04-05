@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useT } from "@/i18n";
 
@@ -26,6 +27,17 @@ export default function HeroSection() {
       />
 
       <div className="relative z-10 text-center px-6 max-w-4xl">
+        <div className="mb-7 md:mb-8 flex justify-center">
+          <Image
+            src="/gallery/dujari-logo-demo.png"
+            alt="DUJARI demo logo"
+            width={900}
+            height={600}
+            priority
+            className="h-auto w-[240px] md:w-[320px] lg:w-[360px] object-contain opacity-95"
+          />
+        </div>
+
         <p className="text-[#FF2D7B] text-xs md:text-sm tracking-[0.5em] uppercase mb-6 font-medium">
           {t("hero.tagline")}
         </p>
