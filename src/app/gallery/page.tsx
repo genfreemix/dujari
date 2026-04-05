@@ -20,17 +20,17 @@ export default function GalleryPage() {
   ];
 
   return (
-    <div className="pt-20 md:pt-24">
-      <section className="bg-black py-12 md:py-20">
+    <div className="pt-16 md:pt-[72px]">
+      <section className="bg-black py-4 md:py-6">
         <div className="max-w-7xl mx-auto px-6">
-          <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-3">
+          <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-1">
             {t("gallery.subtitle")}
           </p>
-          <h1 className="text-white text-4xl md:text-6xl font-black tracking-tight uppercase mb-8">
+          <h1 className="text-white text-3xl md:text-5xl font-black tracking-tight uppercase mb-4">
             {t("gallery.title")}
           </h1>
 
-          <div className="flex gap-4">
+          <div className="flex gap-3 mb-4">
             {filters.map((f) => (
               <button
                 key={f.key}

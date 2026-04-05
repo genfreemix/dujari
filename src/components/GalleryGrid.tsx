@@ -11,9 +11,9 @@ interface Props {
 
 export default function GalleryGrid({ artworks, title, subtitle }: Props) {
   return (
-    <section className="bg-black py-16 md:py-24">
+    <section className="bg-black py-6 md:py-8">
       {(title || subtitle) && (
-        <div className="max-w-7xl mx-auto px-6 mb-12 md:mb-16">
+        <div className="max-w-7xl mx-auto px-6 mb-6 md:mb-8">
           {subtitle && (
             <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-3">
               {subtitle}
