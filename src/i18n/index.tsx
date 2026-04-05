@@ -49,6 +49,8 @@ const translations: Record<Locale, Record<string, string>> = {
     "gallery.filter_pictures": "Pictures",
     "gallery.filter_posters": "Posters",
     "gallery.filter_merch": "Merch",
+    "gallery.empty_title": "This drop is coming soon",
+    "gallery.empty_text": "This category is reserved for the next DUJARI releases. The format is defined, the pieces are on the way.",
 
     // Artwork card
     "artwork.bottle": "Art Bottle",
@@ -152,6 +154,8 @@ const translations: Record<Locale, Record<string, string>> = {
     "gallery.filter_pictures": "Картины",
     "gallery.filter_posters": "Постеры",
     "gallery.filter_merch": "Мерч",
+    "gallery.empty_title": "Этот дроп скоро появится",
+    "gallery.empty_text": "Эта категория уже зарезервирована под следующие релизы DUJARI. Формат определён, работы в подготовке.",
 
     "artwork.bottle": "Арт-бутылка",
     "artwork.panel": "Арт-панель",
@@ -247,6 +251,8 @@ const translations: Record<Locale, Record<string, string>> = {
     "gallery.filter_pictures": "Tableaux",
     "gallery.filter_posters": "Posters",
     "gallery.filter_merch": "Merch",
+    "gallery.empty_title": "Cette collection arrive bientôt",
+    "gallery.empty_text": "Cette catégorie est déjà réservée aux prochaines sorties DUJARI. Le format est défini, les pièces sont en préparation.",
 
     "artwork.bottle": "Bouteille d'art",
     "artwork.panel": "Panneau d'art",

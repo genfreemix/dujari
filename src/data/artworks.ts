@@ -1,7 +1,9 @@
+export type ArtworkCategory = "bottle" | "panel" | "pictures" | "posters" | "merch";
+
 export interface Artwork {
   id: string;
   title: string;
-  category: "bottle" | "panel";
+  category: ArtworkCategory;
   description: { en: string; ru: string; fr: string };
   price: string;
   dimensions: string;
@@ -176,7 +178,7 @@ export function getFeatured(): Artwork[] {
   return artworks.filter((a) => a.available).slice(0, 5);
 }
 
-export function getByCategory(category: "bottle" | "panel"): Artwork[] {
+export function getByCategory(category: ArtworkCategory): Artwork[] {
   return artworks.filter((a) => a.category === category);
 }
 

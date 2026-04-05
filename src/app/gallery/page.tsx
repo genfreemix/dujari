@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import GalleryGrid from "@/components/GalleryGrid";
-import { artworks } from "@/data/artworks";
+import { artworks, type ArtworkCategory } from "@/data/artworks";
 import { useT } from "@/i18n";
 
-type Filter = "all" | "bottle" | "panel" | "pictures" | "posters" | "merch";
+type Filter = "all" | ArtworkCategory;
 
 export default function GalleryPage() {
   const t = useT();
@@ -24,6 +24,7 @@ export default function GalleryPage() {
     { key: "posters", label: t("gallery.filter_posters") },
     { key: "merch", label: t("gallery.filter_merch") },
   ];
+  const activeFilterLabel = filters.find((item) => item.key === filter)?.label ?? t("gallery.filter_all");
 
   return (
     <div className="bg-black pt-16 md:pt-20">
@@ -54,12 +55,28 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      <GalleryGrid
-        artworks={filtered}
-        sectionClassName="pt-16 md:pt-20"
-        containerClassName={containerClassName}
-        imageClassName="xl:h-[min(48.5vh,36.5rem)] xl:aspect-auto"
-      />
+      {filtered.length > 0 ? (
+        <GalleryGrid
+          artworks={filtered}
+          sectionClassName="pt-16 md:pt-20"
+          containerClassName={containerClassName}
+          imageClassName="xl:h-[min(48.5vh,36.5rem)] xl:aspect-auto"
+        />
+      ) : (
+        <section className="bg-black pt-16 md:pt-20 pb-12 md:pb-16">
+          <div className={`${containerClassName} border border-white/10 bg-white/[0.03] px-6 py-10 md:px-10 md:py-14`}>
+            <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-3">
+              {activeFilterLabel}
+            </p>
+            <h2 className="text-white text-2xl md:text-4xl font-black tracking-tight uppercase mb-3">
+              {t("gallery.empty_title")}
+            </h2>
+            <p className="max-w-2xl text-white/45 text-sm md:text-base leading-relaxed">
+              {t("gallery.empty_text")}
+            </p>
+          </div>
+        </section>
+      )}
     </div>
   );
 }
