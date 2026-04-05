@@ -29,11 +29,11 @@ export default function GalleryPage() {
   return (
     <div className="relative isolate min-h-screen overflow-hidden bg-black pt-16 md:pt-20">
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-45"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-75"
         style={{ backgroundImage: "url('/gallery/gallery-background.jpg')" }}
       />
-      <div className="absolute inset-0 bg-black/70" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,45,123,0.12),transparent_38%),linear-gradient(180deg,rgba(0,0,0,0.38)_0%,rgba(0,0,0,0.82)_100%)]" />
+      <div className="absolute inset-0 bg-black/42" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,45,123,0.16),transparent_42%),linear-gradient(180deg,rgba(0,0,0,0.14)_0%,rgba(0,0,0,0.34)_100%)]" />
 
       <section className="relative z-10 pt-6 md:pt-8 pb-0">
         <div className={containerClassName}>
@@ -72,7 +72,7 @@ export default function GalleryPage() {
         />
       ) : (
         <section className="relative z-10 pt-16 md:pt-20 pb-12 md:pb-16">
-          <div className={`${containerClassName} border border-white/10 bg-black/45 backdrop-blur-[2px] px-6 py-10 md:px-10 md:py-14`}>
+          <div className={`${containerClassName} border border-white/10 bg-black/28 backdrop-blur-[2px] px-6 py-10 md:px-10 md:py-14`}>
             <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-3">
               {activeFilterLabel}
             </p>
