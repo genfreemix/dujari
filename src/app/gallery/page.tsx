@@ -30,7 +30,7 @@ export default function GalleryPage() {
     <div className="relative isolate min-h-screen overflow-hidden bg-black pt-16 md:pt-20">
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.88]"
-        style={{ backgroundImage: "url('/gallery/gallery-background.jpg')" }}
+        style={{ backgroundImage: "url('/gallery/gallery-background02.jpg')" }}
       />
       <div className="absolute inset-0 bg-black/26" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,45,123,0.2),transparent_46%),linear-gradient(180deg,rgba(0,0,0,0.06)_0%,rgba(0,0,0,0.18)_100%)]" />
