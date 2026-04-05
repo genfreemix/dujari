@@ -10,7 +10,7 @@ type Filter = "all" | "bottle" | "panel";
 export default function GalleryPage() {
   const t = useT();
   const [filter, setFilter] = useState<Filter>("all");
-  const containerClassName = "mx-auto w-full max-w-[1500px] px-6";
+  const containerClassName = "mx-auto w-full max-w-[1500px] px-6 xl:pl-8 xl:pr-4";
 
   const filtered = filter === "all" ? artworks : getByCategory(filter);
 
@@ -51,9 +51,9 @@ export default function GalleryPage() {
 
       <GalleryGrid
         artworks={filtered}
-        sectionClassName="pt-12 md:pt-14"
+        sectionClassName="pt-14 md:pt-16"
         containerClassName={containerClassName}
-        imageClassName="xl:h-[min(51vh,38rem)] xl:aspect-auto"
+        imageClassName="xl:h-[min(49.5vh,37rem)] xl:aspect-auto"
       />
     </div>
   );
