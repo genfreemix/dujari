@@ -46,6 +46,9 @@ const translations: Record<Locale, Record<string, string>> = {
     "gallery.filter_all": "All",
     "gallery.filter_bottles": "Art Bottles",
     "gallery.filter_panels": "Panels",
+    "gallery.filter_pictures": "Pictures",
+    "gallery.filter_posters": "Posters",
+    "gallery.filter_merch": "Merch",
 
     // Artwork card
     "artwork.bottle": "Art Bottle",
@@ -146,6 +149,9 @@ const translations: Record<Locale, Record<string, string>> = {
     "gallery.filter_all": "Все",
     "gallery.filter_bottles": "Арт-бутылки",
     "gallery.filter_panels": "Панели",
+    "gallery.filter_pictures": "Картины",
+    "gallery.filter_posters": "Постеры",
+    "gallery.filter_merch": "Мерч",
 
     "artwork.bottle": "Арт-бутылка",
     "artwork.panel": "Арт-панель",
@@ -238,6 +244,9 @@ const translations: Record<Locale, Record<string, string>> = {
     "gallery.filter_all": "Tout",
     "gallery.filter_bottles": "Bouteilles d'art",
     "gallery.filter_panels": "Panneaux",
+    "gallery.filter_pictures": "Tableaux",
+    "gallery.filter_posters": "Posters",
+    "gallery.filter_merch": "Merch",
 
     "artwork.bottle": "Bouteille d'art",
     "artwork.panel": "Panneau d'art",

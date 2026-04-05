@@ -2,22 +2,27 @@
 
 import { useState } from "react";
 import GalleryGrid from "@/components/GalleryGrid";
-import { artworks, getByCategory } from "@/data/artworks";
+import { artworks } from "@/data/artworks";
 import { useT } from "@/i18n";
 
-type Filter = "all" | "bottle" | "panel";
+type Filter = "all" | "bottle" | "panel" | "pictures" | "posters" | "merch";
 
 export default function GalleryPage() {
   const t = useT();
   const [filter, setFilter] = useState<Filter>("all");
   const containerClassName = "mx-auto w-full max-w-[1500px] px-6 xl:pl-8 xl:pr-4";
 
-  const filtered = filter === "all" ? artworks : getByCategory(filter);
+  const filtered = filter === "all"
+    ? artworks
+    : artworks.filter((artwork) => artwork.category === filter);
 
   const filters: { key: Filter; label: string }[] = [
     { key: "all", label: t("gallery.filter_all") },
     { key: "bottle", label: t("gallery.filter_bottles") },
     { key: "panel", label: t("gallery.filter_panels") },
+    { key: "pictures", label: t("gallery.filter_pictures") },
+    { key: "posters", label: t("gallery.filter_posters") },
+    { key: "merch", label: t("gallery.filter_merch") },
   ];
 
   return (
@@ -31,7 +36,7 @@ export default function GalleryPage() {
             {t("gallery.title")}
           </h1>
 
-          <div className="flex gap-3">
+          <div className="flex flex-wrap gap-3">
             {filters.map((f) => (
               <button
                 key={f.key}
