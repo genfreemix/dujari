@@ -14,19 +14,21 @@ export default function Footer() {
   return (
     <footer className="bg-black border-t border-white/10 py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-[1.45fr_0.8fr_0.85fr] gap-10 md:gap-8 items-start">
           <div>
             <Link href="/" className="inline-block mb-5 group">
-              <Image
-                src="/gallery/dujari-logo-demo.png"
-                alt="DUJARI logo"
-                width={420}
-                height={240}
-                className="h-auto w-[220px] md:w-[260px] object-contain opacity-95 transition-opacity duration-200 group-hover:opacity-100"
-                priority={false}
-              />
+              <div className="relative w-[270px] h-[120px] md:w-[340px] md:h-[150px] overflow-hidden">
+                <Image
+                  src="/gallery/dujari-logo-demo.png"
+                  alt="DUJARI logo"
+                  fill
+                  sizes="(min-width: 768px) 340px, 270px"
+                  className="object-cover object-center scale-[1.9] md:scale-[1.95] opacity-95 transition-opacity duration-200 group-hover:opacity-100"
+                  priority={false}
+                />
+              </div>
             </Link>
-            <p className="text-white/40 text-sm leading-relaxed max-w-sm">
+            <p className="text-white/50 text-base leading-relaxed max-w-md">
               {t("footer.tagline")}
             </p>
           </div>
