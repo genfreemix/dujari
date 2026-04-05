@@ -7,6 +7,7 @@ interface Props {
   artworks: Artwork[];
   title?: string;
   subtitle?: string;
+  containerClassName?: string;
   sectionClassName?: string;
   gridClassName?: string;
   cardClassName?: string;
@@ -17,15 +18,18 @@ export default function GalleryGrid({
   artworks,
   title,
   subtitle,
+  containerClassName,
   sectionClassName,
   gridClassName,
   cardClassName,
   imageClassName,
 }: Props) {
+  const resolvedContainerClassName = containerClassName ?? "max-w-7xl mx-auto px-6";
+
   return (
     <section className={`bg-black pt-10 pb-6 md:pt-12 md:pb-8 ${sectionClassName ?? ""}`.trim()}>
       {(title || subtitle) && (
-        <div className="max-w-7xl mx-auto px-6 mb-6 md:mb-8">
+        <div className={`${resolvedContainerClassName} mb-6 md:mb-8`.trim()}>
           {subtitle && (
             <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-3">
               {subtitle}
@@ -39,7 +43,7 @@ export default function GalleryGrid({
         </div>
       )}
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className={resolvedContainerClassName}>
         <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-3 gap-y-10 md:gap-x-4 md:gap-y-12 ${gridClassName ?? ""}`.trim()}>
           {artworks.map((artwork, i) => (
             <ArtworkCard
