@@ -32,3 +32,16 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Spark effect animations */
+@keyframes electric-flash {
+  0% { opacity: 1; transform: translate(-50%, -50%) scale(0.3); }
+  40% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.2); }
+}
+
+@keyframes spark-move {
+  0% { opacity: 1; transform: translate(0, 0) scale(1); }
+  20% { opacity: 1; }
+  100% { opacity: 0; transform: translate(var(--spark-end-x), var(--spark-end-y)) scale(0); }
+}

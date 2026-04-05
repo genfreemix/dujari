@@ -22,15 +22,15 @@ export default function ArtworkPage() {
 
   return (
     <div className="pt-20 md:pt-24 bg-black min-h-screen">
-      <div className="max-w-7xl mx-auto px-6 py-12 md:py-20">
+      <div className="max-w-7xl mx-auto px-6 py-4 md:py-6">
         <Link
           href="/gallery"
-          className="text-white/40 text-xs tracking-[0.25em] uppercase hover:text-white/70 transition-colors mb-8 inline-block"
+          className="text-white/40 text-xs tracking-[0.25em] uppercase hover:text-white/70 transition-colors mb-4 inline-block"
         >
           {t("artwork.back")}
         </Link>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 mt-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 mt-4 items-start">
           {/* Image */}
           <div className="lg:sticky lg:top-24">
             <div
@@ -69,20 +69,20 @@ export default function ArtworkPage() {
           </div>
 
           {/* Details */}
-          <div className="lg:sticky lg:top-24 flex flex-col justify-center lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto">
-            <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-3">
+          <div className="lg:sticky lg:top-24 flex flex-col justify-start lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto">
+            <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-2">
               {categoryLabel} · {artwork.year}
             </p>
 
-            <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-black tracking-tight uppercase mb-4">
+            <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-black tracking-tight uppercase mb-3">
               {artwork.title}
             </h1>
 
-            <div className="text-white/50 text-sm leading-relaxed mb-6 max-w-lg whitespace-pre-line">
+            <div className="text-white/50 text-sm leading-relaxed mb-4 max-w-lg whitespace-pre-line line-clamp-4 lg:line-clamp-none">
               {description}
             </div>
 
-            <div className="border-t border-white/10 pt-4 mb-6 space-y-2">
+            <div className="border-t border-white/10 pt-3 mb-4 space-y-1.5">
               <div className="flex justify-between text-sm">
                 <span className="text-white/40">{t("artwork.price")}</span>
                 <span className="text-white font-bold">{artwork.price}</span>
@@ -102,7 +102,7 @@ export default function ArtworkPage() {
             </div>
 
             {artwork.available && (
-              <div className="bg-white/5 border border-white/10 px-4 py-2.5 mb-6">
+              <div className="bg-white/5 border border-white/10 px-3 py-2 mb-4">
                 <p className="text-[#FF2D7B] text-xs tracking-wider uppercase font-medium">
                   {t("artwork.scarcity")}
                 </p>

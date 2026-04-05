@@ -1,10 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useT } from "@/i18n";
 
 export default function Footer() {
   const t = useT();
+  const pathname = usePathname();
+
+  if (pathname.startsWith("/artwork/")) return null;
 
   return (
     <footer className="bg-black border-t border-white/10 py-12 md:py-16">

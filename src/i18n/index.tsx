@@ -114,6 +114,7 @@ const translations: Record<Locale, Record<string, string>> = {
 
     // Inquiry
     "inquiry.whatsapp": "Request via WhatsApp",
+    "inquiry.telegram": "Telegram",
     "inquiry.email": "Email Inquiry",
 
     // Footer
@@ -205,6 +206,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "contact.a4": "Конечно. Расскажите о вашей идее — мы реализуем.",
 
     "inquiry.whatsapp": "Запрос через WhatsApp",
+    "inquiry.telegram": "Telegram",
     "inquiry.email": "Написать на почту",
 
     "footer.tagline": "Коллекционные поп-арт объекты. Каждая работа уникальна. Каждая — заявление.",
@@ -295,6 +297,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "contact.a4": "Absolument. Parlez-nous de votre vision — nous la réaliserons.",
 
     "inquiry.whatsapp": "Demande via WhatsApp",
+    "inquiry.telegram": "Telegram",
     "inquiry.email": "Demande par e-mail",
 
     "footer.tagline": "Objets pop-art de collection. Chaque pièce est unique. Chaque pièce est une déclaration.",

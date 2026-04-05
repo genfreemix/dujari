@@ -24,6 +24,7 @@ export default function InquiryButton({
     : `Hi! I'm interested in DUJARI artworks.`;
 
   const whatsappUrl = `https://wa.me/33600000000?text=${encodeURIComponent(whatsappText)}`;
+  const telegramUrl = `https://t.me/dujari`;
   const mailUrl = `mailto:hello@dujari.art?subject=${encodeURIComponent(subject)}`;
 
   const base =
@@ -34,7 +35,7 @@ export default function InquiryButton({
       : "border border-white/20 text-white/70 hover:border-white/50 hover:text-white";
 
   return (
-    <div className={`flex flex-col sm:flex-row gap-3 ${className}`}>
+    <div className={`flex flex-col sm:flex-row flex-wrap gap-2 ${className}`}>
       <a
         href={whatsappUrl}
         target="_blank"
@@ -46,6 +47,17 @@ export default function InquiryButton({
           <path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 00.611.611l4.458-1.495A11.952 11.952 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-2.347 0-4.518-.803-6.237-2.148l-.354-.293-3.665 1.229 1.229-3.665-.293-.354A9.935 9.935 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
         </svg>
         {t("inquiry.whatsapp")}
+      </a>
+      <a
+        href={telegramUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${base} bg-[#2AABEE] text-white hover:bg-[#229ED9]`}
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="opacity-70">
+          <path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+        </svg>
+        {t("inquiry.telegram")}
       </a>
       <a
         href={mailUrl}
