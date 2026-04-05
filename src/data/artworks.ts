@@ -1,4 +1,4 @@
-export type ArtworkCategory = "bottle" | "panel" | "pictures" | "posters" | "merch";
+export type ArtworkCategory = "bottle" | "panel" | "objects" | "pictures" | "posters" | "merch";
 
 export interface Artwork {
   id: string;

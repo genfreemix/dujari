@@ -20,6 +20,7 @@ export default function GalleryPage() {
     { key: "all", label: t("gallery.filter_all") },
     { key: "bottle", label: t("gallery.filter_bottles") },
     { key: "panel", label: t("gallery.filter_panels") },
+    { key: "objects", label: t("gallery.filter_objects") },
     { key: "pictures", label: t("gallery.filter_pictures") },
     { key: "posters", label: t("gallery.filter_posters") },
     { key: "merch", label: t("gallery.filter_merch") },
@@ -51,8 +52,8 @@ export default function GalleryPage() {
                 onClick={() => setFilter(f.key)}
                 className={`text-xs font-semibold tracking-[0.16em] uppercase px-4 py-2.5 border backdrop-blur-sm transition-all duration-200 cursor-pointer ${
                   filter === f.key
-                    ? "border-[#FF2D7B] bg-black/55 text-[#FF7BAA] shadow-[0_0_0_1px_rgba(255,45,123,0.18)]"
-                    : "border-[#FF2D7B]/70 bg-black/38 text-[#FF8DB6] hover:border-[#FF2D7B] hover:bg-black/50 hover:text-[#FFB3CD]"
+                    ? "border-[#FF2D7B] bg-black/46 text-[#FF8FB6] shadow-[0_0_0_1px_rgba(255,45,123,0.18)]"
+                    : "border-[#FF2D7B]/70 bg-black/24 text-[#FF9FC1] hover:border-[#FF2D7B] hover:bg-black/34 hover:text-[#FFC2D7]"
                 }`}
               >
                 {f.label}
