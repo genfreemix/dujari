@@ -14,17 +14,24 @@ export default function Footer() {
     <footer className="bg-black border-t border-white/10 py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-[1.25fr_0.8fr_0.85fr] gap-10 md:gap-8 items-start">
-          <div>
-            <Link href="/" className="inline-flex flex-col items-start mb-5 group">
+          <div className="relative overflow-hidden rounded-[28px] border border-white/6 bg-white/[0.02] px-6 py-7 md:px-8 md:py-8">
+            <div className="pointer-events-none absolute -left-14 top-0 h-36 w-36 rounded-full bg-[#ff7a00]/18 blur-3xl" />
+            <div className="pointer-events-none absolute left-18 top-8 h-28 w-28 rounded-full bg-[#FF2D7B]/12 blur-3xl" />
+            <Link href="/" className="relative inline-flex flex-col items-start group">
               <span className="text-[11px] tracking-[0.45em] uppercase text-[#FF2D7B] mb-3">
                 Collectible Pop-Art
               </span>
-              <span className="text-white font-black text-4xl md:text-5xl tracking-[0.18em] uppercase leading-none transition-colors duration-200 group-hover:text-[#fff3da]">
+              <span className="bg-gradient-to-r from-[#fff4d6] via-[#ffb85b] to-[#FF2D7B] bg-clip-text text-transparent font-black text-5xl md:text-6xl tracking-[0.16em] uppercase leading-none transition-opacity duration-200 group-hover:opacity-90">
                 DUJARI
               </span>
-              <span className="mt-3 h-px w-28 bg-gradient-to-r from-[#FF2D7B] via-[#ff9b42] to-transparent" />
+              <span className="mt-4 h-px w-32 bg-gradient-to-r from-[#FF2D7B] via-[#ff9b42] to-transparent" />
             </Link>
-            <p className="text-white/50 text-base leading-relaxed max-w-md">
+            <div className="relative mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-[11px] tracking-[0.3em] uppercase text-white/38">
+              <span>France / Europe</span>
+              <span>1/1 Originals</span>
+              <span>No Reproductions</span>
+            </div>
+            <p className="relative mt-5 text-white/52 text-base leading-relaxed max-w-md">
               {t("footer.tagline")}
             </p>
           </div>
