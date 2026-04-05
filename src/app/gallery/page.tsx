@@ -21,12 +21,12 @@ export default function GalleryPage() {
 
   return (
     <div className="pt-16 md:pt-[72px]">
-      <section className="bg-black pt-3 md:pt-4 pb-0">
+      <section className="bg-black pt-6 md:pt-8 pb-0">
         <div className="max-w-7xl mx-auto px-6">
-          <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-1">
+          <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-3">
             {t("gallery.subtitle")}
           </p>
-          <h1 className="text-white text-2xl md:text-4xl font-black tracking-tight uppercase mb-2">
+          <h1 className="text-white text-2xl md:text-4xl font-black tracking-tight uppercase mb-4">
             {t("gallery.title")}
           </h1>
 
