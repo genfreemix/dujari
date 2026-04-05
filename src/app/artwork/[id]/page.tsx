@@ -78,7 +78,7 @@ export default function ArtworkPage() {
               {artwork.title}
             </h1>
 
-            <div className="text-white/50 text-sm leading-relaxed mb-4 max-w-lg whitespace-pre-line line-clamp-4 lg:line-clamp-none">
+            <div className="text-white/50 text-sm leading-relaxed mb-4 max-w-lg">
               {description}
             </div>
 
