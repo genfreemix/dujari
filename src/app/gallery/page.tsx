@@ -29,11 +29,11 @@ export default function GalleryPage() {
   return (
     <div className="relative isolate min-h-screen overflow-hidden bg-black pt-16 md:pt-20">
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-75"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.88]"
         style={{ backgroundImage: "url('/gallery/gallery-background.jpg')" }}
       />
-      <div className="absolute inset-0 bg-black/42" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,45,123,0.16),transparent_42%),linear-gradient(180deg,rgba(0,0,0,0.14)_0%,rgba(0,0,0,0.34)_100%)]" />
+      <div className="absolute inset-0 bg-black/26" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,45,123,0.2),transparent_46%),linear-gradient(180deg,rgba(0,0,0,0.06)_0%,rgba(0,0,0,0.18)_100%)]" />
 
       <section className="relative z-10 pt-6 md:pt-8 pb-0">
         <div className={containerClassName}>
@@ -51,8 +51,8 @@ export default function GalleryPage() {
                 onClick={() => setFilter(f.key)}
                 className={`text-xs tracking-[0.25em] uppercase px-4 py-2 border transition-all duration-200 cursor-pointer ${
                   filter === f.key
-                    ? "border-[#FF2D7B] text-[#FF2D7B]"
-                    : "border-white/10 text-white/40 hover:text-white/70 hover:border-white/30"
+                    ? "border-[#FF2D7B] bg-[#FF2D7B]/10 text-[#FF2D7B]"
+                    : "border-[#FF2D7B]/70 text-[#FF2D7B]/85 hover:border-[#FF2D7B] hover:text-[#FF2D7B] hover:bg-[#FF2D7B]/8"
                 }`}
               >
                 {f.label}
