@@ -38,7 +38,7 @@ export default function GalleryPage() {
 
       <section className="relative z-10 pt-6 md:pt-8 pb-0">
         <div className={containerClassName}>
-          <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-3">
+          <p className="text-[#FF5C96] text-[11px] md:text-xs font-medium tracking-[0.38em] uppercase mb-3 [text-shadow:0_1px_10px_rgba(0,0,0,0.45)]">
             {t("gallery.subtitle")}
           </p>
           <h1 className="text-white text-2xl md:text-4xl font-black tracking-tight uppercase mb-4">
