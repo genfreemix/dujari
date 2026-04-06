@@ -72,7 +72,7 @@ export default function ArtworkPage() {
                   <img
                     src={activeImage}
                     alt={artwork.title}
-                    className="w-full h-auto max-h-[calc(100vh-6rem)] object-contain"
+                    className="block h-auto w-full max-h-[calc(100vh-6rem)] scale-[1.01] object-contain"
                   />
                 ) : (
                   <div className="aspect-[3/4] flex items-center justify-center">
