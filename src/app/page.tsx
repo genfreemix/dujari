@@ -21,10 +21,6 @@ export default function HomePage() {
         subtitle={t("home.featured_subtitle")}
       />
 
-      <div className="flex justify-center items-center py-10 md:py-12">
-        <div className="h-px bg-[#FF2D7B] divider-line" />
-      </div>
-
       <ArtistBlock />
 
       <section className="bg-black py-20 md:py-28 border-t border-white/5">

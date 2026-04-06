@@ -45,12 +45,3 @@ html {
   20% { opacity: 1; }
   100% { opacity: 0; transform: translate(var(--spark-end-x), var(--spark-end-y)) scale(0); }
 }
-
-@keyframes divider-expand {
-  from { width: 0; opacity: 0; }
-  to   { width: 4rem; opacity: 0.55; }
-}
-
-.divider-line {
-  animation: divider-expand 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
