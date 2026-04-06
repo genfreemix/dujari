@@ -23,6 +23,7 @@ export default function GalleryPage() {
     { key: "objects", label: t("gallery.filter_objects") },
     { key: "pictures", label: t("gallery.filter_pictures") },
     { key: "posters", label: t("gallery.filter_posters") },
+    { key: "books", label: t("gallery.filter_books") },
     { key: "merch", label: t("gallery.filter_merch") },
   ];
   const activeFilterLabel = filters.find((item) => item.key === filter)?.label ?? t("gallery.filter_all");
@@ -45,7 +46,7 @@ export default function GalleryPage() {
             {t("gallery.title")}
           </h1>
 
-          <div className="flex flex-wrap gap-3 xl:grid xl:grid-cols-7 xl:gap-3">
+          <div className="flex flex-wrap gap-3 xl:grid xl:grid-cols-8 xl:gap-3">
             {filters.map((f) => (
               <button
                 key={f.key}
