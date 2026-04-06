@@ -68,6 +68,34 @@ export default function ArtistPage() {
         </div>
       </section>
 
+      {/* Creative Fields */}
+      <section className="pt-2 pb-14 md:pt-0 md:pb-16 border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-xl mb-6 md:mb-7">
+            <p className="text-[#FF2D7B] text-[9px] md:text-[10px] tracking-[0.42em] uppercase mb-3">
+              {t("artist.fields_label")}
+            </p>
+            <h2 className="text-white text-xl md:text-2xl font-bold tracking-[0.08em] uppercase text-white/92">
+              {t("artist.fields_title")}
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
+            {creativeFields.map((item) => (
+              <div
+                key={item.title}
+                className="border-t border-white/10 bg-white/[0.015] px-4 py-5 md:px-5 md:py-5"
+              >
+                <h3 className="text-white text-[11px] tracking-[0.28em] uppercase font-medium mb-3 text-white/88">
+                  {item.title}
+                </h3>
+                <p className="text-white/42 text-[13px] leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Story */}
       <section className="py-16 md:py-24 border-t border-white/5">
         <div className="max-w-3xl mx-auto px-6">
@@ -78,35 +106,6 @@ export default function ArtistPage() {
             <p>{t("artist.story1")}</p>
             <p>{t("artist.story2")}</p>
             <p>{t("artist.story3")}</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Creative Fields */}
-      <section className="py-16 md:py-24 border-t border-white/5">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-2xl mb-10 md:mb-12">
-            <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.45em] uppercase mb-4">
-              {t("artist.fields_label")}
-            </p>
-            <h2 className="text-white text-2xl md:text-3xl font-black tracking-tight uppercase">
-              {t("artist.fields_title")}
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
-            {creativeFields.map((item) => (
-              <div
-                key={item.title}
-                className="border border-white/8 bg-white/[0.02] px-6 py-7 md:px-7 md:py-8 backdrop-blur-sm"
-              >
-                <div className="w-10 h-px bg-gradient-to-r from-[#FF2D7B] to-transparent mb-5" />
-                <h3 className="text-white text-sm tracking-[0.24em] uppercase font-bold mb-4">
-                  {item.title}
-                </h3>
-                <p className="text-white/45 text-sm leading-relaxed">{item.text}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
