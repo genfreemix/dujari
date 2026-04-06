@@ -1,6 +1,7 @@
 "use client";
 
 import InquiryButton from "@/components/InquiryButton";
+import Image from "next/image";
 import Link from "next/link";
 import { useT } from "@/i18n";
 
@@ -27,17 +28,15 @@ export default function ArtistPage() {
 
         <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
           <div className="relative aspect-[4/5] bg-neutral-900 overflow-hidden order-2 md:order-1">
-            <div
-              className="absolute inset-0"
-              style={{
-                background: "linear-gradient(135deg, #1A1A2E 0%, #0A0A0A 50%, #FF2D7B20 100%)",
-              }}
+            <Image
+              src="/artist/dujari-artist-portrait.jpg"
+              alt="Portrait of Dujari"
+              fill
+              priority
+              sizes="(min-width: 768px) 40vw, 100vw"
+              className="object-cover"
             />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-white/8 text-[200px] md:text-[280px] font-black uppercase select-none leading-none">
-                D
-              </span>
-            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
           </div>
 
           <div className="order-1 md:order-2">
