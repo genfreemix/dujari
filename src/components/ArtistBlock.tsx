@@ -9,8 +9,8 @@ export default function ArtistBlock() {
 
   return (
     <section id="artist" className="bg-black py-20 md:py-32 border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-        <div className="relative aspect-[4/5] bg-neutral-900 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+        <div className="relative aspect-[4/5] bg-neutral-900 overflow-hidden self-start">
           <Image
             src="/artist/dujari-artist-portrait.jpg"
             alt="Portrait of Dujari"
