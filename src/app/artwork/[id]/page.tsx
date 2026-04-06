@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { getArtwork, getAdjacentArtworks } from "@/data/artworks";
 import InquiryButton from "@/components/InquiryButton";
@@ -10,7 +11,6 @@ export default function ArtworkPage() {
   const params = useParams();
   const { locale, t } = useI18n();
   const artwork = getArtwork(params.id as string);
-  const { prev, next } = getAdjacentArtworks(params.id as string);
 
   if (!artwork) {
     return (
@@ -18,8 +18,16 @@ export default function ArtworkPage() {
     );
   }
 
+  const { prev, next } = getAdjacentArtworks(params.id as string);
+
   const description = artwork.description[locale] || artwork.description.en;
   const categoryLabel = artwork.category === "bottle" ? t("artwork.bottle") : t("artwork.panel");
+  const galleryImages = artwork.galleryImages?.length ? artwork.galleryImages : [artwork.image];
+  const [activeImage, setActiveImage] = useState(galleryImages[0]);
+
+  useEffect(() => {
+    setActiveImage(galleryImages[0]);
+  }, [artwork.id, galleryImages]);
 
   return (
     <div className="pt-16 md:pt-[72px] bg-black min-h-screen">
@@ -45,9 +53,9 @@ export default function ArtworkPage() {
                 className="w-full relative overflow-hidden"
                 style={{ backgroundColor: artwork.color, maxHeight: "calc(100vh - 6rem)" }}
               >
-                {artwork.image ? (
+                {activeImage ? (
                   <img
-                    src={artwork.image}
+                    src={activeImage}
                     alt={artwork.title}
                     className="w-full h-auto max-h-[calc(100vh-6rem)] object-contain"
                   />
@@ -65,6 +73,32 @@ export default function ArtworkPage() {
                   </div>
                 )}
               </div>
+
+              {galleryImages.length > 1 && (
+                <div className="mt-3 grid grid-cols-5 gap-2">
+                  {galleryImages.map((imageSrc, index) => {
+                    const isActive = imageSrc === activeImage;
+
+                    return (
+                      <button
+                        key={imageSrc}
+                        type="button"
+                        onClick={() => setActiveImage(imageSrc)}
+                        className={`relative aspect-square overflow-hidden border transition-colors ${
+                          isActive ? "border-[#FF2D7B]" : "border-white/10 hover:border-white/30"
+                        }`}
+                        aria-label={`View image ${index + 1} of ${galleryImages.length}`}
+                      >
+                        <img
+                          src={imageSrc}
+                          alt={`${artwork.title} view ${index + 1}`}
+                          className="absolute inset-0 h-full w-full object-cover"
+                        />
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
 
               {/* Back to gallery - bottom left under photo */}
               <Link

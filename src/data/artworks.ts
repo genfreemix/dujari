@@ -9,6 +9,7 @@ export interface Artwork {
   dimensions: string;
   year: number;
   image: string;
+  galleryImages?: string[];
   color: string; // placeholder bg color
   available: boolean;
   edition: string; // e.g. "1/1"
@@ -28,6 +29,13 @@ export const artworks: Artwork[] = [
     dimensions: "",
     year: 2026,
     image: "/artworks/tincture-magic-strawberry/cover.jpg",
+    galleryImages: [
+      "/artworks/tincture-magic-strawberry/cover.jpg",
+      "/artworks/tincture-magic-strawberry/view-1.jpg",
+      "/artworks/tincture-magic-strawberry/view-2.jpg",
+      "/artworks/tincture-magic-strawberry/view-3.jpg",
+      "/artworks/tincture-magic-strawberry/view-4.png",
+    ],
     color: "#ff5f87",
     available: true,
     edition: "1/1",
