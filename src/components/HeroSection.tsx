@@ -5,6 +5,11 @@ import { useT } from "@/i18n";
 
 export default function HeroSection() {
   const t = useT();
+  const disciplines = [
+    t("home.discipline_visual_title"),
+    t("home.discipline_music_title"),
+    t("home.discipline_poetry_title"),
+  ];
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
@@ -39,6 +44,17 @@ export default function HeroSection() {
         <p className="text-white/50 text-sm md:text-base mt-8 max-w-md mx-auto leading-relaxed">
           {t("hero.sub")}
         </p>
+
+        <div className="mt-7 flex flex-wrap items-center justify-center gap-2 md:gap-3">
+          {disciplines.map((discipline) => (
+            <span
+              key={discipline}
+              className="border border-white/12 bg-white/[0.03] px-4 py-2 text-[10px] md:text-[11px] tracking-[0.34em] uppercase text-white/58 backdrop-blur-sm"
+            >
+              {discipline}
+            </span>
+          ))}
+        </div>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
