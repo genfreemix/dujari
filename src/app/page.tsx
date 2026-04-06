@@ -11,10 +11,49 @@ import Link from "next/link";
 export default function HomePage() {
   const t = useT();
   const featured = getFeatured();
+  const disciplines = [
+    {
+      title: t("home.discipline_visual_title"),
+      text: t("home.discipline_visual_text"),
+    },
+    {
+      title: t("home.discipline_music_title"),
+      text: t("home.discipline_music_text"),
+    },
+    {
+      title: t("home.discipline_poetry_title"),
+      text: t("home.discipline_poetry_text"),
+    },
+  ];
 
   return (
     <>
       <HeroSection />
+
+      <section className="relative overflow-hidden border-t border-white/5 bg-black py-8 md:py-10">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(255,45,123,0.09),transparent_30%),radial-gradient(circle_at_85%_100%,rgba(255,230,0,0.06),transparent_28%)]" />
+        <div className="relative max-w-7xl mx-auto px-6">
+          <p className="mb-5 text-[10px] md:text-xs tracking-[0.45em] uppercase text-white/28">
+            {t("home.disciplines_label")}
+          </p>
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-3 md:gap-4">
+            {disciplines.map((discipline) => (
+              <div
+                key={discipline.title}
+                className="relative overflow-hidden border border-white/8 bg-white/[0.02] px-5 py-5 backdrop-blur-sm"
+              >
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-[#FF2D7B] via-white/25 to-transparent" />
+                <h2 className="mb-2 text-sm md:text-base font-black tracking-[0.22em] uppercase text-white">
+                  {discipline.title}
+                </h2>
+                <p className="max-w-xs text-sm leading-relaxed text-white/44">
+                  {discipline.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <GalleryGrid
         artworks={featured}
