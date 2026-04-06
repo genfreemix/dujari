@@ -23,11 +23,26 @@ export default function ArtworkPage() {
   const description = artwork.description[locale] || artwork.description.en;
   const categoryLabel = artwork.category === "bottle" ? t("artwork.bottle") : t("artwork.panel");
   const galleryImages = artwork.galleryImages?.length ? artwork.galleryImages : [artwork.image];
-  const [activeImage, setActiveImage] = useState(galleryImages[0]);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    setActiveImage(galleryImages[0]);
+    setActiveIndex(0);
   }, [artwork.id, galleryImages]);
+
+  const activeImage = galleryImages[activeIndex] ?? artwork.image;
+  const hasImageSlider = galleryImages.length > 1;
+
+  function showPrevImage() {
+    setActiveIndex((currentIndex) =>
+      currentIndex === 0 ? galleryImages.length - 1 : currentIndex - 1
+    );
+  }
+
+  function showNextImage() {
+    setActiveIndex((currentIndex) =>
+      currentIndex === galleryImages.length - 1 ? 0 : currentIndex + 1
+    );
+  }
 
   return (
     <div className="pt-16 md:pt-[72px] bg-black min-h-screen">
@@ -72,33 +87,51 @@ export default function ArtworkPage() {
                     {t("artwork.sold")}
                   </div>
                 )}
+
+                {hasImageSlider && (
+                  <>
+                    <button
+                      type="button"
+                      onClick={showPrevImage}
+                      className="absolute left-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/45 text-white/75 transition-colors hover:border-white/30 hover:text-white"
+                      aria-label="Previous image"
+                    >
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                        <path d="M15 18l-6-6 6-6" />
+                      </svg>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={showNextImage}
+                      className="absolute right-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/45 text-white/75 transition-colors hover:border-white/30 hover:text-white"
+                      aria-label="Next image"
+                    >
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                        <path d="M9 18l6-6-6-6" />
+                      </svg>
+                    </button>
+
+                    <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-black/40 px-3 py-2 backdrop-blur-sm">
+                      {galleryImages.map((imageSrc, index) => {
+                        const isActive = index === activeIndex;
+
+                        return (
+                          <button
+                            key={imageSrc}
+                            type="button"
+                            onClick={() => setActiveIndex(index)}
+                            className={`h-2.5 w-2.5 rounded-full transition-all ${
+                              isActive ? "bg-[#FF2D7B]" : "bg-white/35 hover:bg-white/70"
+                            }`}
+                            aria-label={`View image ${index + 1} of ${galleryImages.length}`}
+                          />
+                        );
+                      })}
+                    </div>
+                  </>
+                )}
               </div>
-
-              {galleryImages.length > 1 && (
-                <div className="mt-3 grid grid-cols-5 gap-2">
-                  {galleryImages.map((imageSrc, index) => {
-                    const isActive = imageSrc === activeImage;
-
-                    return (
-                      <button
-                        key={imageSrc}
-                        type="button"
-                        onClick={() => setActiveImage(imageSrc)}
-                        className={`relative aspect-square overflow-hidden border transition-colors ${
-                          isActive ? "border-[#FF2D7B]" : "border-white/10 hover:border-white/30"
-                        }`}
-                        aria-label={`View image ${index + 1} of ${galleryImages.length}`}
-                      >
-                        <img
-                          src={imageSrc}
-                          alt={`${artwork.title} view ${index + 1}`}
-                          className="absolute inset-0 h-full w-full object-cover"
-                        />
-                      </button>
-                    );
-                  })}
-                </div>
-              )}
 
               {/* Back to gallery - bottom left under photo */}
               <Link
