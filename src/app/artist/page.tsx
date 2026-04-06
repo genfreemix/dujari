@@ -21,14 +21,14 @@ export default function ArtistPage() {
         />
 
         <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-          <div className="relative aspect-[4/5] bg-neutral-900 overflow-hidden order-2 md:order-1">
+          <div className="relative aspect-[4/5] bg-neutral-900 overflow-hidden order-2 md:order-1 md:translate-y-1">
             <Image
               src="/artist/dujari-artist-portrait.jpg"
               alt="Portrait of Dujari"
               fill
               priority
               sizes="(min-width: 768px) 40vw, 100vw"
-              className="object-cover"
+              className="object-cover object-[46%_22%]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
           </div>
