@@ -64,7 +64,7 @@ export default function HeroSection() {
             {t("hero.cta_collection")}
           </Link>
           <Link
-            href="/artist"
+            href="/#artist"
             className="inline-block border border-white/20 text-white/70 text-xs tracking-[0.3em] uppercase px-10 py-4 hover:border-white/50 hover:text-white transition-all duration-200"
           >
             {t("hero.cta_artist")}
