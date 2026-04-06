@@ -11,7 +11,7 @@ export default function ArtistPage() {
   return (
     <div className="pt-16 md:pt-20 bg-black min-h-screen">
       {/* Hero */}
-      <section className="relative min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)] pt-0 pb-14 md:pb-16 overflow-hidden flex items-center">
+      <section className="relative h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] overflow-hidden flex items-stretch">
         <div
           className="absolute inset-0 opacity-40"
           style={{
@@ -20,8 +20,8 @@ export default function ArtistPage() {
           }}
         />
 
-        <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-          <div className="relative aspect-[4/5] bg-neutral-900 overflow-hidden order-2 md:order-1 md:translate-y-1">
+        <div className="relative max-w-7xl w-full mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-stretch">
+          <div className="relative hidden md:block bg-neutral-900 overflow-hidden order-2 md:order-1">
             <Image
               src="/artist/dujari-artist-portrait.jpg"
               alt="Portrait of Dujari"
@@ -33,7 +33,7 @@ export default function ArtistPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
           </div>
 
-          <div className="order-1 md:order-2">
+          <div className="order-1 md:order-2 flex flex-col justify-center">
             <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-4">
               {t("artist_block.label")}
             </p>
