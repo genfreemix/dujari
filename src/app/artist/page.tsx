@@ -20,8 +20,8 @@ export default function ArtistPage() {
           }}
         />
 
-        <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-          <div className="relative aspect-[4/5] bg-neutral-900 overflow-hidden order-2 md:order-1 md:translate-y-1">
+        <div className="relative max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-[minmax(0,0.96fr)_minmax(0,1.04fr)] gap-12 md:gap-16 items-center">
+          <div className="relative w-full max-w-[560px] aspect-[4/5] bg-neutral-900 overflow-hidden order-2 md:order-1 md:translate-y-1">
             <Image
               src="/artist/dujari-artist-portrait.jpg"
               alt="Portrait of Dujari"
@@ -33,25 +33,16 @@ export default function ArtistPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
           </div>
 
-          <div className="order-1 md:order-2">
+          <div className="order-1 md:order-2 md:max-w-[560px] md:min-h-[320px] flex flex-col justify-center">
             <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-4">
               {t("artist_block.label")}
             </p>
             <h1 className="text-white text-5xl md:text-7xl font-black tracking-tight uppercase mb-8">
               DUJARI
             </h1>
-            <p className="text-white/50 text-lg md:text-xl leading-relaxed italic mb-8 md:mb-10 max-w-xl">
+            <p className="text-white/50 text-lg md:text-xl leading-relaxed italic max-w-[28rem] md:min-h-[5.5rem]">
               {t("artist.quote")}
             </p>
-
-            <div className="flex flex-wrap items-center gap-3 md:gap-4">
-              <span className="inline-flex items-center justify-center border border-white/14 bg-white/[0.03] px-5 py-3 text-[10px] md:text-[11px] tracking-[0.34em] uppercase text-white/72">
-                {t("artist.field_music_title")}
-              </span>
-              <span className="inline-flex items-center justify-center border border-white/14 bg-white/[0.03] px-5 py-3 text-[10px] md:text-[11px] tracking-[0.34em] uppercase text-white/72">
-                {t("artist.field_poetry_title")}
-              </span>
-            </div>
           </div>
         </div>
       </section>
