@@ -21,7 +21,7 @@ export default function ArtistBlock() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
         </div>
 
-        <div>
+        <div className="md:pt-14 lg:pt-16">
           <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-4">
             {t("artist_block.label")}
           </p>
