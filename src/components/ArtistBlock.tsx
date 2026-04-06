@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useT } from "@/i18n";
 
@@ -10,18 +11,14 @@ export default function ArtistBlock() {
     <section className="bg-black py-20 md:py-32 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
         <div className="relative aspect-[4/5] bg-neutral-900 overflow-hidden">
-          <div
-            className="absolute inset-0"
-            style={{
-              background: "linear-gradient(135deg, #1A1A2E 0%, #0A0A0A 50%, #FF2D7B15 100%)",
-            }}
+          <Image
+            src="/artist/dujari-artist-portrait.jpg"
+            alt="Portrait of Dujari"
+            fill
+            sizes="(min-width: 768px) 40vw, 100vw"
+            className="object-cover"
           />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-white/10 text-[120px] md:text-[180px] font-black uppercase select-none leading-none">
-              D
-            </span>
-          </div>
-          <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
         </div>
 
         <div>
