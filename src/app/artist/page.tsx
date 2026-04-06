@@ -15,9 +15,9 @@ export default function ArtistPage() {
   ];
 
   return (
-    <div className="pt-20 md:pt-24 bg-black min-h-screen">
+    <div className="pt-16 md:pt-20 bg-black min-h-screen">
       {/* Hero */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
+      <section className="relative pt-8 md:pt-10 pb-20 md:pb-24 overflow-hidden">
         <div
           className="absolute inset-0 opacity-40"
           style={{
