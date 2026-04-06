@@ -8,31 +8,10 @@ import { useT } from "@/i18n";
 export default function ArtistPage() {
   const t = useT();
 
-  const creativeFields = [
-    {
-      title: t("artist.field_visual_title"),
-      text: t("artist.field_visual_text"),
-    },
-    {
-      title: t("artist.field_music_title"),
-      text: t("artist.field_music_text"),
-    },
-    {
-      title: t("artist.field_poetry_title"),
-      text: t("artist.field_poetry_text"),
-    },
-  ];
-
-  const philosophy = [
-    { title: t("artist.phil1_title"), text: t("artist.phil1_text") },
-    { title: t("artist.phil2_title"), text: t("artist.phil2_text") },
-    { title: t("artist.phil3_title"), text: t("artist.phil3_text") },
-  ];
-
   return (
     <div className="pt-16 md:pt-20 bg-black min-h-screen">
       {/* Hero */}
-      <section className="relative pt-0 pb-20 md:pb-24 overflow-hidden">
+      <section className="relative min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)] pt-0 pb-14 md:pb-16 overflow-hidden flex items-center">
         <div
           className="absolute inset-0 opacity-40"
           style={{
@@ -61,70 +40,18 @@ export default function ArtistPage() {
             <h1 className="text-white text-5xl md:text-7xl font-black tracking-tight uppercase mb-8">
               DUJARI
             </h1>
-            <p className="text-white/50 text-lg md:text-xl leading-relaxed italic mb-6">
+            <p className="text-white/50 text-lg md:text-xl leading-relaxed italic mb-8 md:mb-10 max-w-xl">
               {t("artist.quote")}
             </p>
-          </div>
-        </div>
-      </section>
 
-      {/* Creative Fields */}
-      <section className="pt-2 pb-14 md:pt-0 md:pb-16 border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="max-w-xl mb-6 md:mb-7">
-            <p className="text-[#FF2D7B] text-[9px] md:text-[10px] tracking-[0.42em] uppercase mb-3">
-              {t("artist.fields_label")}
-            </p>
-            <h2 className="text-white text-xl md:text-2xl font-bold tracking-[0.08em] uppercase text-white/92">
-              {t("artist.fields_title")}
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
-            {creativeFields.map((item) => (
-              <div
-                key={item.title}
-                className="border-t border-white/10 bg-white/[0.015] px-4 py-5 md:px-5 md:py-5"
-              >
-                <h3 className="text-white text-[11px] tracking-[0.28em] uppercase font-medium mb-3 text-white/88">
-                  {item.title}
-                </h3>
-                <p className="text-white/42 text-[13px] leading-relaxed">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Story */}
-      <section className="py-16 md:py-24 border-t border-white/5">
-        <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-white text-2xl md:text-3xl font-black tracking-tight uppercase mb-8">
-            {t("artist.story_title")}
-          </h2>
-          <div className="space-y-6 text-white/50 text-sm md:text-base leading-relaxed">
-            <p>{t("artist.story1")}</p>
-            <p>{t("artist.story2")}</p>
-            <p>{t("artist.story3")}</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Philosophy */}
-      <section className="py-16 md:py-24 border-t border-white/5">
-        <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-white text-2xl md:text-3xl font-black tracking-tight uppercase mb-8">
-            {t("artist.philosophy")}
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {philosophy.map((item) => (
-              <div key={item.title} className="border-t border-white/10 pt-6">
-                <h3 className="text-white text-sm tracking-[0.2em] uppercase font-bold mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-white/40 text-sm leading-relaxed">{item.text}</p>
-              </div>
-            ))}
+            <div className="flex flex-wrap items-center gap-3 md:gap-4">
+              <span className="inline-flex items-center justify-center border border-white/14 bg-white/[0.03] px-5 py-3 text-[10px] md:text-[11px] tracking-[0.34em] uppercase text-white/72">
+                {t("artist.field_music_title")}
+              </span>
+              <span className="inline-flex items-center justify-center border border-white/14 bg-white/[0.03] px-5 py-3 text-[10px] md:text-[11px] tracking-[0.34em] uppercase text-white/72">
+                {t("artist.field_poetry_title")}
+              </span>
+            </div>
           </div>
         </div>
       </section>
