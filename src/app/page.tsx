@@ -3,7 +3,6 @@
 import HeroSection from "@/components/HeroSection";
 import GalleryGrid from "@/components/GalleryGrid";
 import ArtistBlock from "@/components/ArtistBlock";
-import InquiryButton from "@/components/InquiryButton";
 import { getFeatured } from "@/data/artworks";
 import { useT } from "@/i18n";
 import Link from "next/link";
@@ -21,18 +20,6 @@ export default function HomePage() {
         title={t("home.featured_title")}
         subtitle={t("home.featured_subtitle")}
       />
-
-      <section className="bg-black py-16 md:py-24 border-t border-white/5">
-        <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-white text-3xl md:text-4xl font-black tracking-tight uppercase mb-4">
-            {t("home.unique_title")}
-          </h2>
-          <p className="text-white/40 text-sm md:text-base mb-8 max-w-lg mx-auto">
-            {t("home.unique_text")}
-          </p>
-          <InquiryButton className="justify-center" />
-        </div>
-      </section>
 
       <ArtistBlock />
 
