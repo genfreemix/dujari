@@ -28,6 +28,7 @@ export default function PoetryPage() {
     { key: "poetry.poem1", date: t("poetry.date") },
     { key: "poetry.poem2" },
     { key: "poetry.poem3" },
+    { key: "poetry.poem4" },
   ];
 
   return (
