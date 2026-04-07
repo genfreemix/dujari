@@ -35,7 +35,6 @@ export default function GalleryPage() {
         style={{ backgroundImage: "url('/gallery/gallery-background02.jpg')" }}
       />
       <div className="absolute inset-0 bg-black/58" />
-      <div className="absolute inset-0 bg-blue-900/20" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,45,123,0.2),transparent_46%),linear-gradient(180deg,rgba(0,0,0,0.06)_0%,rgba(0,0,0,0.18)_100%)]" />
 
       <section className="relative z-10 pt-6 md:pt-8 pb-0">
