@@ -27,6 +27,7 @@ export default function PoetryPage() {
   const poems: { key: string; date?: string }[] = [
     { key: "poetry.poem1", date: t("poetry.date") },
     { key: "poetry.poem2" },
+    { key: "poetry.poem3" },
   ];
 
   return (

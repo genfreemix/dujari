@@ -153,6 +153,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "poetry.date": "19.03.2026",
     "poetry.poem1": "Deliberately accepting\nThe whole greasy world\nWith its melting winter,\nI embrace you.\nHopeless April\nOpens every floodgate…\nToo much is already lost—\nBelieve the poet.\nSomewhere the trendy\nAbuses flicker by…\nWith dry eyes,\nCracks without windows,\nI'll open freely a road\nFor the living.\nDoors since night unlocked—\nMy cocoon has dissolved.",
     "poetry.poem2": "Naked truth —\nDreams have grown bitter.\nNow every night\nNot sleeping, but fearing…\nThe Almighty,\nGrief, love gone cold.\nWe're simply so afraid\nTo admit the absurd.\nWe must.\nAnd no ellipsis — just the fuss…\nHow I want this spring\nTo clear my head.\nTo wait\nAnd with satiety\nBelieve in dreams,\nCreate permanently,\nLive in a hurry!",
+    "poetry.poem3": "Shadows grow younger from happiness,\nAnd let me mark time — let me.\nIn the torrent of the whirlwind\nOf the mournful autumn\nSadness shall not touch my eyelids, lips.\nPeople don’t grow grey from happiness,\nFrom silence everything grows louder in the soul.\nHow strange:\nNow bacchanalia, now a veto,\nA gulp of freedom — so deceptive…\nFrom happiness\nYou become spontaneous,\nYou no longer guard\nMoments stolen away…\nWe are in this strange autumn\nAlone together,\nAnd it is in our power —\nThe village apartment.",
 
     // Footer
     "footer.tagline": "Collectible pop-art objects. Each piece is unique. Each piece is a statement.",
@@ -282,6 +283,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "poetry.date": "19.03.2026",
     "poetry.poem1": "Нарочито приняв\nВесь засаленный мир\nС оплывшей зимой,\nОбнимаю тебя.\nБезысходный апрель\nОткрывает все шлюзы…\nСлишком всё безвозвратно —\nПоэту поверь.\nНовомодные где-то\nМелькают абьюзы…\nГлазами сухими,\nЩелями без окон,\nБезвозмездно открою дорогу\nЖивому.\nДвери с ночи не заперты —\nРастворился мой кокон…",
     "poetry.poem2": "Голая правда —\nОзлобились сны.\nТеперь каждой ночью\nНе спать, а бояться…\nВсевышнего,\nГоря, остывшей любви.\nНам просто так страшно\nВ нелепом признаться.\nНадо.\nИ нет многоточия — есть суета…\nТак хочется этой весной\nПохмелиться.\nЖдать\nИ пресыщенно\nВерить мечтам,\nТворить перманентно,\nЖить торопиться!",
+    "poetry.poem3": "От счастья молодеют тени,\nИ пусть топчусь на месте — пусть.\nВ потоке вихря\nОсени плачевной\nНе тронет мои веки, губы грусть.\nОт счастья не седеют люди,\nОт тишины всё громче на душе.\nТак странно:\nТо вакханалия, то вето,\nГлоток свободы — так обманно…\nОт счастья\nТы становишься спонтанной,\nНе бережёшь\nУкрадкой моменты…\nМы в этой осени престранной\nЛишь вдвоём,\nИ в нашей власти —\nДеревенские апартаменты.",
 
     "footer.tagline": "Коллекционные поп-арт объекты. Каждая работа уникальна. Каждая — заявление.",
     "footer.explore": "Навигация",
@@ -409,8 +411,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "poetry.back": "← Retour",
     "poetry.date": "19.03.2026",
     "poetry.poem1": "En acceptant délibérément\nTout le monde graisseux\nAvec son hiver qui fond,\nJe t'embrasse.\nL'avril sans issue\nOuvre toutes les écluses…\nTrop de choses sont à jamais perdues —\nCrois le poète.\nQuelque part les abus\nÀ la mode scintillent…\nLes yeux secs,\nFissures sans fenêtres,\nGratuitement j'ouvrirai la route\nAu vivant.\nLes portes non verrouillées depuis la nuit —\nMon cocon s'est dissous.",
-    "poetry.poem2": "La vérité nue —\nLes rêves sont devenus hostiles.\nMaintenant chaque nuit\nNon pas dormir, mais avoir peur…\nDu Tout-Puissant,\nDu malheur, de l’amour refroidi.\nNous avons si peur\nD’admettre l’absurde.\nIl le faut.\nPas de points de suspension — juste l’agitation…\nOn voudrait tant ce printemps\nSe désalterer.\nAttendre\nEt avec satiété\nCroire aux rêves,\nCréer en permanence,\nVivre en se pressant!",
-
+    "poetry.poem2": "La vérité nue —\nLes rêves sont devenus hostiles.\nMaintenant chaque nuit\nNon pas dormir, mais avoir peur…\nDu Tout-Puissant,\nDu malheur, de l’amour refroidi.\nNous avons si peur\nD’admettre l’absurde.\nIl le faut.\nPas de points de suspension — juste l’agitation…\nOn voudrait tant ce printemps\nSe désalterer.\nAttendre\nEt avec satiété\nCroire aux rêves,\nCréer en permanence,\nVivre en se pressant!",    "poetry.poem3": "Les ombres rajeunissent du bonheur,\nEt que je fasse du surplace — soit.\nDans le tourbillon\nDe l'automne plaintif\nLa tristesse ne touchera pas mes paupières, mes lèvres.\nOn ne grisonne pas du bonheur,\nDu silence tout devient plus fort dans l'âme.\nC'est si étrange:\nTantôt bacchanale, tantôt véto,\nUne gorgée de liberté — si trompeuse…\nDu bonheur\nTu deviens spontanée,\nTu ne gardes plus\nLes moments volés en secret…\nNous sommes dans cet automne si étrange\nSeulement tous les deux,\nEt il est en notre pouvoir —\nL'appartement du village.",
     "footer.tagline": "Objets pop-art de collection. Chaque pièce est unique. Chaque pièce est une déclaration.",
     "footer.explore": "Explorer",
     "footer.get_in_touch": "Nous contacter",
