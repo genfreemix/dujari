@@ -32,7 +32,7 @@ export default function PoetryPage() {
       <main className="flex-1 px-6 md:px-12 pt-4 md:pt-5">
 
         {/* Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-x-10 gap-y-10 items-end">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-x-10 gap-y-10 items-end">
           {poems.map((poem) => (
             <PoemBlock key={poem.key} text={t(poem.key)} />
           ))}
