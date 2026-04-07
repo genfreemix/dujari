@@ -285,7 +285,15 @@ export function getArtwork(id: string): Artwork | undefined {
 }
 
 export function getFeatured(): Artwork[] {
-  return artworks.filter((a) => a.available).slice(0, 5);
+  const available = artworks.filter((a) => a.available);
+  const eyemeter = available.find((a) => a.id === "eyemeter-panel");
+  const withoutEyemeter = available.filter((a) => a.id !== "eyemeter-panel");
+
+  if (!eyemeter) {
+    return withoutEyemeter.slice(0, 5);
+  }
+
+  return [withoutEyemeter[0], eyemeter, ...withoutEyemeter.slice(1, 4)].filter(Boolean);
 }
 
 export function getByCategory(category: ArtworkCategory): Artwork[] {
