@@ -7,13 +7,13 @@ function PoemBlock({ text, date }: { text: string; date?: string }) {
   const lines = text.split("\n");
   return (
     <div className="max-w-[260px]">
-      <div className="font-mono text-white/80 text-sm leading-[1.75] tracking-wide">
+      <div className="font-[family-name:var(--font-jetbrains-mono)] text-white/80 text-sm leading-[1.75] tracking-wide">
         {lines.map((line, i) =>
           line === "" ? <br key={i} /> : <p key={i}>{line}</p>
         )}
       </div>
       {date && (
-        <p className="mt-3 text-white/20 text-[10px] tracking-[0.35em] font-mono">
+        <p className="mt-3 text-white/20 text-[10px] tracking-[0.35em] font-[family-name:var(--font-jetbrains-mono)]">
           {date}
         </p>
       )}
