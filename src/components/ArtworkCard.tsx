@@ -19,7 +19,7 @@ export default function ArtworkCard({ artwork, priority, className, imageClassNa
   return (
     <Link
       href={`/artwork/${artwork.id}`}
-      className={`group relative block overflow-hidden bg-neutral-900 ${className ?? ""}`.trim()}
+      className={`group relative block overflow-hidden bg-neutral-900 ring-1 ring-white/15 shadow-lg shadow-black/60 ${className ?? ""}`.trim()}
     >
       {/* Image */}
       <div
