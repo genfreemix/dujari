@@ -6,7 +6,7 @@ import { useT } from "@/i18n";
 function PoemBlock({ text, date }: { text: string; date?: string }) {
   const lines = text.split("\n");
   return (
-    <div className="max-w-[260px]">
+    <div className="min-w-0">
       <div className="font-[family-name:var(--font-jetbrains-mono)] text-white/80 text-sm leading-[1.75] tracking-wide">
         {lines.map((line, i) =>
           line === "" ? <br key={i} /> : <p key={i}>{line}</p>
@@ -37,7 +37,7 @@ export default function PoetryPage() {
       <main className="flex-1 px-6 md:px-12 pt-4 md:pt-5">
 
         {/* Grid */}
-        <div className="flex flex-wrap gap-x-12 gap-y-10">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-x-10 gap-y-10">
           {poems.map((poem) => (
             <PoemBlock key={poem.key} text={t(poem.key)} date={poem.date} />
           ))}
