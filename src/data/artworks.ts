@@ -262,6 +262,23 @@ export const artworks: Artwork[] = [
     edition: "1/1",
   },
   {
+    id: "glam-skull-panel",
+    title: "Glam Skull",
+    category: "objects",
+    description: {
+      en: "Beautiful things die too, but they do it with taste. Flooded in neon and assembled like an illusion, this skull mocks the ideal, luxury, and the obsession with looking alive. It does not hide decay. It stages it. Empty beauty you still cannot look away from.",
+      ru: "Красивые вещи тоже умирают — но делают это со вкусом. Залитый неоном и собранный как иллюзия, этот череп высмеивает идеал, роскошь и одержимость выглядеть живым. Он не скрывает распад — он его демонстрирует. Пустая красота, от которой всё равно невозможно оторваться.",
+      fr: "Les belles choses meurent aussi, mais elles le font avec goût. Inondé de néon et construit comme une illusion, ce crâne se moque de l'idéal, du luxe et de l'obsession de paraître vivant. Il ne cache pas la décomposition, il la met en scène. Une beauté vide dont il reste pourtant impossible de détourner le regard."
+    },
+    price: "490 €",
+    dimensions: "68 × 48 cm",
+    year: 2026,
+    image: "/artworks/glam-skull-panel.jpg",
+    color: "#f06aa7",
+    available: true,
+    edition: "1/1",
+  },
+  {
     id: "cherry-bomb",
     title: "Cherry Bomb",
     category: "bottle",
@@ -286,14 +303,13 @@ export function getArtwork(id: string): Artwork | undefined {
 
 export function getFeatured(): Artwork[] {
   const available = artworks.filter((a) => a.available);
-  const eyemeter = available.find((a) => a.id === "eyemeter-panel");
-  const withoutEyemeter = available.filter((a) => a.id !== "eyemeter-panel");
+  const featuredIds = ["tincture-magic-strawberry", "eyemeter-panel", "glam-skull-panel"];
+  const prioritized = featuredIds
+    .map((id) => available.find((artwork) => artwork.id === id))
+    .filter((artwork): artwork is Artwork => Boolean(artwork));
+  const remaining = available.filter((artwork) => !featuredIds.includes(artwork.id));
 
-  if (!eyemeter) {
-    return withoutEyemeter.slice(0, 5);
-  }
-
-  return [withoutEyemeter[0], eyemeter, ...withoutEyemeter.slice(1, 4)].filter(Boolean);
+  return [...prioritized, ...remaining].slice(0, 5);
 }
 
 export function getByCategory(category: ArtworkCategory): Artwork[] {

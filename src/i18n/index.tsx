@@ -57,6 +57,11 @@ const translations: Record<Locale, Record<string, string>> = {
     // Artwork card
     "artwork.bottle": "Art Bottle",
     "artwork.panel": "Art Panel",
+    "artwork.objects": "Art Object",
+    "artwork.pictures": "Art Picture",
+    "artwork.posters": "Art Poster",
+    "artwork.books": "Art Book",
+    "artwork.merch": "Art Merch",
     "artwork.sold": "Sold",
 
     // Artwork detail
@@ -178,6 +183,11 @@ const translations: Record<Locale, Record<string, string>> = {
 
     "artwork.bottle": "Арт-бутылка",
     "artwork.panel": "Арт-панель",
+    "artwork.objects": "Арт-объект",
+    "artwork.pictures": "Арт-картина",
+    "artwork.posters": "Арт-постер",
+    "artwork.books": "Арт-книга",
+    "artwork.merch": "Арт-мерч",
     "artwork.sold": "Продано",
 
     "artwork.back": "← Назад в галерею",
@@ -292,6 +302,11 @@ const translations: Record<Locale, Record<string, string>> = {
 
     "artwork.bottle": "Bouteille d'art",
     "artwork.panel": "Panneau d'art",
+    "artwork.objects": "Objet d'art",
+    "artwork.pictures": "Tableau d'art",
+    "artwork.posters": "Poster d'art",
+    "artwork.books": "Livre d'art",
+    "artwork.merch": "Merch d'art",
     "artwork.sold": "Vendu",
 
     "artwork.back": "← Retour à la galerie",

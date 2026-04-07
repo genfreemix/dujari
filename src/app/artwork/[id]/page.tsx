@@ -21,7 +21,7 @@ export default function ArtworkPage() {
   const { prev, next } = getAdjacentArtworks(params.id as string);
 
   const description = artwork.description[locale] || artwork.description.en;
-  const categoryLabel = artwork.category === "bottle" ? t("artwork.bottle") : t("artwork.panel");
+  const categoryLabel = t(`artwork.${artwork.category}`);
   const galleryImages = artwork.galleryImages?.length ? artwork.galleryImages : [artwork.image];
   const [activeIndex, setActiveIndex] = useState(0);
 

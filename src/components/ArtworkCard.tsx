@@ -14,7 +14,7 @@ interface Props {
 export default function ArtworkCard({ artwork, priority, className, imageClassName }: Props) {
   const { t } = useI18n();
   const isSold = !artwork.available;
-  const categoryLabel = artwork.category === "bottle" ? t("artwork.bottle") : t("artwork.panel");
+  const categoryLabel = t(`artwork.${artwork.category}`);
 
   return (
     <Link
