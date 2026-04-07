@@ -22,7 +22,7 @@ export default function ArtistPage() {
         />
 
         <div className="relative max-w-7xl w-full mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-stretch">
-          <div className="relative hidden md:block bg-neutral-900 overflow-hidden order-2 md:order-1">
+          <div className="relative h-64 md:h-auto bg-neutral-900 overflow-hidden order-2 md:order-1">
             <Image
               src="/artist/dujari-artist-portrait-camera.png"
               alt="Portrait of Dujari"
