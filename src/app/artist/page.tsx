@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useT } from "@/i18n";
 
+
 export default function ArtistPage() {
   const t = useT();
 
@@ -48,9 +49,12 @@ export default function ArtistPage() {
               <span className="inline-flex items-center justify-center border border-white/14 bg-white/[0.03] px-5 py-3 text-[10px] md:text-[11px] tracking-[0.34em] uppercase text-white/72">
                 {t("artist.field_music_title")}
               </span>
-              <span className="inline-flex items-center justify-center border border-white/14 bg-white/[0.03] px-5 py-3 text-[10px] md:text-[11px] tracking-[0.34em] uppercase text-white/72">
+              <Link
+                href="/poetry"
+                className="inline-flex items-center justify-center border border-white/14 bg-white/[0.03] px-5 py-3 text-[10px] md:text-[11px] tracking-[0.34em] uppercase text-white/72 hover:border-[#FF2D7B]/50 hover:text-white transition-colors duration-200"
+              >
                 {t("artist.field_poetry_title")}
-              </span>
+              </Link>
             </div>
           </div>
         </div>
