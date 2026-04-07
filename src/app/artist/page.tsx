@@ -22,7 +22,7 @@ export default function ArtistPage() {
         />
 
         <div className="relative max-w-7xl w-full mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-stretch">
-          <div className="relative h-64 md:h-auto bg-neutral-900 overflow-hidden md:order-1">
+          <div className="relative h-64 md:h-auto bg-neutral-900 overflow-hidden order-1 md:order-1">
             <Image
               src="/artist/dujari-artist-portrait-camera.png"
               alt="Portrait of Dujari"
@@ -34,7 +34,7 @@ export default function ArtistPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
           </div>
 
-          <div className="order-1 md:order-2 flex flex-col justify-center">
+          <div className="order-2 md:order-2 flex flex-col justify-center">
             <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-4">
               {t("artist_block.label")}
             </p>
