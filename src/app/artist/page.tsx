@@ -12,7 +12,7 @@ export default function ArtistPage() {
   return (
     <div className="pt-16 md:pt-20 bg-black min-h-screen">
       {/* Hero */}
-      <section className="relative h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] overflow-hidden flex items-stretch">
+      <section className="relative min-h-[calc(100vh-4rem)] md:h-[calc(100vh-5rem)] overflow-hidden flex items-stretch">
         <div
           className="absolute inset-0 opacity-40"
           style={{
@@ -22,7 +22,7 @@ export default function ArtistPage() {
         />
 
         <div className="relative max-w-7xl w-full mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-stretch">
-          <div className="relative h-64 md:h-auto bg-neutral-900 overflow-hidden order-2 md:order-1">
+          <div className="relative h-64 md:h-auto bg-neutral-900 overflow-hidden md:order-1">
             <Image
               src="/artist/dujari-artist-portrait-camera.png"
               alt="Portrait of Dujari"
