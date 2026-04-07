@@ -10,7 +10,7 @@ export default function PoetryPage() {
   return (
     <div className="min-h-screen bg-black pt-16 md:pt-20 flex flex-col">
       {/* Back */}
-      <div className="max-w-3xl mx-auto w-full px-6 pt-10 md:pt-16">
+      <div className="max-w-5xl mx-auto w-full px-6 md:px-16 pt-8 md:pt-12">
         <Link
           href="/artist"
           className="text-white/30 text-[10px] tracking-[0.4em] uppercase hover:text-[#FF2D7B] transition-colors duration-200"
@@ -20,22 +20,9 @@ export default function PoetryPage() {
       </div>
 
       {/* Content */}
-      <main className="flex-1 flex flex-col items-center justify-center px-6 py-16 md:py-20">
-        {/* Label */}
-        <p className="text-[#FF2D7B] text-[10px] tracking-[0.55em] uppercase mb-6">
-          {t("poetry.label")}
-        </p>
-
-        {/* Glitch title */}
-        <h1
-          className="glitch-text text-white text-4xl md:text-6xl font-black tracking-[0.15em] uppercase mb-16 md:mb-20"
-          data-text={t("poetry.title")}
-        >
-          {t("poetry.title")}
-        </h1>
-
+      <main className="flex-1 px-6 md:px-16 py-10 md:py-12 max-w-5xl mx-auto w-full">
         {/* Poem */}
-        <div className="w-full max-w-lg">
+        <div className="max-w-sm">
           <div className="font-mono text-white/80 text-base md:text-lg leading-[2.2] tracking-wide">
             {lines.map((line, i) =>
               line === "" ? (
