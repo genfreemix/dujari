@@ -152,7 +152,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "poetry.back": "← Back",
     "poetry.date": "19.03.2026",
     "poetry.poem1": "Deliberately accepting\nThe whole greasy world\nWith its melting winter,\nI embrace you.\nHopeless April\nOpens every floodgate…\nToo much is already lost—\nBelieve the poet.\nSomewhere the trendy\nAbuses flicker by…\nWith dry eyes,\nCracks without windows,\nI'll open freely a road\nFor the living.\nDoors since night unlocked—\nMy cocoon has dissolved.",
-    "poetry.poem2": "Голая правда —\nОзлобились сны.\nТеперь каждой ночью\nНе спать, а бояться…\nВсевышнего,\nГоря, остывшей любви.\nНам просто так страшно\nВ нелепом признаться.\nНадо.\nИ нет многоточия — есть суета…\nТак хочется этой весной\nПохмелиться.\nЖдать\nИ пресыщенно\nВерить мечтам,\nТворить перманентно,\nЖить торопиться!",
+    "poetry.poem2": "Naked truth —\nDreams have grown bitter.\nNow every night\nNot sleeping, but fearing…\nThe Almighty,\nGrief, love gone cold.\nWe're simply so afraid\nTo admit the absurd.\nWe must.\nAnd no ellipsis — just the fuss…\nHow I want this spring\nTo clear my head.\nTo wait\nAnd with satiety\nBelieve in dreams,\nCreate permanently,\nLive in a hurry!",
 
     // Footer
     "footer.tagline": "Collectible pop-art objects. Each piece is unique. Each piece is a statement.",
@@ -409,7 +409,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "poetry.back": "← Retour",
     "poetry.date": "19.03.2026",
     "poetry.poem1": "En acceptant délibérément\nTout le monde graisseux\nAvec son hiver qui fond,\nJe t'embrasse.\nL'avril sans issue\nOuvre toutes les écluses…\nTrop de choses sont à jamais perdues —\nCrois le poète.\nQuelque part les abus\nÀ la mode scintillent…\nLes yeux secs,\nFissures sans fenêtres,\nGratuitement j'ouvrirai la route\nAu vivant.\nLes portes non verrouillées depuis la nuit —\nMon cocon s'est dissous.",
-    "poetry.poem2": "Голая правда —\nОзлобились сны.\nТеперь каждой ночью\nНе спать, а бояться…\nВсевышнего,\nГоря, остывшей любви.\nНам просто так страшно\nВ нелепом признаться.\nНадо.\nИ нет многоточия — есть суета…\nТак хочется этой весной\nПохмелиться.\nЖдать\nИ пресыщенно\nВерить мечтам,\nТворить перманентно,\nЖить торопиться!",
+    "poetry.poem2": "La vérité nue —\nLes rêves sont devenus hostiles.\nMaintenant chaque nuit\nNon pas dormir, mais avoir peur…\nDu Tout-Puissant,\nDu malheur, de l’amour refroidi.\nNous avons si peur\nD’admettre l’absurde.\nIl le faut.\nPas de points de suspension — juste l’agitation…\nOn voudrait tant ce printemps\nSe désalterer.\nAttendre\nEt avec satiété\nCroire aux rêves,\nCréer en permanence,\nVivre en se pressant!",
 
     "footer.tagline": "Objets pop-art de collection. Chaque pièce est unique. Chaque pièce est une déclaration.",
     "footer.explore": "Explorer",
