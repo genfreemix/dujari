@@ -11,10 +11,10 @@ export default function PoetryPage() {
     <div className="min-h-screen bg-black pt-16 md:pt-20 flex flex-col">
 
       {/* Content */}
-      <main className="flex-1 px-6 md:px-12 pt-4 md:pt-5">
+      <main className="flex-1 px-6 md:px-12 pt-3 md:pt-4">
         {/* Poem */}
         <div className="max-w-sm">
-          <div className="font-mono text-white/80 text-base md:text-lg leading-[2.2] tracking-wide">
+          <div className="font-mono text-white/80 text-sm md:text-base leading-[1.75] tracking-wide">
             {lines.map((line, i) =>
               line === "" ? (
                 <br key={i} />
@@ -25,12 +25,12 @@ export default function PoetryPage() {
           </div>
 
           {/* Date */}
-          <p className="mt-6 text-white/20 text-[11px] tracking-[0.35em] font-mono">
+          <p className="mt-4 text-white/20 text-[10px] tracking-[0.35em] font-mono">
             {t("poetry.date")}
           </p>
 
           {/* Back — below date */}
-          <div className="mt-10">
+          <div className="mt-5">
             <Link
               href="/artist"
               className="text-white/20 text-[10px] tracking-[0.4em] uppercase hover:text-[#FF2D7B] transition-colors duration-200"
