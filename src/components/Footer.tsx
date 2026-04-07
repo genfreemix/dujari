@@ -10,6 +10,7 @@ export default function Footer() {
 
   if (pathname.startsWith("/artwork/")) return null;
   if (pathname === "/gallery") return null;
+  if (pathname === "/poetry") return null;
 
   return (
     <footer className="bg-black border-t border-white/10 py-12 md:py-16">
