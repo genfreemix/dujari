@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useT } from "@/i18n";
 
-function PoemBlock({ text, date }: { text: string; date?: string }) {
+function PoemBlock({ text }: { text: string }) {
   const lines = text.split("\n");
   return (
     <div className="min-w-0">
@@ -12,11 +12,6 @@ function PoemBlock({ text, date }: { text: string; date?: string }) {
           line === "" ? <br key={i} /> : <p key={i}>{line}</p>
         )}
       </div>
-      {date && (
-        <p className="mt-3 text-white/20 text-[10px] tracking-[0.35em] font-[family-name:var(--font-jetbrains-mono)]">
-          {date}
-        </p>
-      )}
     </div>
   );
 }
@@ -24,11 +19,11 @@ function PoemBlock({ text, date }: { text: string; date?: string }) {
 export default function PoetryPage() {
   const t = useT();
 
-  const poems: { key: string; date?: string }[] = [
-    { key: "poetry.poem1", date: t("poetry.date") },
+  const poems: { key: string }[] = [
+    { key: "poetry.poem1" },
     { key: "poetry.poem2" },
-    { key: "poetry.poem3" },
     { key: "poetry.poem4" },
+    { key: "poetry.poem3" },
     { key: "poetry.poem5" },
   ];
 
@@ -37,9 +32,9 @@ export default function PoetryPage() {
       <main className="flex-1 px-6 md:px-12 pt-4 md:pt-5">
 
         {/* Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-x-10 gap-y-10">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-x-10 gap-y-10 items-end">
           {poems.map((poem) => (
-            <PoemBlock key={poem.key} text={t(poem.key)} date={poem.date} />
+            <PoemBlock key={poem.key} text={t(poem.key)} />
           ))}
         </div>
 
