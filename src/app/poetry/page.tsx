@@ -29,6 +29,7 @@ export default function PoetryPage() {
     { key: "poetry.poem2" },
     { key: "poetry.poem3" },
     { key: "poetry.poem4" },
+    { key: "poetry.poem5" },
   ];
 
   return (
