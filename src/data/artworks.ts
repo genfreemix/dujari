@@ -211,6 +211,23 @@ export const artworks: Artwork[] = [
     edition: "1/1",
   },
   {
+    id: "eyemeter-panel",
+    title: "Eyemeter",
+    category: "panel",
+    description: {
+      en: "",
+      ru: "",
+      fr: "",
+    },
+    price: "",
+    dimensions: "",
+    year: 2026,
+    image: "/artworks/eyemeter-panel.jpg",
+    color: "#d6c9b7",
+    available: true,
+    edition: "1/1",
+  },
+  {
     id: "midnight-jack",
     title: "Midnight Jack",
     category: "bottle",
