@@ -19,18 +19,18 @@ export default function ArtworkCard({ artwork, priority, className, imageClassNa
   return (
     <Link
       href={`/artwork/${artwork.id}`}
-      className={`group relative block overflow-hidden transition-transform duration-[350ms] ease-out hover:scale-[1.03] ${className ?? ""}`.trim()}
-      style={{ boxShadow: "0 20px 60px rgba(0,0,0,0.4)" }}
+      className={`group relative block transition-transform duration-[350ms] ease-out hover:scale-[1.03] ${className ?? ""}`.trim()}
     >
       {/* Image */}
       <div
-        className={`aspect-[5/6] w-full relative bg-[#0D0D0D] overflow-hidden ${imageClassName ?? ""}`.trim()}
+        className={`aspect-[5/6] w-full relative overflow-hidden ${imageClassName ?? ""}`.trim()}
       >
         {artwork.image ? (
           <img
             src={artwork.image}
             alt={artwork.title}
             className="absolute inset-0 block h-full w-full object-contain"
+            style={{ boxShadow: "0 30px 80px rgba(0,0,0,0.55), 0 8px 24px rgba(0,0,0,0.35)" }}
             loading={priority ? "eager" : "lazy"}
           />
         ) : (
