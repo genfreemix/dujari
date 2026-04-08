@@ -232,52 +232,56 @@ export default function ArtworkPage() {
 
             ) : (
               /* ── PHYSICAL OBJECT (bottle/object): object-first, label-like right column ── */
-              <div className="flex flex-col max-w-[380px] pt-4">
+              <div className="flex flex-col lg:min-h-[65vh] max-w-[380px] pt-4">
 
-                {/* Meta + title — compact */}
-                <p className="text-[#FF2D7B] text-[10px] tracking-[0.52em] uppercase mb-4">
-                  {categoryLabel} · {artwork.year}
-                </p>
-                <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-black tracking-tight uppercase leading-none mb-6">
-                  {artwork.title}
-                </h1>
-
-                {/* Brief description — capped at ~4 lines / 60 words */}
-                {description && (
-                  <p className="text-white/40 text-sm leading-[1.65] mb-8 max-w-[300px] line-clamp-4">
-                    {description}
+                {/* Top: meta + title + description */}
+                <div>
+                  <p className="text-[#FF2D7B] text-[10px] tracking-[0.52em] uppercase mb-4">
+                    {categoryLabel} · {artwork.year}
                   </p>
-                )}
+                  <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-black tracking-tight uppercase leading-none mb-6">
+                    {artwork.title}
+                  </h1>
 
-                {/* Thin divider */}
-                <div className="w-8 h-px bg-white/10 mb-8" />
-
-                {/* Facts — close, compact */}
-                <div className="space-y-2.5 mb-6">
-                  {artwork.price && (
-                    <p className="text-white text-xl font-bold tracking-tight">{artwork.price}</p>
-                  )}
-                  {artwork.dimensions && (
-                    <p className="text-white/40 text-xs tracking-wide">{artwork.dimensions}</p>
-                  )}
-                  {artwork.edition && (
-                    <p className="text-white/25 text-[10px] tracking-[0.22em] uppercase">{artwork.edition}</p>
+                  {/* Brief description — capped at ~4 lines / 60 words */}
+                  {description && (
+                    <p className="text-white/40 text-sm leading-[1.65] max-w-[300px] line-clamp-4">
+                      {description}
+                    </p>
                   )}
                 </div>
 
-                {/* Availability */}
-                <p className="text-white/20 text-[10px] tracking-[0.28em] uppercase mb-8">
-                  {artwork.available ? "One original. No edition." : t("artwork.claimed")}
-                </p>
+                {/* Bottom: divider + facts + CTA — pushed down */}
+                <div className="mt-auto pt-10">
+                  {/* Thin divider */}
+                  <div className="w-8 h-px bg-white/10 mb-8" />
 
-                {/* CTA — bordered, present */}
-                {artwork.available && (
-                  !inquiryOpen ? (
-                    <button
-                      onClick={() => setInquiryOpen(true)}
-                      className="self-start border border-white/20 text-white/75 text-xs tracking-[0.32em] uppercase px-8 py-4 hover:border-white/45 hover:text-white transition-all duration-200"
-                    >
-                      {t("artwork.inquire")}
+                  {/* Facts — close, compact */}
+                  <div className="space-y-2.5 mb-6">
+                    {artwork.price && (
+                      <p className="text-white text-xl font-bold tracking-tight">{artwork.price}</p>
+                    )}
+                    {artwork.dimensions && (
+                      <p className="text-white/40 text-xs tracking-wide">{artwork.dimensions}</p>
+                    )}
+                    {artwork.edition && (
+                      <p className="text-white/25 text-[10px] tracking-[0.22em] uppercase">{artwork.edition}</p>
+                    )}
+                  </div>
+
+                  {/* Availability */}
+                  <p className="text-white/20 text-[10px] tracking-[0.28em] uppercase mb-8">
+                    {artwork.available ? "One original. No edition." : t("artwork.claimed")}
+                  </p>
+
+                  {/* CTA — bordered, present */}
+                  {artwork.available && (
+                    !inquiryOpen ? (
+                      <button
+                        onClick={() => setInquiryOpen(true)}
+                        className="self-start border border-white/20 text-white/75 text-xs tracking-[0.32em] uppercase px-8 py-4 hover:border-white/45 hover:text-white transition-all duration-200"
+                      >
+                        {t("artwork.inquire")}
                     </button>
                   ) : (
                     <div className="flex flex-col gap-2">
@@ -293,6 +297,7 @@ export default function ArtworkPage() {
                     </div>
                   )
                 )}
+                </div>{/* end bottom block */}
 
                 {/* Mobile prev/next */}
                 <div className="flex justify-between mt-14 lg:hidden">
