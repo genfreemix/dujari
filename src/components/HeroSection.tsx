@@ -12,7 +12,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative h-screen flex items-center overflow-hidden bg-black">
       {/* Background visual */}
       <div
         className="absolute inset-0 opacity-60"
@@ -30,33 +30,29 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="relative z-10 text-center px-6 max-w-4xl">
-        <p className="text-[#FF2D7B] text-xs md:text-sm tracking-[0.5em] uppercase mb-6 font-medium">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-14 lg:px-20">
+        {/* Overline */}
+        <p className="text-[#FF2D7B] text-[10px] tracking-[0.6em] uppercase mb-8 md:mb-10 font-medium">
           {t("hero.tagline")}
         </p>
 
-        <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.9] uppercase">
-          {t("hero.line1")}
-          <br />
-          <span className="text-[#FF2D7B]">{t("hero.line2_cant")}</span>{" "}{t("hero.line2_ignore")}
+        {/* Headline */}
+        <h1 className="font-black leading-none tracking-tight">
+          <span className="block text-3xl md:text-5xl lg:text-6xl text-white/80 mb-3 md:mb-4">
+            {t("hero.line1")}
+          </span>
+          <span className="block text-5xl md:text-8xl lg:text-[9rem] text-[#FF2D7B] leading-[0.88]">
+            {t("hero.line2_cant")}
+          </span>
         </h1>
 
-        <p className="text-white/50 text-sm md:text-base mt-8 max-w-md mx-auto leading-relaxed">
+        {/* Secondary atmospheric line */}
+        <p className="text-white/38 text-sm md:text-base italic tracking-[0.08em] mt-8 md:mt-10 max-w-xs md:max-w-sm">
           {t("hero.sub")}
         </p>
 
-        <div className="mt-7 flex flex-wrap items-center justify-center gap-2 md:gap-3">
-          {disciplines.map((discipline) => (
-            <span
-              key={discipline}
-              className="border border-white/12 bg-white/[0.03] px-4 py-2 text-[10px] md:text-[11px] tracking-[0.34em] uppercase text-white/58 backdrop-blur-sm"
-            >
-              {discipline}
-            </span>
-          ))}
-        </div>
-
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        {/* CTA */}
+        <div className="mt-10 md:mt-12 flex flex-col sm:flex-row items-start gap-4">
           <Link
             href="/gallery"
             className="inline-block bg-[#FF2D7B] text-white text-xs tracking-[0.3em] uppercase px-10 py-4 hover:bg-[#e0256b] transition-colors duration-200"
@@ -69,6 +65,18 @@ export default function HeroSection() {
           >
             {t("hero.cta_artist")}
           </Link>
+        </div>
+
+        {/* Discipline chips */}
+        <div className="mt-10 flex flex-wrap items-center gap-2 md:gap-3">
+          {disciplines.map((discipline) => (
+            <span
+              key={discipline}
+              className="border border-white/10 bg-white/[0.03] px-4 py-2 text-[10px] md:text-[11px] tracking-[0.34em] uppercase text-white/40 backdrop-blur-sm"
+            >
+              {discipline}
+            </span>
+          ))}
         </div>
       </div>
 

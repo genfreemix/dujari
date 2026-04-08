@@ -31,9 +31,22 @@ export default function ArtistBlock() {
           <p className="text-white/50 text-sm md:text-base leading-relaxed mb-4">
             {t("artist_block.bio1")}
           </p>
-          <p className="text-white/50 text-sm md:text-base leading-relaxed mb-8">
+          <p className="text-white/50 text-sm md:text-base leading-relaxed mb-6">
             {t("artist_block.bio2")}
           </p>
+
+          {/* Discipline chips */}
+          <div className="flex flex-wrap items-center gap-3 mb-8">
+            <span className="inline-flex items-center border border-white/14 bg-white/[0.03] px-5 py-3 text-[10px] tracking-[0.34em] uppercase text-white/70">
+              {t("artist.field_music_title")}
+            </span>
+            <Link
+              href="/poetry"
+              className="inline-flex items-center border border-white/14 bg-white/[0.03] px-5 py-3 text-[10px] tracking-[0.34em] uppercase text-white/70 hover:border-[#FF2D7B]/50 hover:text-white transition-colors duration-200"
+            >
+              {t("artist.field_poetry_title")}
+            </Link>
+          </div>
           <Link
             href="/artist"
             className="inline-block border border-white/20 text-white/70 text-xs tracking-[0.3em] uppercase px-8 py-4 hover:border-white/50 hover:text-white transition-all duration-200"
