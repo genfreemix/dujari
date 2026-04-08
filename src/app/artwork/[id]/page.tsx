@@ -56,7 +56,7 @@ export default function ArtworkPage() {
         {/* Desktop: prev arrow */}
         <Link
           href={prev ? `/artwork/${prev.id}` : "/gallery"}
-          className="hidden lg:flex items-center justify-center w-10 shrink-0 text-white/15 hover:text-white/45 transition-colors"
+          className="hidden lg:flex items-center justify-center w-10 shrink-0 text-white/0 hover:text-white/45 transition-colors"
           title={prev ? prev.title : t("artwork.back")}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
@@ -251,8 +251,8 @@ export default function ArtworkPage() {
                   )}
                 </div>
 
-                {/* Bottom: divider + facts + CTA — pushed down */}
-                <div className="mt-auto pt-10">
+                {/* Bottom: divider + facts + CTA */}
+                <div className="mt-10">
                   {/* Thin divider */}
                   <div className="w-8 h-px bg-white/10 mb-8" />
 
@@ -324,7 +324,7 @@ export default function ArtworkPage() {
         {/* Desktop: next arrow */}
         <Link
           href={next ? `/artwork/${next.id}` : "/gallery"}
-          className="hidden lg:flex items-center justify-center w-10 shrink-0 text-white/15 hover:text-white/45 transition-colors"
+          className="hidden lg:flex items-center justify-center w-10 shrink-0 text-white/0 hover:text-white/45 transition-colors"
           title={next ? next.title : t("artwork.back")}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
