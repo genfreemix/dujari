@@ -70,7 +70,7 @@ export default function ArtworkPage() {
             className={`grid items-start gap-16 md:gap-20 lg:gap-28 ${
               isWallPiece
                 ? "grid-cols-1 lg:grid-cols-[1.3fr_1fr]"
-                : "grid-cols-1 lg:grid-cols-[1fr_1fr]"
+                : "grid-cols-1 lg:grid-cols-[1.4fr_1fr]"
             }`}
           >
 
@@ -163,130 +163,156 @@ export default function ArtworkPage() {
             </div>
 
             {/* Right: scene */}
-            <div className="flex flex-col lg:min-h-[70vh] max-w-[520px]">
+            {isWallPiece ? (
+              /* ── WALL PIECE: text-dominant, facts pushed to bottom ── */
+              <div className="flex flex-col lg:min-h-[70vh] max-w-[520px]">
 
-              {/* Top block: meta + title + description */}
-              <div>
-                {/* Meta */}
-                <p className="text-[#FF2D7B] text-[10px] tracking-[0.52em] uppercase mb-6">
-                  {categoryLabel} · {artwork.year}
-                </p>
-
-                {/* Title */}
-                <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-black tracking-tight uppercase leading-none mb-10">
-                  {artwork.title}
-                </h1>
-
-                {/* Description */}
-                {description && (
-                  <p className="text-white/50 text-sm md:text-base leading-[1.75] max-w-[440px]">
-                    {description}
+                <div>
+                  <p className="text-[#FF2D7B] text-[10px] tracking-[0.52em] uppercase mb-6">
+                    {categoryLabel} · {artwork.year}
                   </p>
-                )}
-              </div>
-
-              {/* Bottom block: facts + CTA — pushed to bottom */}
-              <div className="mt-auto pt-14">
-
-                {/* Facts — quiet stack, no labels */}
-                <div className="mb-8 space-y-3">
-                  {artwork.price && (
-                    <p className="text-white text-2xl font-bold tracking-tight">
-                      {artwork.price}
-                    </p>
-                  )}
-                  {artwork.dimensions && (
-                    <p className="text-white/45 text-sm tracking-wide">
-                      {artwork.dimensions}
-                    </p>
-                  )}
-                  {artwork.edition && (
-                    <p className="text-white/30 text-xs tracking-[0.22em] uppercase">
-                      {artwork.edition}
+                  <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-black tracking-tight uppercase leading-none mb-10">
+                    {artwork.title}
+                  </h1>
+                  {description && (
+                    <p className="text-white/50 text-sm md:text-base leading-[1.75] max-w-[440px]">
+                      {description}
                     </p>
                   )}
                 </div>
 
-                {/* Availability */}
-                <p className="text-white/22 text-[11px] tracking-[0.28em] uppercase mb-8">
-                  {artwork.available
-                    ? "One original. No edition."
-                    : t("artwork.claimed")}
-                </p>
-
-                {/* CTA */}
-                {artwork.available && (
-                  isWallPiece ? (
+                <div className="mt-auto pt-14">
+                  <div className="mb-8 space-y-3">
+                    {artwork.price && (
+                      <p className="text-white text-2xl font-bold tracking-tight">{artwork.price}</p>
+                    )}
+                    {artwork.dimensions && (
+                      <p className="text-white/45 text-sm tracking-wide">{artwork.dimensions}</p>
+                    )}
+                    {artwork.edition && (
+                      <p className="text-white/30 text-xs tracking-[0.22em] uppercase">{artwork.edition}</p>
+                    )}
+                  </div>
+                  <p className="text-white/22 text-[11px] tracking-[0.28em] uppercase mb-8">
+                    {artwork.available ? "One original. No edition." : t("artwork.claimed")}
+                  </p>
+                  {artwork.available && (
                     !inquiryOpen ? (
-                      <button
-                        onClick={() => setInquiryOpen(true)}
+                      <button onClick={() => setInquiryOpen(true)}
                         className="text-white/38 text-[11px] tracking-[0.32em] uppercase hover:text-white/70 transition-colors text-left"
-                      >
-                        {t("artwork.inquire")} →
-                      </button>
+                      >{t("artwork.inquire")} →</button>
                     ) : (
                       <div className="flex gap-8">
-                        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
-                          className="text-white/38 text-[11px] tracking-[0.22em] uppercase hover:text-white/70 transition-colors"
-                        >WhatsApp</a>
-                        <a href={telegramUrl} target="_blank" rel="noopener noreferrer"
-                          className="text-white/38 text-[11px] tracking-[0.22em] uppercase hover:text-white/70 transition-colors"
-                        >Telegram</a>
-                        <a href={mailUrl}
-                          className="text-white/38 text-[11px] tracking-[0.22em] uppercase hover:text-white/70 transition-colors"
-                        >Email</a>
+                        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="text-white/38 text-[11px] tracking-[0.22em] uppercase hover:text-white/70 transition-colors">WhatsApp</a>
+                        <a href={telegramUrl} target="_blank" rel="noopener noreferrer" className="text-white/38 text-[11px] tracking-[0.22em] uppercase hover:text-white/70 transition-colors">Telegram</a>
+                        <a href={mailUrl} className="text-white/38 text-[11px] tracking-[0.22em] uppercase hover:text-white/70 transition-colors">Email</a>
                       </div>
                     )
+                  )}
+                </div>
+
+                {/* Mobile prev/next */}
+                <div className="flex justify-between mt-14 lg:hidden">
+                  <Link href={prev ? `/artwork/${prev.id}` : "/gallery"}
+                    className="text-white/22 text-[10px] tracking-[0.18em] uppercase hover:text-white/50 transition-colors flex items-center gap-1.5"
+                  >
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6" /></svg>
+                    {prev ? prev.title.slice(0, 14) : t("artwork.back")}
+                  </Link>
+                  {next && (
+                    <Link href={`/artwork/${next.id}`}
+                      className="text-white/22 text-[10px] tracking-[0.18em] uppercase hover:text-white/50 transition-colors flex items-center gap-1.5"
+                    >
+                      {next.title.slice(0, 14)}
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6" /></svg>
+                    </Link>
+                  )}
+                </div>
+              </div>
+
+            ) : (
+              /* ── PHYSICAL OBJECT (bottle/object): object-first, label-like right column ── */
+              <div className="flex flex-col max-w-[380px] pt-4">
+
+                {/* Meta + title — compact */}
+                <p className="text-[#FF2D7B] text-[10px] tracking-[0.52em] uppercase mb-4">
+                  {categoryLabel} · {artwork.year}
+                </p>
+                <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-black tracking-tight uppercase leading-none mb-6">
+                  {artwork.title}
+                </h1>
+
+                {/* Brief description — short, quiet */}
+                {description && (
+                  <p className="text-white/40 text-sm leading-[1.65] mb-8 max-w-[300px]">
+                    {description}
+                  </p>
+                )}
+
+                {/* Thin divider */}
+                <div className="w-8 h-px bg-white/10 mb-8" />
+
+                {/* Facts — close, compact */}
+                <div className="space-y-2.5 mb-6">
+                  {artwork.price && (
+                    <p className="text-white text-xl font-bold tracking-tight">{artwork.price}</p>
+                  )}
+                  {artwork.dimensions && (
+                    <p className="text-white/40 text-xs tracking-wide">{artwork.dimensions}</p>
+                  )}
+                  {artwork.edition && (
+                    <p className="text-white/25 text-[10px] tracking-[0.22em] uppercase">{artwork.edition}</p>
+                  )}
+                </div>
+
+                {/* Availability */}
+                <p className="text-white/20 text-[10px] tracking-[0.28em] uppercase mb-8">
+                  {artwork.available ? "One original. No edition." : t("artwork.claimed")}
+                </p>
+
+                {/* CTA — bordered, present */}
+                {artwork.available && (
+                  !inquiryOpen ? (
+                    <button
+                      onClick={() => setInquiryOpen(true)}
+                      className="self-start border border-white/20 text-white/75 text-xs tracking-[0.32em] uppercase px-8 py-4 hover:border-white/45 hover:text-white transition-all duration-200"
+                    >
+                      {t("artwork.inquire")}
+                    </button>
                   ) : (
-                    !inquiryOpen ? (
-                      <button
-                        onClick={() => setInquiryOpen(true)}
-                        className="border border-white/20 text-white/80 text-xs tracking-[0.32em] uppercase px-8 py-4 hover:border-white/45 hover:text-white transition-all duration-200"
-                      >
-                        {t("artwork.inquire")}
-                      </button>
-                    ) : (
-                      <div className="flex flex-col gap-2.5">
-                        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
-                          className="border border-white/12 text-white/55 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/28 hover:text-white/85 transition-all duration-200"
-                        >WhatsApp</a>
-                        <a href={telegramUrl} target="_blank" rel="noopener noreferrer"
-                          className="border border-white/12 text-white/55 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/28 hover:text-white/85 transition-all duration-200"
-                        >Telegram</a>
-                        <a href={mailUrl}
-                          className="border border-white/12 text-white/55 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/28 hover:text-white/85 transition-all duration-200"
-                        >Email</a>
-                      </div>
-                    )
+                    <div className="flex flex-col gap-2">
+                      <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
+                        className="border border-white/12 text-white/55 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/28 hover:text-white/85 transition-all duration-200"
+                      >WhatsApp</a>
+                      <a href={telegramUrl} target="_blank" rel="noopener noreferrer"
+                        className="border border-white/12 text-white/55 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/28 hover:text-white/85 transition-all duration-200"
+                      >Telegram</a>
+                      <a href={mailUrl}
+                        className="border border-white/12 text-white/55 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/28 hover:text-white/85 transition-all duration-200"
+                      >Email</a>
+                    </div>
                   )
                 )}
 
-              </div>{/* end bottom block */}
-
-              {/* Mobile prev/next */}
-              <div className="flex justify-between mt-14 lg:hidden">
-                <Link
-                  href={prev ? `/artwork/${prev.id}` : "/gallery"}
-                  className="text-white/22 text-[10px] tracking-[0.18em] uppercase hover:text-white/50 transition-colors flex items-center gap-1.5"
-                >
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M15 18l-6-6 6-6" />
-                  </svg>
-                  {prev ? prev.title.slice(0, 14) : t("artwork.back")}
-                </Link>
-                {next && (
-                  <Link
-                    href={`/artwork/${next.id}`}
+                {/* Mobile prev/next */}
+                <div className="flex justify-between mt-14 lg:hidden">
+                  <Link href={prev ? `/artwork/${prev.id}` : "/gallery"}
                     className="text-white/22 text-[10px] tracking-[0.18em] uppercase hover:text-white/50 transition-colors flex items-center gap-1.5"
                   >
-                    {next.title.slice(0, 14)}
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M9 18l6-6-6-6" />
-                    </svg>
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6" /></svg>
+                    {prev ? prev.title.slice(0, 14) : t("artwork.back")}
                   </Link>
-                )}
+                  {next && (
+                    <Link href={`/artwork/${next.id}`}
+                      className="text-white/22 text-[10px] tracking-[0.18em] uppercase hover:text-white/50 transition-colors flex items-center gap-1.5"
+                    >
+                      {next.title.slice(0, 14)}
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6" /></svg>
+                    </Link>
+                  )}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
 
