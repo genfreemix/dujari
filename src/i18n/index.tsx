@@ -36,7 +36,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "hero.line2_cant": "the feeling",
     "hero.line2_ignore": "",
     "hero.sub": "Blood of emotion becomes light",
-    "hero.cta_collection": "View Collection",
+    "hero.cta_collection": "Step in",
     "hero.cta_artist": "Meet the Artist",
     "hero.scroll": "Scroll",
 
@@ -307,7 +307,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "hero.line2_cant": "l'état",
     "hero.line2_ignore": "",
     "hero.sub": "Le sang des émotions devient lumière",
-    "hero.cta_collection": "Voir la collection",
+    "hero.cta_collection": "Entre",
     "hero.cta_artist": "L'artiste",
     "hero.scroll": "Défiler",
 
