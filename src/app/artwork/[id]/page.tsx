@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { getArtwork, getAdjacentArtworks } from "@/data/artworks";
-import InquiryButton from "@/components/InquiryButton";
 import Link from "next/link";
 import { useI18n } from "@/i18n";
 
@@ -12,6 +11,20 @@ export default function ArtworkPage() {
   const { locale, t } = useI18n();
   const artwork = getArtwork(params.id as string);
 
+  const galleryImages = artwork?.galleryImages?.length
+    ? artwork.galleryImages
+    : artwork
+    ? [artwork.image]
+    : [];
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [inquiryOpen, setInquiryOpen] = useState(false);
+
+  useEffect(() => {
+    setActiveIndex(0);
+    setInquiryOpen(false);
+  }, [params.id]);
+
   if (!artwork) {
     return (
       <div className="pt-40 text-center text-white/40">Artwork not found</div>
@@ -19,199 +32,251 @@ export default function ArtworkPage() {
   }
 
   const { prev, next } = getAdjacentArtworks(params.id as string);
-
   const description = artwork.description[locale] || artwork.description.en;
   const categoryLabel = t(`artwork.${artwork.category}`);
-  const galleryImages = artwork.galleryImages?.length ? artwork.galleryImages : [artwork.image];
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    setActiveIndex(0);
-  }, [artwork.id, galleryImages]);
-
   const activeImage = galleryImages[activeIndex] ?? artwork.image;
-  const hasImageSlider = galleryImages.length > 1;
+  const hasSlider = galleryImages.length > 1;
+  const isWallPiece = ["panel", "pictures", "posters"].includes(artwork.category);
 
-  function showPrevImage() {
-    setActiveIndex((currentIndex) =>
-      currentIndex === 0 ? galleryImages.length - 1 : currentIndex - 1
-    );
-  }
-
-  function showNextImage() {
-    setActiveIndex((currentIndex) =>
-      currentIndex === galleryImages.length - 1 ? 0 : currentIndex + 1
-    );
-  }
+  const whatsappText = `Hi! I'm interested in "${artwork.title}" from DUJARI.`;
+  const whatsappUrl = `https://wa.me/33600000000?text=${encodeURIComponent(whatsappText)}`;
+  const telegramUrl = `https://t.me/dujari`;
+  const mailUrl = `mailto:hello@dujari.art?subject=${encodeURIComponent(`Inquiry about "${artwork.title}"`)}`;
 
   return (
-    <div className="pt-16 md:pt-[72px] bg-black min-h-screen">
-      <div className="flex items-stretch min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-72px)]">
+    <div
+      className="min-h-screen pt-16 md:pt-20"
+      style={{
+        background:
+          "radial-gradient(ellipse at 20% 40%, #FF2D7B0C 0%, transparent 50%), radial-gradient(ellipse at 80% 70%, #FFE6000A 0%, transparent 45%), #0A0A0A",
+      }}
+    >
+      <div className="flex items-stretch min-h-[calc(100vh-5rem)]">
 
-        {/* Left arrow: prev artwork or gallery */}
+        {/* Desktop: prev arrow */}
         <Link
           href={prev ? `/artwork/${prev.id}` : "/gallery"}
-          className="hidden lg:flex items-center justify-center w-12 shrink-0 text-white/20 hover:text-white/60 hover:bg-white/5 transition-all"
+          className="hidden lg:flex items-center justify-center w-10 shrink-0 text-white/15 hover:text-white/45 transition-colors"
           title={prev ? prev.title : t("artwork.back")}
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
             <path d="M15 18l-6-6 6-6" />
           </svg>
         </Link>
 
         {/* Main content */}
-        <div className="flex-1 max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 items-start">
-            {/* Image */}
-            <div className="relative">
-              <div
-                className="w-full relative overflow-hidden"
-                style={{ backgroundColor: artwork.color, maxHeight: "calc(100vh - 6rem)" }}
-              >
-                {activeImage ? (
+        <div className="flex-1 max-w-6xl mx-auto px-6 md:px-10 py-12 md:py-16">
+          <div
+            className={`grid items-start gap-16 md:gap-20 lg:gap-28 ${
+              isWallPiece
+                ? "grid-cols-1 lg:grid-cols-[1.3fr_1fr]"
+                : "grid-cols-1 lg:grid-cols-[1fr_1fr]"
+            }`}
+          >
+
+            {/* Left: object */}
+            <div>
+              {/* Image — no container, object floats */}
+              <div className="relative">
+                {activeImage && (
                   <img
                     src={activeImage}
                     alt={artwork.title}
-                    className="block h-auto w-full max-h-[calc(100vh-6rem)] scale-[1.01] object-contain"
+                    className="w-full h-auto object-contain max-h-[78vh]"
+                    style={{
+                      boxShadow:
+                        "0 40px 100px rgba(0,0,0,0.65), 0 10px 32px rgba(0,0,0,0.4)",
+                    }}
                   />
-                ) : (
-                  <div className="aspect-[3/4] flex items-center justify-center">
-                    <span className="text-white/15 text-[100px] md:text-[160px] font-black uppercase select-none leading-none">
-                      {artwork.title.charAt(0)}
+                )}
+
+                {/* Sold overlay */}
+                {!artwork.available && (
+                  <div className="absolute top-4 right-4">
+                    <span className="text-white/35 text-[10px] tracking-[0.35em] uppercase">
+                      {t("artwork.sold")}
                     </span>
                   </div>
                 )}
 
-                {!artwork.available && (
-                  <div className="absolute top-4 right-4 bg-[#FF2D7B]/90 text-white text-[10px] tracking-[0.3em] uppercase px-3 py-1.5">
-                    {t("artwork.sold")}
-                  </div>
-                )}
-
-                {hasImageSlider && (
+                {/* Slider: side arrows */}
+                {hasSlider && (
                   <>
                     <button
-                      type="button"
-                      onClick={showPrevImage}
-                      className="absolute left-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/45 text-white/75 transition-colors hover:border-white/30 hover:text-white"
+                      onClick={() =>
+                        setActiveIndex((i) =>
+                          i === 0 ? galleryImages.length - 1 : i - 1
+                        )
+                      }
+                      className="absolute -left-5 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center text-white/25 hover:text-white/65 transition-colors"
                       aria-label="Previous image"
                     >
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                         <path d="M15 18l-6-6 6-6" />
                       </svg>
                     </button>
-
                     <button
-                      type="button"
-                      onClick={showNextImage}
-                      className="absolute right-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/45 text-white/75 transition-colors hover:border-white/30 hover:text-white"
+                      onClick={() =>
+                        setActiveIndex((i) =>
+                          i === galleryImages.length - 1 ? 0 : i + 1
+                        )
+                      }
+                      className="absolute -right-5 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center text-white/25 hover:text-white/65 transition-colors"
                       aria-label="Next image"
                     >
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                         <path d="M9 18l6-6-6-6" />
                       </svg>
                     </button>
-
-                    <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full bg-black/40 px-3 py-2 backdrop-blur-sm">
-                      {galleryImages.map((imageSrc, index) => {
-                        const isActive = index === activeIndex;
-
-                        return (
-                          <button
-                            key={imageSrc}
-                            type="button"
-                            onClick={() => setActiveIndex(index)}
-                            className={`h-2.5 w-2.5 rounded-full transition-all ${
-                              isActive ? "bg-[#FF2D7B]" : "bg-white/35 hover:bg-white/70"
-                            }`}
-                            aria-label={`View image ${index + 1} of ${galleryImages.length}`}
-                          />
-                        );
-                      })}
-                    </div>
                   </>
                 )}
               </div>
 
-              {/* Back to gallery - bottom left under photo */}
+              {/* Slider dots */}
+              {hasSlider && (
+                <div className="mt-5 flex justify-center gap-2">
+                  {galleryImages.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setActiveIndex(i)}
+                      className={`h-px rounded-none transition-all duration-300 ${
+                        i === activeIndex
+                          ? "w-8 bg-white/50"
+                          : "w-4 bg-white/18 hover:bg-white/35"
+                      }`}
+                      aria-label={`Image ${i + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
+
+              {/* Back link */}
               <Link
                 href="/gallery"
-                className="mt-2 inline-flex items-center gap-1.5 text-white/30 text-[10px] tracking-[0.2em] uppercase hover:text-white/60 transition-colors"
+                className="mt-10 inline-flex items-center gap-2 text-white/22 text-[10px] tracking-[0.28em] uppercase hover:text-white/50 transition-colors"
               >
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M15 18l-6-6 6-6" />
                 </svg>
                 {t("artwork.back")}
               </Link>
             </div>
 
-            {/* Details */}
-            <div className="flex flex-col justify-start lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto">
-              <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-1.5">
+            {/* Right: scene */}
+            <div className="flex flex-col">
+
+              {/* Meta */}
+              <p className="text-[#FF2D7B] text-[10px] tracking-[0.52em] uppercase mb-6">
                 {categoryLabel} · {artwork.year}
               </p>
 
-              <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-black tracking-tight uppercase mb-2">
+              {/* Title */}
+              <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-black tracking-tight uppercase leading-none mb-10">
                 {artwork.title}
               </h1>
 
-              <div className="text-white/50 text-sm leading-relaxed mb-3 max-w-lg">
-                {description}
-              </div>
-
-              <div className="border-t border-white/10 pt-2.5 mb-3 space-y-1">
-                <div className="flex justify-between text-sm">
-                  <span className="text-white/40">{t("artwork.price")}</span>
-                  <span className="text-white font-bold">{artwork.price}</span>
-                </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-white/40">{t("artwork.dimensions")}</span>
-                  <span className="text-white/70">{artwork.dimensions}</span>
-                </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-white/40">{t("artwork.edition")}</span>
-                  <span className="text-white/70">{artwork.edition}</span>
-                </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-white/40">{t("artwork.year")}</span>
-                  <span className="text-white/70">{artwork.year}</span>
-                </div>
-              </div>
-
-              {artwork.available && (
-                <div className="bg-white/5 border border-white/10 px-3 py-1.5 mb-3">
-                  <p className="text-[#FF2D7B] text-xs tracking-wider uppercase font-medium">
-                    {t("artwork.scarcity")}
-                  </p>
-                </div>
+              {/* Description */}
+              {description && (
+                <p className="text-white/50 text-base md:text-lg leading-[1.8] mb-14 max-w-xs">
+                  {description}
+                </p>
               )}
 
-              {artwork.available ? (
-                <InquiryButton artworkTitle={artwork.title} />
-              ) : (
-                <div className="border border-white/10 px-6 py-3 text-center">
-                  <p className="text-white/40 text-xs tracking-[0.25em] uppercase">
-                    {t("artwork.claimed")}
+              {/* Facts — quiet stack, no labels */}
+              <div className="mb-10 space-y-3">
+                {artwork.price && (
+                  <p className="text-white text-2xl font-bold tracking-tight">
+                    {artwork.price}
                   </p>
-                </div>
+                )}
+                {artwork.dimensions && (
+                  <p className="text-white/45 text-sm tracking-wide">
+                    {artwork.dimensions}
+                  </p>
+                )}
+                {artwork.edition && (
+                  <p className="text-white/30 text-xs tracking-[0.22em] uppercase">
+                    {artwork.edition}
+                  </p>
+                )}
+              </div>
+
+              {/* Availability */}
+              <p className="text-white/22 text-[11px] tracking-[0.28em] uppercase mb-10">
+                {artwork.available
+                  ? "One original. No edition."
+                  : t("artwork.claimed")}
+              </p>
+
+              {/* CTA */}
+              {artwork.available && (
+                isWallPiece ? (
+                  /* Wall piece: minimal text link */
+                  !inquiryOpen ? (
+                    <button
+                      onClick={() => setInquiryOpen(true)}
+                      className="text-white/38 text-[11px] tracking-[0.32em] uppercase hover:text-white/70 transition-colors text-left"
+                    >
+                      {t("artwork.inquire")} →
+                    </button>
+                  ) : (
+                    <div className="flex gap-8">
+                      <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
+                        className="text-white/38 text-[11px] tracking-[0.22em] uppercase hover:text-white/70 transition-colors"
+                      >WhatsApp</a>
+                      <a href={telegramUrl} target="_blank" rel="noopener noreferrer"
+                        className="text-white/38 text-[11px] tracking-[0.22em] uppercase hover:text-white/70 transition-colors"
+                      >Telegram</a>
+                      <a href={mailUrl}
+                        className="text-white/38 text-[11px] tracking-[0.22em] uppercase hover:text-white/70 transition-colors"
+                      >Email</a>
+                    </div>
+                  )
+                ) : (
+                  /* Physical object: bordered button → reveal */
+                  !inquiryOpen ? (
+                    <button
+                      onClick={() => setInquiryOpen(true)}
+                      className="border border-white/20 text-white/80 text-xs tracking-[0.32em] uppercase px-8 py-4 hover:border-white/45 hover:text-white transition-all duration-200"
+                    >
+                      {t("artwork.inquire")}
+                    </button>
+                  ) : (
+                    <div className="flex flex-col gap-2.5">
+                      <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
+                        className="border border-white/12 text-white/55 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/28 hover:text-white/85 transition-all duration-200"
+                      >WhatsApp</a>
+                      <a href={telegramUrl} target="_blank" rel="noopener noreferrer"
+                        className="border border-white/12 text-white/55 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/28 hover:text-white/85 transition-all duration-200"
+                      >Telegram</a>
+                      <a href={mailUrl}
+                        className="border border-white/12 text-white/55 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/28 hover:text-white/85 transition-all duration-200"
+                      >Email</a>
+                    </div>
+                  )
+                )
               )}
 
               {/* Mobile prev/next */}
-              <div className="flex justify-between mt-4 lg:hidden">
+              <div className="flex justify-between mt-14 lg:hidden">
                 <Link
                   href={prev ? `/artwork/${prev.id}` : "/gallery"}
-                  className="text-white/30 text-xs tracking-[0.15em] uppercase hover:text-white/60 transition-colors flex items-center gap-1"
+                  className="text-white/22 text-[10px] tracking-[0.18em] uppercase hover:text-white/50 transition-colors flex items-center gap-1.5"
                 >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 18l-6-6 6-6" /></svg>
-                  {prev ? prev.title.slice(0, 15) : t("artwork.back")}
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M15 18l-6-6 6-6" />
+                  </svg>
+                  {prev ? prev.title.slice(0, 14) : t("artwork.back")}
                 </Link>
                 {next && (
                   <Link
                     href={`/artwork/${next.id}`}
-                    className="text-white/30 text-xs tracking-[0.15em] uppercase hover:text-white/60 transition-colors flex items-center gap-1"
+                    className="text-white/22 text-[10px] tracking-[0.18em] uppercase hover:text-white/50 transition-colors flex items-center gap-1.5"
                   >
-                    {next.title.slice(0, 15)}
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 18l6-6-6-6" /></svg>
+                    {next.title.slice(0, 14)}
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M9 18l6-6-6-6" />
+                    </svg>
                   </Link>
                 )}
               </div>
@@ -219,21 +284,18 @@ export default function ArtworkPage() {
           </div>
         </div>
 
-        {/* Right arrow: next artwork */}
-        {next ? (
-          <Link
-            href={`/artwork/${next.id}`}
-            className="hidden lg:flex items-center justify-center w-12 shrink-0 text-white/20 hover:text-white/60 hover:bg-white/5 transition-all"
-            title={next.title}
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path d="M9 18l6-6-6-6" />
-            </svg>
-          </Link>
-        ) : (
-          <div className="hidden lg:block w-12 shrink-0" />
-        )}
+        {/* Desktop: next arrow */}
+        <Link
+          href={next ? `/artwork/${next.id}` : "/gallery"}
+          className="hidden lg:flex items-center justify-center w-10 shrink-0 text-white/15 hover:text-white/45 transition-colors"
+          title={next ? next.title : t("artwork.back")}
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </Link>
       </div>
     </div>
   );
 }
+

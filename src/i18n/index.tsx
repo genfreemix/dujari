@@ -72,6 +72,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "artwork.year": "Year",
     "artwork.scarcity": "⚡ Only 1 available — This is a unique original",
     "artwork.claimed": "This piece has been claimed",
+    "artwork.inquire": "Inquire",
 
     // Home
     "home.featured_title": "Selected Works",
@@ -209,6 +210,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "artwork.year": "Год",
     "artwork.scarcity": "⚡ Только 1 экземпляр — это уникальный оригинал",
     "artwork.claimed": "Эта работа уже нашла владельца",
+    "artwork.inquire": "Запрос",
 
     "home.featured_title": "Избранные работы",
     "home.featured_subtitle": "Коллекция 001 — Начало",
@@ -340,6 +342,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "artwork.year": "Année",
     "artwork.scarcity": "⚡ 1 seul exemplaire — C'est un original unique",
     "artwork.claimed": "Cette pièce a trouvé son propriétaire",
+    "artwork.inquire": "Demande",
 
     "home.featured_title": "Œuvres sélectionnées",
     "home.featured_subtitle": "Collection 001 — Origines",
