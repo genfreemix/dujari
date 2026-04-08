@@ -242,9 +242,9 @@ export default function ArtworkPage() {
                   {artwork.title}
                 </h1>
 
-                {/* Brief description — short, quiet */}
+                {/* Brief description — capped at ~4 lines / 60 words */}
                 {description && (
-                  <p className="text-white/40 text-sm leading-[1.65] mb-8 max-w-[300px]">
+                  <p className="text-white/40 text-sm leading-[1.65] mb-8 max-w-[300px] line-clamp-4">
                     {description}
                   </p>
                 )}
