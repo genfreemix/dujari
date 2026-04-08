@@ -29,13 +29,14 @@ export default function GalleryPage() {
   const activeFilterLabel = filters.find((item) => item.key === filter)?.label ?? t("gallery.filter_all");
 
   return (
-    <div className="relative isolate min-h-screen overflow-hidden bg-black pt-16 md:pt-20">
+    <div className="relative isolate min-h-screen overflow-hidden bg-[#0A0A0A] pt-16 md:pt-20">
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.88]"
-        style={{ backgroundImage: "url('/gallery/gallery-background02.jpg')" }}
+        className="absolute inset-0 opacity-60"
+        style={{
+          background:
+            "radial-gradient(ellipse at 30% 50%, #FF2D7B22 0%, transparent 50%), radial-gradient(ellipse at 70% 30%, #FFE60015 0%, transparent 50%)",
+        }}
       />
-      <div className="absolute inset-0 bg-black/58" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,45,123,0.2),transparent_46%),linear-gradient(180deg,rgba(0,0,0,0.06)_0%,rgba(0,0,0,0.18)_100%)]" />
 
       <section className="relative z-10 pt-6 md:pt-8 pb-0">
         <div className={containerClassName}>
