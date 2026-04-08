@@ -163,99 +163,105 @@ export default function ArtworkPage() {
             </div>
 
             {/* Right: scene */}
-            <div className="flex flex-col">
+            <div className="flex flex-col lg:min-h-[70vh] max-w-[520px]">
 
-              {/* Meta */}
-              <p className="text-[#FF2D7B] text-[10px] tracking-[0.52em] uppercase mb-6">
-                {categoryLabel} · {artwork.year}
-              </p>
-
-              {/* Title */}
-              <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-black tracking-tight uppercase leading-none mb-10">
-                {artwork.title}
-              </h1>
-
-              {/* Description */}
-              {description && (
-                <p className="text-white/50 text-base md:text-lg leading-[1.8] mb-14 max-w-xs">
-                  {description}
+              {/* Top block: meta + title + description */}
+              <div>
+                {/* Meta */}
+                <p className="text-[#FF2D7B] text-[10px] tracking-[0.52em] uppercase mb-6">
+                  {categoryLabel} · {artwork.year}
                 </p>
-              )}
 
-              {/* Facts — quiet stack, no labels */}
-              <div className="mb-10 space-y-3">
-                {artwork.price && (
-                  <p className="text-white text-2xl font-bold tracking-tight">
-                    {artwork.price}
-                  </p>
-                )}
-                {artwork.dimensions && (
-                  <p className="text-white/45 text-sm tracking-wide">
-                    {artwork.dimensions}
-                  </p>
-                )}
-                {artwork.edition && (
-                  <p className="text-white/30 text-xs tracking-[0.22em] uppercase">
-                    {artwork.edition}
+                {/* Title */}
+                <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-black tracking-tight uppercase leading-none mb-10">
+                  {artwork.title}
+                </h1>
+
+                {/* Description */}
+                {description && (
+                  <p className="text-white/50 text-sm md:text-base leading-[1.75] max-w-[440px]">
+                    {description}
                   </p>
                 )}
               </div>
 
-              {/* Availability */}
-              <p className="text-white/22 text-[11px] tracking-[0.28em] uppercase mb-10">
-                {artwork.available
-                  ? "One original. No edition."
-                  : t("artwork.claimed")}
-              </p>
+              {/* Bottom block: facts + CTA — pushed to bottom */}
+              <div className="mt-auto pt-14">
 
-              {/* CTA */}
-              {artwork.available && (
-                isWallPiece ? (
-                  /* Wall piece: minimal text link */
-                  !inquiryOpen ? (
-                    <button
-                      onClick={() => setInquiryOpen(true)}
-                      className="text-white/38 text-[11px] tracking-[0.32em] uppercase hover:text-white/70 transition-colors text-left"
-                    >
-                      {t("artwork.inquire")} →
-                    </button>
+                {/* Facts — quiet stack, no labels */}
+                <div className="mb-8 space-y-3">
+                  {artwork.price && (
+                    <p className="text-white text-2xl font-bold tracking-tight">
+                      {artwork.price}
+                    </p>
+                  )}
+                  {artwork.dimensions && (
+                    <p className="text-white/45 text-sm tracking-wide">
+                      {artwork.dimensions}
+                    </p>
+                  )}
+                  {artwork.edition && (
+                    <p className="text-white/30 text-xs tracking-[0.22em] uppercase">
+                      {artwork.edition}
+                    </p>
+                  )}
+                </div>
+
+                {/* Availability */}
+                <p className="text-white/22 text-[11px] tracking-[0.28em] uppercase mb-8">
+                  {artwork.available
+                    ? "One original. No edition."
+                    : t("artwork.claimed")}
+                </p>
+
+                {/* CTA */}
+                {artwork.available && (
+                  isWallPiece ? (
+                    !inquiryOpen ? (
+                      <button
+                        onClick={() => setInquiryOpen(true)}
+                        className="text-white/38 text-[11px] tracking-[0.32em] uppercase hover:text-white/70 transition-colors text-left"
+                      >
+                        {t("artwork.inquire")} →
+                      </button>
+                    ) : (
+                      <div className="flex gap-8">
+                        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
+                          className="text-white/38 text-[11px] tracking-[0.22em] uppercase hover:text-white/70 transition-colors"
+                        >WhatsApp</a>
+                        <a href={telegramUrl} target="_blank" rel="noopener noreferrer"
+                          className="text-white/38 text-[11px] tracking-[0.22em] uppercase hover:text-white/70 transition-colors"
+                        >Telegram</a>
+                        <a href={mailUrl}
+                          className="text-white/38 text-[11px] tracking-[0.22em] uppercase hover:text-white/70 transition-colors"
+                        >Email</a>
+                      </div>
+                    )
                   ) : (
-                    <div className="flex gap-8">
-                      <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
-                        className="text-white/38 text-[11px] tracking-[0.22em] uppercase hover:text-white/70 transition-colors"
-                      >WhatsApp</a>
-                      <a href={telegramUrl} target="_blank" rel="noopener noreferrer"
-                        className="text-white/38 text-[11px] tracking-[0.22em] uppercase hover:text-white/70 transition-colors"
-                      >Telegram</a>
-                      <a href={mailUrl}
-                        className="text-white/38 text-[11px] tracking-[0.22em] uppercase hover:text-white/70 transition-colors"
-                      >Email</a>
-                    </div>
+                    !inquiryOpen ? (
+                      <button
+                        onClick={() => setInquiryOpen(true)}
+                        className="border border-white/20 text-white/80 text-xs tracking-[0.32em] uppercase px-8 py-4 hover:border-white/45 hover:text-white transition-all duration-200"
+                      >
+                        {t("artwork.inquire")}
+                      </button>
+                    ) : (
+                      <div className="flex flex-col gap-2.5">
+                        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
+                          className="border border-white/12 text-white/55 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/28 hover:text-white/85 transition-all duration-200"
+                        >WhatsApp</a>
+                        <a href={telegramUrl} target="_blank" rel="noopener noreferrer"
+                          className="border border-white/12 text-white/55 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/28 hover:text-white/85 transition-all duration-200"
+                        >Telegram</a>
+                        <a href={mailUrl}
+                          className="border border-white/12 text-white/55 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/28 hover:text-white/85 transition-all duration-200"
+                        >Email</a>
+                      </div>
+                    )
                   )
-                ) : (
-                  /* Physical object: bordered button → reveal */
-                  !inquiryOpen ? (
-                    <button
-                      onClick={() => setInquiryOpen(true)}
-                      className="border border-white/20 text-white/80 text-xs tracking-[0.32em] uppercase px-8 py-4 hover:border-white/45 hover:text-white transition-all duration-200"
-                    >
-                      {t("artwork.inquire")}
-                    </button>
-                  ) : (
-                    <div className="flex flex-col gap-2.5">
-                      <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
-                        className="border border-white/12 text-white/55 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/28 hover:text-white/85 transition-all duration-200"
-                      >WhatsApp</a>
-                      <a href={telegramUrl} target="_blank" rel="noopener noreferrer"
-                        className="border border-white/12 text-white/55 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/28 hover:text-white/85 transition-all duration-200"
-                      >Telegram</a>
-                      <a href={mailUrl}
-                        className="border border-white/12 text-white/55 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/28 hover:text-white/85 transition-all duration-200"
-                      >Email</a>
-                    </div>
-                  )
-                )
-              )}
+                )}
+
+              </div>{/* end bottom block */}
 
               {/* Mobile prev/next */}
               <div className="flex justify-between mt-14 lg:hidden">
