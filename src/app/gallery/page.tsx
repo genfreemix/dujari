@@ -52,10 +52,10 @@ export default function GalleryPage() {
               <button
                 key={f.key}
                 onClick={() => setFilter(f.key)}
-                className={`text-xs font-semibold tracking-[0.16em] uppercase px-4 py-2.5 border backdrop-blur-sm transition-all duration-200 cursor-pointer xl:w-full xl:text-center ${
+                className={`text-[10px] tracking-[0.22em] uppercase px-4 py-2.5 border transition-all duration-200 cursor-pointer xl:w-full xl:text-center ${
                   filter === f.key
-                    ? "border-[#FF2D7B] bg-black/46 text-[#FF8FB6] shadow-[0_0_0_1px_rgba(255,45,123,0.18)]"
-                    : "border-[#FF2D7B]/70 bg-black/24 text-[#FF9FC1] hover:border-[#FF2D7B] hover:bg-black/34 hover:text-[#FFC2D7]"
+                    ? "border-[#FF2D7B]/60 text-[#FF2D7B] bg-white/[0.03]"
+                    : "border-white/12 text-white/35 bg-transparent hover:border-white/25 hover:text-white/60"
                 }`}
               >
                 {f.label}

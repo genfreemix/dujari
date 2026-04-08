@@ -19,18 +19,17 @@ export default function ArtworkCard({ artwork, priority, className, imageClassNa
   return (
     <Link
       href={`/artwork/${artwork.id}`}
-      className={`group relative block overflow-hidden bg-neutral-900 ring-1 ring-white/15 shadow-lg shadow-black/60 ${className ?? ""}`.trim()}
+      className={`group relative block overflow-hidden ${className ?? ""}`.trim()}
     >
       {/* Image */}
       <div
-        className={`aspect-[5/6] w-full relative ${imageClassName ?? ""}`.trim()}
-        style={{ backgroundColor: artwork.color }}
+        className={`aspect-[5/6] w-full relative bg-[#0D0D0D] overflow-hidden ${imageClassName ?? ""}`.trim()}
       >
         {artwork.image ? (
           <img
             src={artwork.image}
             alt={artwork.title}
-            className="absolute inset-0 block h-full w-full scale-[1.01] object-contain"
+            className="absolute inset-0 block h-full w-full scale-[1.01] object-contain transition-transform duration-700 ease-out group-hover:scale-[1.06]"
             loading={priority ? "eager" : "lazy"}
           />
         ) : (
@@ -42,16 +41,18 @@ export default function ArtworkCard({ artwork, priority, className, imageClassNa
         )}
       </div>
 
-      {/* Hover overlay */}
-      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-500 flex items-end">
-        <div className="w-full p-4 md:p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
-          <p className="text-[#FF2D7B] text-[10px] tracking-[0.3em] uppercase mb-1">
+      {/* Hover overlay — gradient from bottom */}
+      <div className="absolute inset-0 flex items-end pointer-events-none">
+        <div className="w-full px-4 pt-16 pb-4 md:px-5 md:pb-5 bg-gradient-to-t from-black/70 via-black/20 to-transparent translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+          <p className="text-[#FF2D7B] text-[9px] tracking-[0.35em] uppercase mb-1">
             {categoryLabel} · {artwork.edition}
           </p>
-          <h3 className="text-white text-lg md:text-xl font-bold tracking-wide uppercase">
+          <h3 className="text-white text-sm md:text-base font-bold tracking-wide uppercase leading-tight">
             {artwork.title}
           </h3>
-          <p className="text-white/60 text-sm mt-1">{artwork.price}</p>
+          {artwork.price && (
+            <p className="text-white/50 text-xs mt-1">{artwork.price}</p>
+          )}
         </div>
       </div>
 
