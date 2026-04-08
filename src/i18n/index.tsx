@@ -176,7 +176,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "hero.line2_cant": "состояние",
     "hero.line2_ignore": "",
     "hero.sub": "Кровь эмоций становится светом",
-    "hero.cta_collection": "Смотреть коллекцию",
+    "hero.cta_collection": "Открой",
     "hero.cta_artist": "Об артисте",
     "hero.scroll": "Листайте",
 
