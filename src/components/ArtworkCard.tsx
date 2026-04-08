@@ -19,7 +19,8 @@ export default function ArtworkCard({ artwork, priority, className, imageClassNa
   return (
     <Link
       href={`/artwork/${artwork.id}`}
-      className={`group relative block overflow-hidden ${className ?? ""}`.trim()}
+      className={`group relative block overflow-hidden transition-transform duration-[350ms] ease-out hover:scale-[1.03] ${className ?? ""}`.trim()}
+      style={{ boxShadow: "0 20px 60px rgba(0,0,0,0.4)" }}
     >
       {/* Image */}
       <div
@@ -29,7 +30,7 @@ export default function ArtworkCard({ artwork, priority, className, imageClassNa
           <img
             src={artwork.image}
             alt={artwork.title}
-            className="absolute inset-0 block h-full w-full scale-[1.01] object-contain transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+            className="absolute inset-0 block h-full w-full object-contain"
             loading={priority ? "eager" : "lazy"}
           />
         ) : (

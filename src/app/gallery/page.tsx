@@ -31,10 +31,10 @@ export default function GalleryPage() {
   return (
     <div className="relative isolate min-h-screen overflow-hidden bg-[#0A0A0A] pt-16 md:pt-20">
       <div
-        className="absolute inset-0 opacity-60"
+        className="absolute inset-0 opacity-70"
         style={{
           background:
-            "radial-gradient(ellipse at 30% 50%, #FF2D7B22 0%, transparent 50%), radial-gradient(ellipse at 70% 30%, #FFE60015 0%, transparent 50%)",
+            "radial-gradient(ellipse at 25% 60%, #FF2D7B18 0%, transparent 45%), radial-gradient(ellipse at 75% 20%, #FFE60010 0%, transparent 40%), radial-gradient(ellipse at 50% 100%, #1a0010 0%, transparent 60%)",
         }}
       />
 
