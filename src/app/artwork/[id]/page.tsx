@@ -67,7 +67,7 @@ export default function ArtworkPage() {
         {/* Main content */}
         <div className="flex-1 max-w-6xl mx-auto px-6 md:px-10 py-12 md:py-16">
           <div
-            className={`grid items-start gap-16 md:gap-20 lg:gap-28 ${
+            className={`grid items-stretch gap-16 md:gap-20 lg:gap-28 ${
               isWallPiece
                 ? "grid-cols-1 lg:grid-cols-[1.3fr_1fr]"
                 : "grid-cols-1 lg:grid-cols-[1.4fr_1fr]"
@@ -165,7 +165,7 @@ export default function ArtworkPage() {
             {/* Right: scene */}
             {isWallPiece ? (
               /* ── WALL PIECE: text-dominant, facts pushed to bottom ── */
-              <div className="flex flex-col lg:min-h-[70vh] max-w-[520px]">
+              <div className="flex flex-col h-full max-w-[520px]">
 
                 <div>
                   <p className="text-[#FF2D7B] text-[10px] tracking-[0.52em] uppercase mb-6">
@@ -232,7 +232,7 @@ export default function ArtworkPage() {
 
             ) : (
               /* ── PHYSICAL OBJECT (bottle/object): object-first, label-like right column ── */
-              <div className="flex flex-col lg:min-h-[65vh] max-w-[380px] pt-4">
+              <div className="flex flex-col h-full max-w-[380px] pt-4">
 
                 {/* Top: meta + title + description */}
                 <div>
