@@ -18,8 +18,8 @@ export default function ContactPage() {
   const phoneUrl = `tel:+33600000000`;
 
   return (
-    <div className="pt-20 md:pt-24 bg-black min-h-screen">
-      <section className="py-20 md:py-32">
+    <div className="pt-14 md:pt-16 bg-black min-h-screen">
+      <section className="pt-10 pb-20 md:pt-12 md:pb-28">
         <div className="max-w-3xl mx-auto px-6">
           <div>
             <h1 className="text-white text-3xl md:text-5xl font-black tracking-tight uppercase mb-10">
