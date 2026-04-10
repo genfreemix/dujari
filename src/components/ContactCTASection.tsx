@@ -11,20 +11,20 @@ export default function ContactCTASection() {
 
   return (
     <section className="bg-black pt-10 pb-14 md:pt-14 md:pb-20 border-t border-white/5">
-      <div className="max-w-2xl mx-auto px-6 text-center">
+      <div className="max-w-[520px] mx-auto px-6 text-center">
         <h2 className="text-white text-3xl md:text-5xl font-black tracking-tight uppercase mb-4 leading-tight">
           {t("contact.title")}
         </h2>
-        <p className="text-white/40 text-sm md:text-base leading-relaxed mb-8 max-w-md mx-auto">
+        <p className="text-white/40 text-sm md:text-base leading-relaxed mb-8 max-w-[420px] mx-auto">
           {t("contact.text")}
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border border-white/20 text-white/65 text-xs tracking-[0.35em] uppercase px-10 py-4 hover:border-[#25D366]/50 hover:text-white transition-all duration-300"
+            className="w-full sm:w-[200px] inline-flex items-center justify-center gap-2.5 border border-white/20 text-white/65 text-xs tracking-[0.35em] uppercase px-6 py-4 hover:border-[#25D366]/50 hover:text-white transition-all duration-300"
           >
             <svg
               width="13"
@@ -42,7 +42,7 @@ export default function ContactCTASection() {
             href={telegramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border border-white/20 text-white/65 text-xs tracking-[0.35em] uppercase px-10 py-4 hover:border-[#2AABEE]/50 hover:text-white transition-all duration-300"
+            className="w-full sm:w-[200px] inline-flex items-center justify-center gap-2.5 border border-white/20 text-white/65 text-xs tracking-[0.35em] uppercase px-6 py-4 hover:border-[#2AABEE]/50 hover:text-white transition-all duration-300"
           >
             <svg
               width="13"
