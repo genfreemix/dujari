@@ -52,18 +52,12 @@ export default function HeroSection() {
         </p>
 
         {/* CTA */}
-        <div className="mt-10 md:mt-12 flex flex-col sm:flex-row items-start gap-4">
+        <div className="mt-10 md:mt-12 flex items-start">
           <Link
             href="/gallery"
             className="inline-block bg-[#FF2D7B] text-white text-xs tracking-[0.3em] uppercase px-10 py-4 hover:bg-[#e0256b] transition-colors duration-200"
           >
             {t("hero.cta_collection")}
-          </Link>
-          <Link
-            href="/#artist"
-            className="inline-block border border-white/20 text-white/70 text-xs tracking-[0.3em] uppercase px-10 py-4 hover:border-white/50 hover:text-white transition-all duration-200"
-          >
-            {t("hero.cta_artist")}
           </Link>
         </div>
 
