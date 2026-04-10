@@ -14,8 +14,6 @@ export default function ContactPage() {
 
   const whatsappUrl = `https://wa.me/33600000000?text=${encodeURIComponent("Hi! I'm interested in DUJARI artworks.")}`;
   const telegramUrl = `https://t.me/dujari`;
-  const mailUrl = `mailto:hello@dujari.art?subject=${encodeURIComponent("Inquiry about DUJARI artwork")}`;
-  const phoneUrl = `tel:+33600000000`;
 
   return (
     <div className="pt-14 md:pt-16 bg-black min-h-screen">
@@ -38,12 +36,12 @@ export default function ContactPage() {
             </div>
             </div>
 
-            <div className="mt-12 pt-10 border-t border-white/5 grid grid-cols-1 gap-2.5 md:mt-0 md:pt-0 md:border-t-0 md:self-start">
+            <div className="mt-12 pt-10 border-t border-white/5 flex flex-col gap-3 md:mt-0 md:pt-0 md:border-t-0 md:self-start md:items-start">
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-12 items-center justify-center gap-2 border border-white/20 text-white/60 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-[#25D366]/50 hover:text-white transition-all duration-300"
+                className="inline-flex w-[17.5rem] min-h-12 items-center justify-center gap-2 border border-white/20 text-white/60 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-[#25D366]/50 hover:text-white transition-all duration-300"
               >
                 WhatsApp
               </a>
@@ -51,21 +49,9 @@ export default function ContactPage() {
                 href={telegramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-12 items-center justify-center gap-2 border border-white/20 text-white/60 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-[#2AABEE]/50 hover:text-white transition-all duration-300"
+                className="inline-flex w-[17.5rem] min-h-12 items-center justify-center gap-2 border border-white/20 text-white/60 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-[#2AABEE]/50 hover:text-white transition-all duration-300"
               >
                 Telegram
-              </a>
-              <a
-                href={mailUrl}
-                className="inline-flex min-h-12 items-center justify-center gap-2 border border-white/20 text-white/60 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/35 hover:text-white transition-all duration-300"
-              >
-                {t("inquiry.email")}
-              </a>
-              <a
-                href={phoneUrl}
-                className="inline-flex min-h-12 items-center justify-center gap-2 border border-white/20 text-white/60 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/35 hover:text-white transition-all duration-300"
-              >
-                {t("inquiry.call")}
               </a>
             </div>
           </div>
