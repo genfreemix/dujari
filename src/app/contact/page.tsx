@@ -1,6 +1,5 @@
 "use client";
 
-import InquiryButton from "@/components/InquiryButton";
 import { useT } from "@/i18n";
 
 export default function ContactPage() {
@@ -15,27 +14,17 @@ export default function ContactPage() {
 
   const whatsappUrl = `https://wa.me/33600000000?text=${encodeURIComponent("Hi! I'm interested in DUJARI artworks.")}`;
   const telegramUrl = `https://t.me/dujari`;
+  const mailUrl = `mailto:hello@dujari.art?subject=${encodeURIComponent("Inquiry about DUJARI artwork")}`;
+  const phoneUrl = `tel:+33600000000`;
 
   return (
     <div className="pt-20 md:pt-24 bg-black min-h-screen">
       <section className="py-20 md:py-32">
         <div className="max-w-3xl mx-auto px-6">
-          <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-4">
-            {t("contact.label")}
-          </p>
-          <h1 className="text-white text-4xl md:text-6xl font-black tracking-tight uppercase mb-6 whitespace-pre-line">
-            {t("contact.title")}
-          </h1>
-          <p className="text-white/50 text-sm md:text-base leading-relaxed mb-12 max-w-lg">
-            {t("contact.text")}
-          </p>
-
-          <InquiryButton className="mb-16" />
-
-          <div className="border-t border-white/10 pt-12 mt-0">
-            <h2 className="text-white text-xl font-black tracking-tight uppercase mb-10">
+          <div>
+            <h1 className="text-white text-3xl md:text-5xl font-black tracking-tight uppercase mb-10">
               {t("contact.how_title")}
-            </h2>
+            </h1>
             <div className="space-y-10">
               {steps.map((step) => (
                 <div key={step.title}>
@@ -47,7 +36,7 @@ export default function ContactPage() {
               ))}
             </div>
 
-            <div className="mt-12 pt-10 border-t border-white/5 flex flex-col sm:flex-row gap-3">
+            <div className="mt-12 pt-10 border-t border-white/5 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl">
               <a
                 href={whatsappUrl}
                 target="_blank"
@@ -63,6 +52,18 @@ export default function ContactPage() {
                 className="inline-flex items-center justify-center gap-2 border border-white/20 text-white/60 text-xs tracking-[0.3em] uppercase px-8 py-4 hover:border-[#2AABEE]/50 hover:text-white transition-all duration-300"
               >
                 Telegram
+              </a>
+              <a
+                href={mailUrl}
+                className="inline-flex items-center justify-center gap-2 border border-white/20 text-white/60 text-xs tracking-[0.3em] uppercase px-8 py-4 hover:border-white/35 hover:text-white transition-all duration-300"
+              >
+                {t("inquiry.email")}
+              </a>
+              <a
+                href={phoneUrl}
+                className="inline-flex items-center justify-center gap-2 border border-white/20 text-white/60 text-xs tracking-[0.3em] uppercase px-8 py-4 hover:border-white/35 hover:text-white transition-all duration-300"
+              >
+                {t("inquiry.call")}
               </a>
             </div>
           </div>
