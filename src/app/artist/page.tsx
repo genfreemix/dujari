@@ -59,7 +59,7 @@ export default function ArtistPage() {
 
             <Link
               href="/path"
-              className="inline-block border border-white/15 text-white/55 text-xs tracking-[0.35em] uppercase px-10 py-4 mt-8 hover:border-white/28 hover:text-white/75 transition-all duration-300"
+              className="inline-flex min-w-[18rem] justify-center border border-white/15 text-white/55 text-xs tracking-[0.35em] uppercase px-10 py-4 mt-8 hover:border-white/28 hover:text-white/75 transition-all duration-300"
             >
               {t("artist_block.cta_path")}
             </Link>
