@@ -36,8 +36,10 @@ const translations: Record<Locale, Record<string, string>> = {
     "hero.line2_cant": "the feeling",
     "hero.line2_ignore": "",
     "hero.sub": "Blood of emotion becomes light",
-    "hero.cta_collection": "Step in",
-    "hero.cta_artist": "Meet the Artist",
+    "hero.disciplines_line": "Visual art, music and poetry",
+    "hero.cta_collection": "View Works",
+    "hero.cta_artist": "About",
+    "hero.micro": "Original works · 1/1 · only one",
     "hero.scroll": "Scroll",
 
     // Gallery
@@ -177,8 +179,10 @@ const translations: Record<Locale, Record<string, string>> = {
     "hero.line2_cant": "состояние",
     "hero.line2_ignore": "",
     "hero.sub": "Кровь эмоций становится светом",
-    "hero.cta_collection": "Открой",
-    "hero.cta_artist": "Об артисте",
+    "hero.disciplines_line": "Визуальное искусство, музыка и поэзия",
+    "hero.cta_collection": "Смотреть работы",
+    "hero.cta_artist": "Об авторе",
+    "hero.micro": "Оригинальные работы · 1/1 · only one",
     "hero.scroll": "Листайте",
 
     "gallery.subtitle": "Коллекция 001 — Начало",
@@ -309,8 +313,10 @@ const translations: Record<Locale, Record<string, string>> = {
     "hero.line2_cant": "l'état",
     "hero.line2_ignore": "",
     "hero.sub": "Le sang des émotions devient lumière",
-    "hero.cta_collection": "Entre",
-    "hero.cta_artist": "L'artiste",
+    "hero.disciplines_line": "Art visuel, musique et poésie",
+    "hero.cta_collection": "Voir les œuvres",
+    "hero.cta_artist": "L'auteure",
+    "hero.micro": "Œuvres originales · 1/1 · only one",
     "hero.scroll": "Défiler",
 
     "gallery.subtitle": "Collection 001 — Origines",

@@ -5,11 +5,6 @@ import { useT } from "@/i18n";
 
 export default function HeroSection() {
   const t = useT();
-  const disciplines = [
-    t("home.discipline_visual_title"),
-    t("home.discipline_music_title"),
-    t("home.discipline_poetry_title"),
-  ];
 
   return (
     <section className="relative h-screen flex items-center overflow-hidden bg-black">
@@ -51,6 +46,11 @@ export default function HeroSection() {
           {t("hero.sub")}
         </p>
 
+        {/* Disciplines line */}
+        <p className="text-white/25 text-xs tracking-[0.1em] mt-2 max-w-xs md:max-w-sm">
+          {t("hero.disciplines_line")}
+        </p>
+
         {/* CTA */}
         <div className="mt-10 md:mt-12 flex flex-col sm:flex-row items-start gap-4">
           <Link
@@ -67,17 +67,10 @@ export default function HeroSection() {
           </Link>
         </div>
 
-        {/* Discipline chips */}
-        <div className="mt-10 flex flex-wrap items-center gap-2 md:gap-3">
-          {disciplines.map((discipline) => (
-            <span
-              key={discipline}
-              className="border border-white/10 bg-white/[0.03] px-4 py-2 text-[10px] md:text-[11px] tracking-[0.34em] uppercase text-white/40 backdrop-blur-sm"
-            >
-              {discipline}
-            </span>
-          ))}
-        </div>
+        {/* Micro-line */}
+        <p className="text-white/20 text-[10px] tracking-[0.12em] mt-5">
+          {t("hero.micro")}
+        </p>
       </div>
 
     </section>
