@@ -96,7 +96,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "artist_block.label": "The Artist",
     "artist_block.bio1": "I give objects a voice.",
     "artist_block.bio2": "1/1.\nNo copies.\nForever.",
-    "artist_block.cta": "Full Story",
+    "artist_block.cta": "Story",
     "artist_block.cta_path": "PATH",
 
     // Artist page
@@ -235,7 +235,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "artist_block.label": "Художник",
     "artist_block.bio1": "Даю объектам голос.",
     "artist_block.bio2": "1/1.\nБез копий.\nНавсегда.",
-    "artist_block.cta": "Полная история",
+    "artist_block.cta": "История",
     "artist_block.cta_path": "ПУТЬ",
 
     "artist.quote": "Обречённые объекты оживают.",
@@ -370,7 +370,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "artist_block.label": "L'Artiste",
     "artist_block.bio1": "Je donne une voix aux objets.",
     "artist_block.bio2": "1/1.\nSans copies.\nPour toujours.",
-    "artist_block.cta": "Histoire complète",
+    "artist_block.cta": "Histoire",
     "artist_block.cta_path": "PARCOURS",
 
     "artist.quote": "Des objets condamnés reviennent à la vie.",
