@@ -36,16 +36,16 @@ export default function Footer() {
           </div>
 
           <div className="text-center md:text-right">
-            <div className="flex flex-col gap-3 items-center md:items-end">
-              <a href="mailto:hello@dujari.art" className="text-white/42 text-sm hover:text-white/70 transition-colors">
+            <div className="flex flex-col gap-2.5 items-center md:items-end">
+              <a href="mailto:hello@dujari.art" className="inline-flex items-center text-white/42 text-sm leading-none hover:text-white/70 transition-colors duration-200">
                 hello@dujari.art
               </a>
-              <div className="flex items-center gap-2 text-white/42 text-sm">
-                <a href="https://wa.me/33600000000" target="_blank" rel="noopener noreferrer" className="hover:text-white/70 transition-colors">
+              <div className="inline-flex items-center gap-2 text-white/42 text-sm leading-none">
+                <a href="https://wa.me/33600000000" target="_blank" rel="noopener noreferrer" className="text-white/42 hover:text-white/70 transition-colors duration-200">
                   WhatsApp
                 </a>
-                <span className="text-white/18">·</span>
-                <a href="https://t.me/dujari" target="_blank" rel="noopener noreferrer" className="hover:text-white/70 transition-colors">
+                <span className="text-white/24">·</span>
+                <a href="https://t.me/dujari" target="_blank" rel="noopener noreferrer" className="text-white/42 hover:text-white/70 transition-colors duration-200">
                   Telegram
                 </a>
               </div>
