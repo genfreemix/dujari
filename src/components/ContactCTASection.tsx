@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useT } from "@/i18n";
 
 export default function ContactCTASection() {
@@ -9,15 +10,15 @@ export default function ContactCTASection() {
   const telegramUrl = `https://t.me/dujari`;
 
   return (
-    <section className="bg-black py-24 md:py-36 border-t border-white/5">
+    <section className="bg-black py-16 md:py-24 border-t border-white/5">
       <div className="max-w-2xl mx-auto px-6 text-center">
-        <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-5">
+        <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-3">
           {t("contact.label")}
         </p>
-        <h2 className="text-white text-3xl md:text-5xl font-black tracking-tight uppercase mb-7 leading-tight">
+        <h2 className="text-white text-3xl md:text-5xl font-black tracking-tight uppercase mb-4 leading-tight">
           {t("contact.title")}
         </h2>
-        <p className="text-white/40 text-sm md:text-base leading-relaxed mb-12 max-w-md mx-auto">
+        <p className="text-white/40 text-sm md:text-base leading-relaxed mb-8 max-w-md mx-auto">
           {t("contact.text")}
         </p>
 
@@ -58,6 +59,13 @@ export default function ContactCTASection() {
             {t("inquiry.telegram")}
           </a>
         </div>
+
+        <Link
+          href="/contact"
+          className="mt-4 inline-block text-[11px] tracking-[0.2em] text-white/30 hover:text-white/55 transition-colors duration-200"
+        >
+          {t("contact.how_title")} →
+        </Link>
       </div>
     </section>
   );
