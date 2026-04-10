@@ -318,7 +318,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "hero.disciplines_line": "Art visuel, musique et poésie",
     "hero.cta_collection": "Voir les œuvres",
     "hero.cta_artist": "L'auteure",
-    "hero.micro": "Œuvres originales · 1/1 · only one",
+    "hero.micro": "Pièce unique · 1/1 · originale",
     "hero.scroll": "Défiler",
 
     "gallery.subtitle": "Collection 001 — Origines",
