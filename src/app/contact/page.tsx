@@ -32,40 +32,7 @@ export default function ContactPage() {
 
           <InquiryButton className="mb-16" />
 
-          <div className="border-t border-white/10 pt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-white/60 text-xs tracking-[0.25em] uppercase mb-3">
-                {t("contact.email")}
-              </h3>
-              <a href="mailto:hello@dujari.art" className="text-white text-lg hover:text-[#FF2D7B] transition-colors">
-                hello@dujari.art
-              </a>
-            </div>
-            <div>
-              <h3 className="text-white/60 text-xs tracking-[0.25em] uppercase mb-3">
-                {t("contact.whatsapp")}
-              </h3>
-              <a href="https://wa.me/33600000000" target="_blank" rel="noopener noreferrer" className="text-white text-lg hover:text-[#25D366] transition-colors">
-                +33 6 00 00 00 00
-              </a>
-            </div>
-            <div>
-              <h3 className="text-white/60 text-xs tracking-[0.25em] uppercase mb-3">
-                {t("contact.instagram")}
-              </h3>
-              <a href="https://instagram.com/dujari.art" target="_blank" rel="noopener noreferrer" className="text-white text-lg hover:text-[#FF2D7B] transition-colors">
-                @dujari.art
-              </a>
-            </div>
-            <div>
-              <h3 className="text-white/60 text-xs tracking-[0.25em] uppercase mb-3">
-                {t("contact.location")}
-              </h3>
-              <p className="text-white text-lg">{t("contact.location_value")}</p>
-            </div>
-          </div>
-
-          <div className="border-t border-white/10 pt-12 mt-12">
+          <div className="border-t border-white/10 pt-12 mt-0">
             <h2 className="text-white text-xl font-black tracking-tight uppercase mb-10">
               {t("contact.how_title")}
             </h2>
