@@ -48,6 +48,16 @@ export default function ArtistBlock() {
               {t("artist.field_poetry_title")}
             </Link>
           </div>
+
+          <div className="mb-8">
+            <Link
+              href="/path"
+              className="inline-flex items-center border border-white/[0.08] bg-transparent px-[1.4rem] py-2.5 text-[10px] tracking-[0.46em] uppercase text-white/52 hover:text-white/68 hover:border-white/18 transition-all duration-300"
+            >
+              {t("artist_block.cta_path")}
+            </Link>
+          </div>
+
           <Link
             href="/artist"
             className="inline-block border border-white/15 text-white/55 text-xs tracking-[0.35em] uppercase px-10 py-4 mt-2 hover:border-white/28 hover:text-white/75 transition-all duration-300"
