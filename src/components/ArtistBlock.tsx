@@ -46,7 +46,7 @@ export default function ArtistBlock() {
           </div>
 
           <Link
-            href="/artist"
+            href="/path"
             className="inline-flex w-[18.5rem] justify-center border border-white/15 text-white/55 text-xs tracking-[0.35em] uppercase px-10 py-4 mt-2 hover:border-white/28 hover:text-white/75 transition-all duration-300"
           >
             {t("artist_block.cta_path")}

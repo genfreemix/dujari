@@ -98,6 +98,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "artist_block.bio2": "1/1.\nNo copies.\nForever.",
     "artist_block.cta": "Story",
     "artist_block.cta_path": "PATH",
+    "path.coming_soon": "Coming soon",
 
     // Artist page
     "artist.quote": "Doomed objects come alive.",
@@ -237,6 +238,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "artist_block.bio2": "1/1.\nБез копий.\nНавсегда.",
     "artist_block.cta": "История",
     "artist_block.cta_path": "ПУТЬ",
+    "path.coming_soon": "Скоро",
 
     "artist.quote": "Обречённые объекты оживают.",
     "artist.story_title": "История",
@@ -372,6 +374,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "artist_block.bio2": "1/1.\nSans copies.\nPour toujours.",
     "artist_block.cta": "Histoire",
     "artist_block.cta_path": "PARCOURS",
+    "path.coming_soon": "Bientôt",
 
     "artist.quote": "Des objets condamnés reviennent à la vie.",
     "artist.story_title": "L'Histoire",
