@@ -6,12 +6,15 @@ import { useT } from "@/i18n";
 export default function ContactPage() {
   const t = useT();
 
-  const faq = [
-    { q: t("contact.q1"), a: t("contact.a1") },
-    { q: t("contact.q2"), a: t("contact.a2") },
-    { q: t("contact.q3"), a: t("contact.a3") },
-    { q: t("contact.q4"), a: t("contact.a4") },
+  const steps = [
+    { title: t("contact.step1_title"), text: t("contact.step1_text") },
+    { title: t("contact.step2_title"), text: t("contact.step2_text") },
+    { title: t("contact.step3_title"), text: t("contact.step3_text") },
+    { title: t("contact.step4_title"), text: t("contact.step4_text") },
   ];
+
+  const whatsappUrl = `https://wa.me/33600000000?text=${encodeURIComponent("Hi! I'm interested in DUJARI artworks.")}`;
+  const telegramUrl = `https://t.me/dujari`;
 
   return (
     <div className="pt-20 md:pt-24 bg-black min-h-screen">
@@ -20,7 +23,7 @@ export default function ContactPage() {
           <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-4">
             {t("contact.label")}
           </p>
-          <h1 className="text-white text-4xl md:text-6xl font-black tracking-tight uppercase mb-6">
+          <h1 className="text-white text-4xl md:text-6xl font-black tracking-tight uppercase mb-6 whitespace-pre-line">
             {t("contact.title")}
           </h1>
           <p className="text-white/50 text-sm md:text-base leading-relaxed mb-12 max-w-lg">
@@ -63,16 +66,37 @@ export default function ContactPage() {
           </div>
 
           <div className="border-t border-white/10 pt-12 mt-12">
-            <h2 className="text-white text-xl font-black tracking-tight uppercase mb-8">
+            <h2 className="text-white text-xl font-black tracking-tight uppercase mb-10">
               {t("contact.how_title")}
             </h2>
-            <div className="space-y-6">
-              {faq.map((item) => (
-                <div key={item.q} className="border-l-2 border-white/10 pl-6">
-                  <h3 className="text-white text-sm font-bold mb-2">{item.q}</h3>
-                  <p className="text-white/40 text-sm">{item.a}</p>
+            <div className="space-y-10">
+              {steps.map((step) => (
+                <div key={step.title}>
+                  <h3 className="text-white text-xs tracking-[0.35em] uppercase mb-3 font-bold">
+                    {step.title}
+                  </h3>
+                  <p className="text-white/40 text-sm leading-relaxed max-w-md">{step.text}</p>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-12 pt-10 border-t border-white/5 flex flex-col sm:flex-row gap-3">
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 border border-white/20 text-white/60 text-xs tracking-[0.3em] uppercase px-8 py-4 hover:border-[#25D366]/50 hover:text-white transition-all duration-300"
+              >
+                WhatsApp
+              </a>
+              <a
+                href={telegramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 border border-white/20 text-white/60 text-xs tracking-[0.3em] uppercase px-8 py-4 hover:border-[#2AABEE]/50 hover:text-white transition-all duration-300"
+              >
+                Telegram
+              </a>
             </div>
           </div>
         </div>
