@@ -41,7 +41,7 @@ export default function ArtistPage() {
             <h1 className="text-white text-5xl md:text-7xl font-black tracking-tight uppercase mb-8">
               DUJARI
             </h1>
-            <p className="text-white/65 text-lg md:text-xl leading-relaxed mb-8 md:mb-10 max-w-xl">
+            <p className="text-white/65 text-[1.4rem] md:text-[1.65rem] leading-[1.3] mb-8 md:mb-10 max-w-xl">
               {t("artist.quote")}
             </p>
 
