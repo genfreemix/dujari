@@ -61,7 +61,7 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              <div className="mt-6 pt-5 border-t border-white/5 flex justify-center">
+              <div className="mt-4 pt-3 border-t border-white/[0.03] flex justify-center">
                 <Link
                   href="/gallery"
                   className="inline-flex items-center justify-center text-[11px] tracking-[0.28em] uppercase text-white/45 hover:text-white/70 transition-colors duration-200"
