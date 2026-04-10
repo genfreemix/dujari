@@ -12,11 +12,11 @@ export default function ArtistBlock() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
         <div className="relative aspect-[4/5] bg-neutral-900 overflow-hidden self-start">
           <Image
-            src="/artist/dujari-artist-portrait.jpg"
+            src="/artist/dujari-artist-portrait-camera.png"
             alt="Portrait of Dujari"
             fill
             sizes="(min-width: 768px) 40vw, 100vw"
-            className="object-cover portrait-zoom"
+            className="object-cover object-[46%_22%] portrait-zoom"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/55 hidden md:block" />

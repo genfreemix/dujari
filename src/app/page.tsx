@@ -2,6 +2,7 @@
 
 import HeroSection from "@/components/HeroSection";
 import GalleryGrid from "@/components/GalleryGrid";
+import ArtistBlock from "@/components/ArtistBlock";
 import { getFeatured } from "@/data/artworks";
 import { useT } from "@/i18n";
 import Link from "next/link";
@@ -19,6 +20,8 @@ export default function HomePage() {
         title={t("home.featured_title")}
         subtitle={t("home.featured_subtitle")}
       />
+
+      <ArtistBlock />
 
       <section className="bg-black py-20 md:py-28 border-t border-white/5">
         <div className="max-w-3xl mx-auto px-6 text-center">

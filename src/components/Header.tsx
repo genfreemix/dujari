@@ -19,7 +19,7 @@ export default function Header() {
   const NAV_ITEMS = [
     { href: "/", label: t("nav.home") },
     { href: "/gallery", label: t("nav.gallery") },
-    { href: "/artist", label: t("nav.artist") },
+    { href: "/#artist", label: t("nav.artist") },
     { href: "/contact", label: t("nav.contact") },
   ];
 
@@ -39,7 +39,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 className={`text-xs tracking-[0.25em] uppercase transition-colors duration-200 ${
-                  pathname === item.href
+                  (item.href === "/#artist" ? pathname === "/" : pathname === item.href)
                     ? "text-[#FF2D7B]"
                     : "text-white/70 hover:text-white"
                 }`}
@@ -102,7 +102,7 @@ export default function Header() {
               href={item.href}
               onClick={() => setOpen(false)}
               className={`block px-6 py-4 text-sm tracking-[0.25em] uppercase border-b border-white/5 ${
-                pathname === item.href
+                (item.href === "/#artist" ? pathname === "/" : pathname === item.href)
                   ? "text-[#FF2D7B]"
                   : "text-white/70"
               }`}
