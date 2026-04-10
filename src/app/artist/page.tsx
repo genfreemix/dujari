@@ -35,32 +35,34 @@ export default function ArtistPage() {
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/55 hidden md:block" />
           </div>
 
-          <div className="order-2 md:order-2 md:pt-14 lg:pt-16">
-            <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-4">
-              {t("artist_block.label")}
-            </p>
-            <h1 className="text-white text-4xl md:text-5xl font-black tracking-tight uppercase mb-6">
-              DUJARI
-            </h1>
-            <p className="text-white/50 text-sm md:text-base leading-relaxed mb-8 max-w-xl">
-              {t("artist.quote")}
-            </p>
+          <div className="order-2 md:order-2 md:pt-14 lg:pt-16 md:min-h-full md:flex md:flex-col md:self-stretch">
+            <div>
+              <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-4">
+                {t("artist_block.label")}
+              </p>
+              <h1 className="text-white text-4xl md:text-5xl font-black tracking-tight uppercase mb-6">
+                DUJARI
+              </h1>
+              <p className="text-white/50 text-sm md:text-base leading-relaxed mb-8 max-w-xl">
+                {t("artist.quote")}
+              </p>
 
-            <div className="flex flex-wrap items-center gap-3 mb-8">
-              <span className="inline-flex items-center border border-white/[0.08] bg-transparent px-5 py-2.5 text-[10px] tracking-[0.42em] uppercase text-white/45">
-                {t("artist.field_music_title")}
-              </span>
-              <Link
-                href="/poetry"
-                className="inline-flex items-center border border-white/[0.08] bg-transparent px-5 py-2.5 text-[10px] tracking-[0.42em] uppercase text-white/45 hover:text-white/65 hover:border-white/20 transition-all duration-300"
-              >
-                {t("artist.field_poetry_title")}
-              </Link>
+              <div className="flex flex-wrap items-center gap-3 mb-8">
+                <span className="inline-flex items-center border border-white/[0.08] bg-transparent px-5 py-2.5 text-[10px] tracking-[0.42em] uppercase text-white/45">
+                  {t("artist.field_music_title")}
+                </span>
+                <Link
+                  href="/poetry"
+                  className="inline-flex items-center border border-white/[0.08] bg-transparent px-5 py-2.5 text-[10px] tracking-[0.42em] uppercase text-white/45 hover:text-white/65 hover:border-white/20 transition-all duration-300"
+                >
+                  {t("artist.field_poetry_title")}
+                </Link>
+              </div>
             </div>
 
             <Link
               href="/path"
-              className="inline-flex w-[18.5rem] justify-center border border-white/15 text-white/55 text-xs tracking-[0.35em] uppercase px-10 py-4 mt-2 hover:border-white/28 hover:text-white/75 transition-all duration-300"
+              className="inline-flex w-[18.5rem] justify-center border border-white/15 text-white/55 text-xs tracking-[0.35em] uppercase px-10 py-4 mt-2 md:mt-auto hover:border-white/28 hover:text-white/75 transition-all duration-300"
             >
               {t("artist_block.cta_path")}
             </Link>
