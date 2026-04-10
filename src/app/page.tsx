@@ -22,6 +22,8 @@ export default function HomePage() {
         subtitle={t("home.featured_subtitle")}
       />
 
+      <ContactCTASection />
+
       <ArtistBlock />
 
       <section className="bg-black py-20 md:py-28 border-t border-white/5">
@@ -40,8 +42,6 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
-
-      <ContactCTASection />
     </>
   );
 }
