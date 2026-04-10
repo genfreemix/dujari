@@ -17,7 +17,7 @@ export default function ContactPage() {
 
   return (
     <div className="pt-14 md:pt-16 bg-black min-h-screen">
-      <section className="pt-10 pb-20 md:pt-12 md:pb-28">
+      <section className="pt-10 pb-10 md:pt-12 md:pb-14">
         <div className="max-w-5xl mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <div>
@@ -61,7 +61,7 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              <div className="mt-8 pt-7 border-t border-white/5 flex justify-center">
+              <div className="mt-6 pt-5 border-t border-white/5 flex justify-center">
                 <Link
                   href="/gallery"
                   className="inline-flex items-center justify-center text-[11px] tracking-[0.28em] uppercase text-white/45 hover:text-white/70 transition-colors duration-200"
