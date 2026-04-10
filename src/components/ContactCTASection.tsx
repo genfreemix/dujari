@@ -10,7 +10,7 @@ export default function ContactCTASection() {
   const telegramUrl = `https://t.me/dujari`;
 
   return (
-    <section className="bg-black py-16 md:py-24 border-t border-white/5">
+    <section className="bg-black pt-10 pb-14 md:pt-14 md:pb-20 border-t border-white/5">
       <div className="max-w-2xl mx-auto px-6 text-center">
         <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-3">
           {t("contact.label")}
