@@ -20,8 +20,9 @@ export default function ContactPage() {
   return (
     <div className="pt-14 md:pt-16 bg-black min-h-screen">
       <section className="pt-10 pb-20 md:pt-12 md:pb-28">
-        <div className="max-w-3xl mx-auto px-6">
-          <div>
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="md:grid md:grid-cols-[minmax(0,1fr)_18rem] md:gap-12 lg:gap-16 md:items-start">
+            <div>
             <h1 className="text-white text-3xl md:text-5xl font-black tracking-tight uppercase mb-10">
               {t("contact.how_title")}
             </h1>
@@ -35,13 +36,14 @@ export default function ContactPage() {
                 </div>
               ))}
             </div>
+            </div>
 
-            <div className="mt-12 pt-10 border-t border-white/5 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl">
+            <div className="mt-12 pt-10 border-t border-white/5 grid grid-cols-1 gap-2.5 md:mt-0 md:pt-0 md:border-t-0 md:self-start">
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 border border-white/20 text-white/60 text-xs tracking-[0.3em] uppercase px-8 py-4 hover:border-[#25D366]/50 hover:text-white transition-all duration-300"
+                className="inline-flex min-h-12 items-center justify-center gap-2 border border-white/20 text-white/60 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-[#25D366]/50 hover:text-white transition-all duration-300"
               >
                 WhatsApp
               </a>
@@ -49,19 +51,19 @@ export default function ContactPage() {
                 href={telegramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 border border-white/20 text-white/60 text-xs tracking-[0.3em] uppercase px-8 py-4 hover:border-[#2AABEE]/50 hover:text-white transition-all duration-300"
+                className="inline-flex min-h-12 items-center justify-center gap-2 border border-white/20 text-white/60 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-[#2AABEE]/50 hover:text-white transition-all duration-300"
               >
                 Telegram
               </a>
               <a
                 href={mailUrl}
-                className="inline-flex items-center justify-center gap-2 border border-white/20 text-white/60 text-xs tracking-[0.3em] uppercase px-8 py-4 hover:border-white/35 hover:text-white transition-all duration-300"
+                className="inline-flex min-h-12 items-center justify-center gap-2 border border-white/20 text-white/60 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/35 hover:text-white transition-all duration-300"
               >
                 {t("inquiry.email")}
               </a>
               <a
                 href={phoneUrl}
-                className="inline-flex items-center justify-center gap-2 border border-white/20 text-white/60 text-xs tracking-[0.3em] uppercase px-8 py-4 hover:border-white/35 hover:text-white transition-all duration-300"
+                className="inline-flex min-h-12 items-center justify-center gap-2 border border-white/20 text-white/60 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/35 hover:text-white transition-all duration-300"
               >
                 {t("inquiry.call")}
               </a>
