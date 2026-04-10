@@ -7,11 +7,13 @@ export default function ContactPage() {
   const t = useT();
 
   const steps = [
-    { title: t("contact.step1_title"), text: t("contact.step1_text") },
     { title: t("contact.step2_title"), text: t("contact.step2_text") },
     { title: t("contact.step3_title"), text: t("contact.step3_text") },
     { title: t("contact.step4_title"), text: t("contact.step4_text") },
   ];
+
+  const whatsappUrl = "https://wa.me/XXXXXXXXXXX";
+  const telegramUrl = "https://t.me/username";
 
   return (
     <div className="pt-14 md:pt-16 bg-black min-h-screen">
@@ -19,13 +21,39 @@ export default function ContactPage() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <div>
-              <h1 className="text-white text-3xl md:text-5xl font-black tracking-tight uppercase mb-10">
+              <h1 className="text-white text-3xl md:text-5xl font-black tracking-tight uppercase mb-8">
                 {t("contact.how_title")}
               </h1>
-              <div className="space-y-10">
+              <div className="space-y-7 md:space-y-8">
+                <div>
+                  <h3 className="text-white text-xs tracking-[0.35em] uppercase mb-2.5 font-bold">
+                    {t("contact.step1_title")}
+                  </h3>
+                  <p className="text-white/40 text-sm leading-relaxed max-w-md mx-auto">
+                    {t("contact.step1_text_start")}
+                    <a
+                      href={whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/58 underline decoration-white/20 underline-offset-4 hover:text-white/80 hover:decoration-white/45 transition-colors duration-200"
+                    >
+                      WhatsApp
+                    </a>
+                    {t("contact.step1_text_middle")}
+                    <a
+                      href={telegramUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/58 underline decoration-white/20 underline-offset-4 hover:text-white/80 hover:decoration-white/45 transition-colors duration-200"
+                    >
+                      Telegram
+                    </a>
+                    {t("contact.step1_text_end")}
+                  </p>
+                </div>
                 {steps.map((step) => (
                   <div key={step.title}>
-                    <h3 className="text-white text-xs tracking-[0.35em] uppercase mb-3 font-bold">
+                    <h3 className="text-white text-xs tracking-[0.35em] uppercase mb-2.5 font-bold">
                       {step.title}
                     </h3>
                     <p className="text-white/40 text-sm leading-relaxed max-w-md mx-auto">{step.text}</p>
@@ -33,12 +61,12 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              <div className="mt-12 pt-10 border-t border-white/5 flex justify-center">
+              <div className="mt-8 pt-7 border-t border-white/5 flex justify-center">
                 <Link
                   href="/gallery"
-                  className="inline-flex min-h-12 items-center justify-center border border-white/20 text-white/60 text-[11px] tracking-[0.28em] uppercase px-10 py-3.5 hover:border-white/35 hover:text-white transition-all duration-300"
+                  className="inline-flex items-center justify-center text-[11px] tracking-[0.28em] uppercase text-white/45 hover:text-white/70 transition-colors duration-200"
                 >
-                  {t("nav.gallery")}
+                  {t("contact.view_works")}
                 </Link>
               </div>
             </div>
