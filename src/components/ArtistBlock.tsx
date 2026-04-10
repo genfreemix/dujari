@@ -16,9 +16,10 @@ export default function ArtistBlock() {
             alt="Portrait of Dujari"
             fill
             sizes="(min-width: 768px) 40vw, 100vw"
-            className="object-cover"
+            className="object-cover portrait-zoom"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/55 hidden md:block" />
         </div>
 
         <div className="md:pt-14 lg:pt-16">
@@ -37,19 +38,19 @@ export default function ArtistBlock() {
 
           {/* Discipline chips */}
           <div className="flex flex-wrap items-center gap-3 mb-8">
-            <span className="inline-flex items-center border border-white/14 bg-white/[0.03] px-5 py-3 text-[10px] tracking-[0.34em] uppercase text-white/70">
+            <span className="inline-flex items-center border border-white/[0.08] bg-transparent px-5 py-2.5 text-[10px] tracking-[0.42em] uppercase text-white/45">
               {t("artist.field_music_title")}
             </span>
             <Link
               href="/poetry"
-              className="inline-flex items-center border border-white/14 bg-white/[0.03] px-5 py-3 text-[10px] tracking-[0.34em] uppercase text-white/70 hover:border-[#FF2D7B]/50 hover:text-white transition-colors duration-200"
+              className="inline-flex items-center border border-white/[0.08] bg-transparent px-5 py-2.5 text-[10px] tracking-[0.42em] uppercase text-white/45 hover:text-white/65 hover:border-white/20 transition-all duration-300"
             >
               {t("artist.field_poetry_title")}
             </Link>
           </div>
           <Link
             href="/artist"
-            className="inline-block border border-white/20 text-white/70 text-xs tracking-[0.3em] uppercase px-8 py-4 hover:border-white/50 hover:text-white transition-all duration-200"
+            className="inline-block border border-white/15 text-white/55 text-xs tracking-[0.35em] uppercase px-10 py-4 mt-2 hover:border-white/28 hover:text-white/75 transition-all duration-300"
           >
             {t("artist_block.cta")}
           </Link>

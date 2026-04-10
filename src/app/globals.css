@@ -61,6 +61,16 @@ html {
   80%       { clip-path: inset(45% 0 45% 0); transform: translate(-2px, 0); }
 }
 
+/* Artist portrait subtle zoom on load */
+@keyframes portrait-zoom-in {
+  from { transform: scale(1); }
+  to   { transform: scale(1.015); }
+}
+
+.portrait-zoom {
+  animation: portrait-zoom-in 6s ease-out forwards;
+}
+
 .glitch-text {
   position: relative;
   display: inline-block;

@@ -94,8 +94,8 @@ const translations: Record<Locale, Record<string, string>> = {
 
     // Artist block
     "artist_block.label": "The Artist",
-    "artist_block.bio1": "Born from the collision of street culture and gallery ambition. DUJARI turns everyday objects into collectible art — bottles that tell stories, panels that scream silence.",
-    "artist_block.bio2": "Each piece is hand-painted. Each piece is 1/1. No prints. No reproductions. When it's gone, it's gone.",
+    "artist_block.bio1": "Street culture. Gallery ambition. Objects that scream silence.",
+    "artist_block.bio2": "Every piece is 1/1. No copies. When it's gone — it's gone.",
     "artist_block.cta": "Full Story",
 
     // Artist page
@@ -232,8 +232,8 @@ const translations: Record<Locale, Record<string, string>> = {
     "home.view_gallery": "Открыть галерею",
 
     "artist_block.label": "Художник",
-    "artist_block.bio1": "Рождён на стыке уличной культуры и галерейных амбиций. DUJARI превращает обыденные объекты в коллекционное искусство — бутылки, которые рассказывают истории, панели, которые кричат тишиной.",
-    "artist_block.bio2": "Каждая работа расписана вручную. Каждая — 1/1. Никаких принтов. Никаких копий. Когда ушла — ушла.",
+    "artist_block.bio1": "Уличная культура, галерейные амбиции. Объекты, которые кричат тишиной.",
+    "artist_block.bio2": "Каждая — 1/1. Никаких копий. Когда ушла — ушла.",
     "artist_block.cta": "Полная история",
 
     "artist.quote": '«Я не расписываю бутылки. Я даю им голос.»',
@@ -366,8 +366,8 @@ const translations: Record<Locale, Record<string, string>> = {
     "home.view_gallery": "Voir toute la galerie",
 
     "artist_block.label": "L'Artiste",
-    "artist_block.bio1": "Né de la collision entre la culture de rue et l'ambition des galeries. DUJARI transforme les objets du quotidien en art de collection — des bouteilles qui racontent des histoires, des panneaux qui crient le silence.",
-    "artist_block.bio2": "Chaque pièce est peinte à la main. Chaque pièce est 1/1. Pas de prints. Pas de reproductions. Quand c'est parti, c'est parti.",
+    "artist_block.bio1": "Culture de rue. Ambition de galerie. Des objets qui crient le silence.",
+    "artist_block.bio2": "Chaque pièce est 1/1. Sans copies. Quand c'est parti — c'est parti.",
     "artist_block.cta": "Histoire complète",
 
     "artist.quote": "«Je ne peins pas des bouteilles. Je leur donne une voix.»",
