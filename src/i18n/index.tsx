@@ -171,6 +171,8 @@ const translations: Record<Locale, Record<string, string>> = {
     "footer.get_in_touch": "Get in touch",
     "footer.rights": "All rights reserved.",
     "footer.no_repro": "Every piece is 1/1. No reproductions.",
+    "footer.originals": "Original works · 1/1",
+    "footer.one_of_one": "Every piece is 1/1",
   },
 
   ru: {
@@ -310,6 +312,8 @@ const translations: Record<Locale, Record<string, string>> = {
     "footer.get_in_touch": "Связаться",
     "footer.rights": "Все права защищены.",
     "footer.no_repro": "Каждая работа — 1/1. Никаких копий.",
+    "footer.originals": "Оригинальные работы · 1/1",
+    "footer.one_of_one": "Каждая работа — 1/1",
   },
 
   fr: {
@@ -448,6 +452,8 @@ const translations: Record<Locale, Record<string, string>> = {
     "footer.get_in_touch": "Nous contacter",
     "footer.rights": "Tous droits réservés.",
     "footer.no_repro": "Chaque pièce est 1/1. Pas de reproductions.",
+    "footer.originals": "Œuvres originales · 1/1",
+    "footer.one_of_one": "Chaque pièce est 1/1",
   },
 };
 
