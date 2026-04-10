@@ -40,9 +40,15 @@ export default function Footer() {
               <a href="mailto:hello@dujari.art" className="text-white/42 text-sm hover:text-white/70 transition-colors">
                 hello@dujari.art
               </a>
-              <a href="https://wa.me/33600000000" target="_blank" rel="noopener noreferrer" className="text-white/42 text-sm hover:text-white/70 transition-colors">
-                WhatsApp
-              </a>
+              <div className="flex items-center gap-2 text-white/42 text-sm">
+                <a href="https://wa.me/33600000000" target="_blank" rel="noopener noreferrer" className="hover:text-white/70 transition-colors">
+                  WhatsApp
+                </a>
+                <span className="text-white/18">·</span>
+                <a href="https://t.me/dujari" target="_blank" rel="noopener noreferrer" className="hover:text-white/70 transition-colors">
+                  Telegram
+                </a>
+              </div>
             </div>
           </div>
         </div>
