@@ -265,7 +265,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "artist.back_gallery": "← Смотреть коллекцию",
 
     "contact.label": "Связаться",
-    "contact.title": "Поговорим об искусстве",
+    "contact.title": "Поговорим об\nискусстве",
     "contact.text": "Заинтересовала работа? Есть вопрос? Хотите заказать что-то уникальное? Пишите напрямую — без форм, без очередей, только разговор.",
     "contact.email": "Почта",
     "contact.whatsapp": "WhatsApp",

@@ -12,7 +12,7 @@ export default function ContactCTASection() {
   return (
     <section className="bg-black pt-10 pb-14 md:pt-14 md:pb-20 border-t border-white/5">
       <div className="max-w-[520px] mx-auto px-6 text-center">
-        <h2 className="text-white text-3xl md:text-5xl font-black tracking-tight uppercase mb-4 leading-tight">
+        <h2 className="text-white text-3xl md:text-5xl font-black tracking-tight uppercase mb-4 leading-tight whitespace-pre-line">
           {t("contact.title")}
         </h2>
         <p className="text-white/40 text-sm md:text-base leading-relaxed mb-8 max-w-[420px] mx-auto">
