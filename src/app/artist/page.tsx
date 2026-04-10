@@ -42,11 +42,11 @@ export default function ArtistPage() {
             <h1 className="text-white text-4xl md:text-5xl font-black tracking-tight uppercase mb-6">
               DUJARI
             </h1>
-            <p className="text-white/50 text-sm md:text-base leading-relaxed mb-8 max-w-xl">
+            <p className="text-white/50 text-sm md:text-base leading-relaxed mb-10 max-w-xl">
               {t("artist.quote")}
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 mb-8">
+            <div className="flex flex-wrap items-center gap-3 mb-10">
               <span className="inline-flex items-center border border-white/[0.08] bg-transparent px-5 py-2.5 text-[10px] tracking-[0.42em] uppercase text-white/45">
                 {t("artist.field_music_title")}
               </span>
