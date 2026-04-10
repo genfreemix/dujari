@@ -42,12 +42,12 @@ export default function HeroSection() {
         </h1>
 
         {/* Secondary atmospheric line */}
-        <p className="text-white/38 text-sm md:text-base italic tracking-[0.08em] mt-8 md:mt-10 max-w-xs md:max-w-sm">
+        <p className="text-white/52 text-sm md:text-base italic tracking-[0.08em] leading-relaxed mt-8 md:mt-10 max-w-xs md:max-w-sm">
           {t("hero.sub")}
         </p>
 
         {/* Disciplines line */}
-        <p className="text-white/25 text-xs tracking-[0.1em] mt-2 max-w-xs md:max-w-sm">
+        <p className="text-white/35 text-[13px] tracking-[0.07em] mt-2 max-w-xs md:max-w-sm">
           {t("hero.disciplines_line")}
         </p>
 
@@ -68,7 +68,7 @@ export default function HeroSection() {
         </div>
 
         {/* Micro-line */}
-        <p className="text-white/20 text-[10px] tracking-[0.12em] mt-5">
+        <p className="text-white/28 text-[11px] tracking-[0.1em] mt-5">
           {t("hero.micro")}
         </p>
       </div>
