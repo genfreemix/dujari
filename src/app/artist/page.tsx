@@ -21,8 +21,8 @@ export default function ArtistPage() {
           }}
         />
 
-        <div className="relative max-w-7xl w-full mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-stretch">
-          <div className="relative h-64 md:h-auto bg-neutral-900 overflow-hidden order-1 md:order-1">
+        <div className="relative max-w-7xl w-full mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+          <div className="relative aspect-[4/5] bg-neutral-900 overflow-hidden self-start order-1 md:order-1">
             <Image
               src="/artist/dujari-artist-portrait-camera.png"
               alt="Portrait of Dujari"
@@ -32,26 +32,27 @@ export default function ArtistPage() {
               className="object-cover object-[46%_22%]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-black/10" />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/55 hidden md:block" />
           </div>
 
-          <div className="order-2 md:order-2 flex flex-col justify-center">
+          <div className="order-2 md:order-2 md:pt-14 lg:pt-16">
             <p className="text-[#FF2D7B] text-[10px] md:text-xs tracking-[0.5em] uppercase mb-4">
               {t("artist_block.label")}
             </p>
-            <h1 className="text-white text-5xl md:text-7xl font-black tracking-tight uppercase mb-8">
+            <h1 className="text-white text-4xl md:text-5xl font-black tracking-tight uppercase mb-6">
               DUJARI
             </h1>
-            <p className="text-white/65 text-[1.4rem] md:text-[1.65rem] leading-[1.3] mb-8 md:mb-10 max-w-xl">
+            <p className="text-white/50 text-sm md:text-base leading-relaxed mb-8 max-w-xl">
               {t("artist.quote")}
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 md:gap-4">
-              <span className="inline-flex items-center justify-center border border-white/[0.08] bg-transparent px-5 py-2.5 text-[10px] md:text-[11px] tracking-[0.42em] uppercase text-white/45">
+            <div className="flex flex-wrap items-center gap-3 mb-8">
+              <span className="inline-flex items-center border border-white/[0.08] bg-transparent px-5 py-2.5 text-[10px] tracking-[0.42em] uppercase text-white/45">
                 {t("artist.field_music_title")}
               </span>
               <Link
                 href="/poetry"
-                className="inline-flex items-center justify-center border border-white/[0.08] bg-transparent px-5 py-2.5 text-[10px] md:text-[11px] tracking-[0.42em] uppercase text-white/45 hover:text-white/65 hover:border-white/20 transition-all duration-300"
+                className="inline-flex items-center border border-white/[0.08] bg-transparent px-5 py-2.5 text-[10px] tracking-[0.42em] uppercase text-white/45 hover:text-white/65 hover:border-white/20 transition-all duration-300"
               >
                 {t("artist.field_poetry_title")}
               </Link>
@@ -59,7 +60,7 @@ export default function ArtistPage() {
 
             <Link
               href="/path"
-              className="inline-flex w-[18.5rem] self-start justify-center border border-white/15 text-white/55 text-xs tracking-[0.35em] uppercase px-10 py-4 mt-8 hover:border-white/28 hover:text-white/75 transition-all duration-300"
+              className="inline-flex w-[18.5rem] justify-center border border-white/15 text-white/55 text-xs tracking-[0.35em] uppercase px-10 py-4 mt-2 hover:border-white/28 hover:text-white/75 transition-all duration-300"
             >
               {t("artist_block.cta_path")}
             </Link>
