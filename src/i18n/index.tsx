@@ -183,7 +183,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "hero.disciplines_line": "Визуальное искусство, музыка и поэзия",
     "hero.cta_collection": "Смотреть работы",
     "hero.cta_artist": "Об авторе",
-    "hero.micro": "Оригинальные работы · 1/1 · only one",
+    "hero.micro": "Оригинальные работы · 1/1 · без повторов",
     "hero.scroll": "Листайте",
 
     "gallery.subtitle": "Коллекция 001 — Начало",
