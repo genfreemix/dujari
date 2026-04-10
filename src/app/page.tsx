@@ -3,6 +3,7 @@
 import HeroSection from "@/components/HeroSection";
 import GalleryGrid from "@/components/GalleryGrid";
 import ArtistBlock from "@/components/ArtistBlock";
+import ContactCTASection from "@/components/ContactCTASection";
 import { getFeatured } from "@/data/artworks";
 import { useT } from "@/i18n";
 import Link from "next/link";
@@ -39,6 +40,8 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+
+      <ContactCTASection />
     </>
   );
 }
