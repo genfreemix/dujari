@@ -29,10 +29,10 @@ export default function ArtistBlock() {
           <h2 className="text-white text-4xl md:text-5xl font-black tracking-tight uppercase mb-6">
             DUJARI
           </h2>
-          <p className="text-white/50 text-sm md:text-base leading-relaxed mb-4">
+          <p className="text-white/50 text-sm md:text-base leading-relaxed mb-2">
             {t("artist_block.bio1")}
           </p>
-          <p className="text-white/50 text-sm md:text-base leading-relaxed mb-6">
+          <p className="text-white/50 text-sm md:text-base leading-loose whitespace-pre-line mb-6">
             {t("artist_block.bio2")}
           </p>
 

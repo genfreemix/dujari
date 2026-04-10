@@ -41,17 +41,17 @@ export default function ArtistPage() {
             <h1 className="text-white text-5xl md:text-7xl font-black tracking-tight uppercase mb-8">
               DUJARI
             </h1>
-            <p className="text-white/50 text-lg md:text-xl leading-relaxed italic mb-8 md:mb-10 max-w-xl">
+            <p className="text-white/65 text-lg md:text-xl leading-relaxed mb-8 md:mb-10 max-w-xl">
               {t("artist.quote")}
             </p>
 
             <div className="flex flex-wrap items-center gap-3 md:gap-4">
-              <span className="inline-flex items-center justify-center border border-white/14 bg-white/[0.03] px-5 py-3 text-[10px] md:text-[11px] tracking-[0.34em] uppercase text-white/72">
+              <span className="inline-flex items-center justify-center border border-white/[0.08] bg-transparent px-5 py-2.5 text-[10px] md:text-[11px] tracking-[0.42em] uppercase text-white/45">
                 {t("artist.field_music_title")}
               </span>
               <Link
                 href="/poetry"
-                className="inline-flex items-center justify-center border border-white/14 bg-white/[0.03] px-5 py-3 text-[10px] md:text-[11px] tracking-[0.34em] uppercase text-white/72 hover:border-[#FF2D7B]/50 hover:text-white transition-colors duration-200"
+                className="inline-flex items-center justify-center border border-white/[0.08] bg-transparent px-5 py-2.5 text-[10px] md:text-[11px] tracking-[0.42em] uppercase text-white/45 hover:text-white/65 hover:border-white/20 transition-all duration-300"
               >
                 {t("artist.field_poetry_title")}
               </Link>

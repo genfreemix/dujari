@@ -94,12 +94,12 @@ const translations: Record<Locale, Record<string, string>> = {
 
     // Artist block
     "artist_block.label": "The Artist",
-    "artist_block.bio1": "Street culture. Gallery ambition. Objects that scream silence.",
-    "artist_block.bio2": "Every piece is 1/1. No copies. When it's gone — it's gone.",
+    "artist_block.bio1": "I give objects a voice.",
+    "artist_block.bio2": "1/1.\nNo copies.\nForever.",
     "artist_block.cta": "Full Story",
 
     // Artist page
-    "artist.quote": '"I don\'t paint bottles. I give them a voice."',
+    "artist.quote": "Doomed objects come alive.",
     "artist.story_title": "The Story",
     "artist.story1": "DUJARI emerged from the collision of street culture and gallery ambition. Growing up surrounded by graffiti, vinyl records, and the raw energy of underground music — the artist developed a visual language that refuses to be categorized.",
     "artist.story2": 'The bottles started as a provocation: "Why does art need a canvas?" Taking iconic bottles — the ones you\'d find in any bar, any city — and transforming them into unrepeatable objects. Pop-art meets punk. Gallery meets garage.',
@@ -232,11 +232,11 @@ const translations: Record<Locale, Record<string, string>> = {
     "home.view_gallery": "Открыть галерею",
 
     "artist_block.label": "Художник",
-    "artist_block.bio1": "Уличная культура, галерейные амбиции. Объекты, которые кричат тишиной.",
-    "artist_block.bio2": "Каждая — 1/1. Никаких копий. Когда ушла — ушла.",
+    "artist_block.bio1": "Даю объектам голос.",
+    "artist_block.bio2": "1/1.\nБез копий.\nНавсегда.",
     "artist_block.cta": "Полная история",
 
-    "artist.quote": '«Я не расписываю бутылки. Я даю им голос.»',
+    "artist.quote": "Обречённые объекты оживают.",
     "artist.story_title": "История",
     "artist.story1": "DUJARI возник на стыке уличной культуры и галерейных амбиций. Граффити, виниловые пластинки, сырая энергия андерграундной музыки — всё это сформировало визуальный язык, который отказывается быть категоризированным.",
     "artist.story2": "Бутылки начались как провокация: «Зачем искусству холст?» Брать культовые бутылки — те самые, что в каждом баре, в каждом городе — и превращать их в неповторимые объекты. Поп-арт встречает панк. Галерея встречает гараж.",
@@ -366,11 +366,11 @@ const translations: Record<Locale, Record<string, string>> = {
     "home.view_gallery": "Voir toute la galerie",
 
     "artist_block.label": "L'Artiste",
-    "artist_block.bio1": "Culture de rue. Ambition de galerie. Des objets qui crient le silence.",
-    "artist_block.bio2": "Chaque pièce est 1/1. Sans copies. Quand c'est parti — c'est parti.",
+    "artist_block.bio1": "Je donne une voix aux objets.",
+    "artist_block.bio2": "1/1.\nSans copies.\nPour toujours.",
     "artist_block.cta": "Histoire complète",
 
-    "artist.quote": "«Je ne peins pas des bouteilles. Je leur donne une voix.»",
+    "artist.quote": "Des objets condamnés reviennent à la vie.",
     "artist.story_title": "L'Histoire",
     "artist.story1": "DUJARI est né de la collision entre la culture de rue et l'ambition des galeries. Graffitis, vinyles, énergie brute de la musique underground — l'artiste a développé un langage visuel qui refuse d'être catégorisé.",
     "artist.story2": "Les bouteilles ont commencé comme une provocation : «Pourquoi l'art a-t-il besoin d'une toile ?» Prendre des bouteilles iconiques — celles qu'on trouve dans chaque bar, chaque ville — et les transformer en objets uniques. Le pop-art rencontre le punk. La galerie rencontre le garage.",
