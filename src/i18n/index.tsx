@@ -223,7 +223,7 @@ const translations: Record<Locale, Record<string, string>> = {
     "artwork.claimed": "Эта работа уже нашла владельца",
     "artwork.inquire": "Запрос",
 
-    "home.featured_title": "Избранные работы",
+    "home.featured_title": "Актуально сейчас",
     "home.featured_subtitle": "Коллекция 001 — Начало",
     "home.disciplines_label": "Творческие направления",
     "home.discipline_visual_title": "Визуальный артист",
