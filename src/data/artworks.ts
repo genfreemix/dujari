@@ -138,7 +138,7 @@ export const artworks: Artwork[] = [
   },
   {
     id: "rom-stevie-wonder",
-    title: "Rom Stevie Wonder",
+    title: "Rum Stevie Wonder",
     category: "bottle",
     description: {
       en: "",
