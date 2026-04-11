@@ -33,25 +33,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Locale switch: fade only text elements, not images/layout */
-h1, h2, h3, h4, h5, h6, p, a, button, label, span {
-  transition: opacity 180ms ease-in-out;
-}
-
-.locale-fading h1,
-.locale-fading h2,
-.locale-fading h3,
-.locale-fading h4,
-.locale-fading h5,
-.locale-fading h6,
-.locale-fading p,
-.locale-fading a,
-.locale-fading button,
-.locale-fading label,
-.locale-fading span {
-  opacity: 0 !important;
-}
-
 /* Spark effect animations */
 @keyframes electric-flash {
   0% { opacity: 1; transform: translate(-50%, -50%) scale(0.3); }

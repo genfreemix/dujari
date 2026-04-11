@@ -493,7 +493,6 @@ const translations: Record<Locale, Record<string, string>> = {
 
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>("en");
-  const [fading, setFading] = useState(false);
 
   // On mount: detect locale from localStorage or browser
   useEffect(() => {
@@ -501,12 +500,8 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const setLocale = useCallback((l: Locale) => {
-    setFading(true);
-    setTimeout(() => {
-      setLocaleState(l);
-      localStorage.setItem(STORAGE_KEY, l);
-      setFading(false);
-    }, 180);
+    setLocaleState(l);
+    localStorage.setItem(STORAGE_KEY, l);
   }, []);
 
   const t = useCallback(
@@ -518,9 +513,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 
   return (
     <I18nContext.Provider value={{ locale, setLocale, t }}>
-      <div className={fading ? "locale-fading" : ""}>
-        {children}
-      </div>
+      {children}
     </I18nContext.Provider>
   );
 }
