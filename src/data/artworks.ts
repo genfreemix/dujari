@@ -137,7 +137,7 @@ export const artworks: Artwork[] = [
     edition: "1/1",
   },
   {
-    id: "rom-stevie-wonder",
+    id: "rum-stevie-wonder",
     title: "Rum Stevie Wonder",
     category: "bottle",
     description: {
@@ -148,7 +148,7 @@ export const artworks: Artwork[] = [
     price: "",
     dimensions: "",
     year: 2026,
-    image: "/artworks/rom-stevie-wonder.jpg",
+    image: "/artworks/rum-stevie-wonder.jpg",
     color: "#8c5d1f",
     available: true,
     edition: "1/1",
