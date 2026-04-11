@@ -6,6 +6,56 @@ import { getArtwork, getAdjacentArtworks } from "@/data/artworks";
 import Link from "next/link";
 import { useI18n } from "@/i18n";
 
+type LocalizedDetail = {
+  en: string;
+  ru: string;
+  fr: string;
+};
+
+type PhysicalSpecs = {
+  materials?: LocalizedDetail;
+  technique?: LocalizedDetail;
+  base?: LocalizedDetail;
+  status?: LocalizedDetail;
+};
+
+const physicalSpecsByCategory: Partial<Record<"bottle" | "objects", PhysicalSpecs>> = {
+  bottle: {
+    materials: {
+      en: "acrylic, glass, mixed media",
+      ru: "акрил, стекло, смешанная техника",
+      fr: "acrylique, verre, technique mixte",
+    },
+    technique: {
+      en: "hand-painted, artist reworked object",
+      ru: "ручная роспись, авторская переработка объекта",
+      fr: "peinture à la main, relecture d'auteur de l'objet",
+    },
+    base: {
+      en: "reworked bottle, 0.7 l",
+      ru: "переработанная бутылка, 0.7 л",
+      fr: "bouteille retravaillée, 0.7 l",
+    },
+    status: {
+      en: "collectible object",
+      ru: "коллекционный объект",
+      fr: "objet de collection",
+    },
+  },
+  objects: {
+    technique: {
+      en: "hand-painted, artist reworked object",
+      ru: "ручная роспись, авторская переработка объекта",
+      fr: "peinture à la main, relecture d'auteur de l'objet",
+    },
+    status: {
+      en: "collectible object",
+      ru: "коллекционный объект",
+      fr: "objet de collection",
+    },
+  },
+} as const;
+
 export default function ArtworkPage() {
   const params = useParams();
   const { locale, t } = useI18n();
@@ -37,6 +87,24 @@ export default function ArtworkPage() {
   const activeImage = galleryImages[activeIndex] ?? artwork.image;
   const hasSlider = galleryImages.length > 1;
   const isWallPiece = ["panel", "pictures", "posters"].includes(artwork.category);
+  const fallbackSpecs =
+    artwork.category === "bottle" || artwork.category === "objects"
+      ? physicalSpecsByCategory[artwork.category]
+      : undefined;
+  const detailSpecs = {
+    materials: artwork.detailSpecs?.materials?.[locale] ?? fallbackSpecs?.materials?.[locale],
+    technique: artwork.detailSpecs?.technique?.[locale] ?? fallbackSpecs?.technique?.[locale],
+    base: artwork.detailSpecs?.base?.[locale] ?? fallbackSpecs?.base?.[locale],
+    status:
+      artwork.detailSpecs?.status?.[locale] ??
+      fallbackSpecs?.status?.[locale] ??
+      t("artwork.status_collectible_object"),
+  };
+  const specRows = [
+    { label: t("artwork.materials"), value: detailSpecs.materials },
+    { label: t("artwork.technique"), value: detailSpecs.technique },
+    { label: t("artwork.base"), value: detailSpecs.base },
+  ].filter((row) => Boolean(row.value));
 
   const whatsappText = `Hi! I'm interested in "${artwork.title}" from DUJARI.`;
   const whatsappUrl = `https://wa.me/33600000000?text=${encodeURIComponent(whatsappText)}`;
@@ -245,46 +313,66 @@ export default function ArtworkPage() {
 
                   {/* Brief description — capped at ~4 lines / 60 words */}
                   {description && (
-                    <p className="text-white/40 text-sm leading-[1.65] max-w-[300px] line-clamp-4">
+                    <p className="max-w-[286px] text-white/40 text-sm leading-[1.65] line-clamp-4">
                       {description}
                     </p>
                   )}
                 </div>
 
-                {/* Bottom: divider + facts + CTA */}
-                <div className="mt-10">
-                  {/* Thin divider */}
-                  <div className="w-8 h-px bg-white/10 mb-8" />
+                <div className="mt-7">
+                  <div className="h-px w-10 bg-white/10" />
 
-                  {/* Facts — close, compact */}
-                  <div className="space-y-2.5 mb-6">
-                    {artwork.price && (
-                      <p className="text-white text-xl font-bold tracking-tight">{artwork.price}</p>
+                  <div className="mt-6 space-y-5">
+                    {specRows.length > 0 && (
+                      <div className="space-y-2.5 text-[12px] leading-[1.55] text-white/34 max-w-[336px]">
+                        {specRows.map((row) => (
+                          <p key={row.label}>
+                            <span className="text-white/62 font-medium">{row.label}:</span>{" "}
+                            {row.value}
+                          </p>
+                        ))}
+                      </div>
                     )}
-                    {artwork.dimensions && (
-                      <p className="text-white/40 text-xs tracking-wide">{artwork.dimensions}</p>
-                    )}
-                    {artwork.edition && (
-                      <p className="text-white/25 text-[10px] tracking-[0.22em] uppercase">{artwork.edition}</p>
-                    )}
+
+                    <div className="space-y-2 text-[12px] leading-[1.55] text-white/34 max-w-[336px]">
+                      {artwork.dimensions && (
+                        <p>
+                          <span className="text-white/62 font-medium">{t("artwork.size")}:</span>{" "}
+                          {artwork.dimensions}
+                        </p>
+                      )}
+                      <p>
+                        <span className="text-white/62 font-medium">{t("artwork.status")}:</span>{" "}
+                        {detailSpecs.status}
+                      </p>
+                    </div>
+
+                    <div className="pt-1.5">
+                      <div className="flex items-end gap-3">
+                        {artwork.price && (
+                          <p className="text-white text-[2rem] leading-none font-bold tracking-tight">{artwork.price}</p>
+                        )}
+                        {artwork.edition && (
+                          <p className="pb-0.5 text-white/45 text-sm tracking-[0.18em] uppercase">{artwork.edition}</p>
+                        )}
+                      </div>
+
+                      <p className="mt-2 text-white/20 text-[10px] tracking-[0.24em] uppercase">
+                        {artwork.available ? t("artwork.original_meta") : t("artwork.claimed")}
+                      </p>
+                    </div>
                   </div>
 
-                  {/* Availability */}
-                  <p className="text-white/20 text-[10px] tracking-[0.28em] uppercase mb-8">
-                    {artwork.available ? "One original. No edition." : t("artwork.claimed")}
-                  </p>
-
-                  {/* CTA — bordered, present */}
                   {artwork.available && (
                     !inquiryOpen ? (
                       <button
                         onClick={() => setInquiryOpen(true)}
-                        className="self-start border border-white/20 text-white/75 text-xs tracking-[0.32em] uppercase px-8 py-4 hover:border-white/45 hover:text-white transition-all duration-200"
+                        className="self-start mt-6 border border-white/20 text-white/75 text-xs tracking-[0.32em] uppercase px-8 py-4 hover:border-white/45 hover:text-white transition-all duration-200"
                       >
                         {t("artwork.inquire")}
                     </button>
                   ) : (
-                    <div className="flex flex-col gap-2">
+                    <div className="mt-6 flex flex-col gap-2">
                       <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
                         className="border border-white/12 text-white/55 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/28 hover:text-white/85 transition-all duration-200"
                       >WhatsApp</a>
