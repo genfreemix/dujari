@@ -122,7 +122,7 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
           "radial-gradient(ellipse at 20% 40%, #FF2D7B0C 0%, transparent 50%), radial-gradient(ellipse at 80% 70%, #FFE6000A 0%, transparent 45%), #0A0A0A",
       }}
     >
-      <div className="flex items-stretch min-h-[calc(100vh-5rem)]">
+      <div className="flex items-center min-h-[calc(100vh-5rem)]">
 
         {/* Desktop: prev arrow */}
         <Link
@@ -147,66 +147,81 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
 
             {/* Left: object */}
             <div className="lg:flex lg:flex-col lg:justify-center lg:h-[calc(100vh-9rem)]">
-              {/* Image — no container, object floats */}
-              <div className="relative">
-                {activeImage && (
-                  <img
-                    src={activeImage}
-                    alt={artwork.title}
-                    className="w-full h-auto object-contain max-h-[calc(100vh-12rem)]"
-                    style={{
-                      boxShadow:
-                        "0 40px 100px rgba(0,0,0,0.65), 0 10px 32px rgba(0,0,0,0.4)",
-                    }}
-                  />
-                )}
+              {/* Photo row: back strip (desktop) + image */}
+              <div className="flex items-stretch gap-2">
 
-                {/* Sold overlay */}
-                {!artwork.available && (
-                  <div className="absolute top-4 right-4">
-                    <span className="text-white/35 text-[10px] tracking-[0.35em] uppercase">
-                      {t("artwork.sold")}
-                    </span>
-                  </div>
-                )}
+                {/* Back button — left of photo, desktop only */}
+                <Link
+                  href="/gallery"
+                  className="hidden lg:flex shrink-0 flex-col items-center justify-center px-1 text-white/22 hover:text-white/52 transition-colors"
+                  title={t("artwork.back")}
+                >
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M15 18l-6-6 6-6" />
+                  </svg>
+                </Link>
 
-                {/* Slider: side arrows */}
-                {hasSlider && (
-                  <>
-                    <button
-                      onClick={() =>
-                        setActiveIndex((i) =>
-                          i === 0 ? galleryImages.length - 1 : i - 1
-                        )
-                      }
-                      className="absolute -left-5 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center text-white/25 hover:text-white/65 transition-colors"
-                      aria-label="Previous image"
-                    >
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                        <path d="M15 18l-6-6 6-6" />
-                      </svg>
-                    </button>
-                    <button
-                      onClick={() =>
-                        setActiveIndex((i) =>
-                          i === galleryImages.length - 1 ? 0 : i + 1
-                        )
-                      }
-                      className="absolute -right-5 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center text-white/25 hover:text-white/65 transition-colors"
-                      aria-label="Next image"
-                    >
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                        <path d="M9 18l6-6-6-6" />
-                      </svg>
-                    </button>
-                  </>
-                )}
+                {/* Image */}
+                <div className="relative flex-1">
+                  {activeImage && (
+                    <img
+                      src={activeImage}
+                      alt={artwork.title}
+                      className="w-full h-auto object-contain max-h-[calc(100vh-12rem)]"
+                      style={{
+                        boxShadow:
+                          "0 40px 100px rgba(0,0,0,0.65), 0 10px 32px rgba(0,0,0,0.4)",
+                      }}
+                    />
+                  )}
+
+                  {/* Sold overlay */}
+                  {!artwork.available && (
+                    <div className="absolute top-4 right-4">
+                      <span className="text-white/35 text-[10px] tracking-[0.35em] uppercase">
+                        {t("artwork.sold")}
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Slider: side arrows */}
+                  {hasSlider && (
+                    <>
+                      <button
+                        onClick={() =>
+                          setActiveIndex((i) =>
+                            i === 0 ? galleryImages.length - 1 : i - 1
+                          )
+                        }
+                        className="absolute left-2 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center text-white/25 hover:text-white/65 transition-colors"
+                        aria-label="Previous image"
+                      >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                          <path d="M15 18l-6-6 6-6" />
+                        </svg>
+                      </button>
+                      <button
+                        onClick={() =>
+                          setActiveIndex((i) =>
+                            i === galleryImages.length - 1 ? 0 : i + 1
+                          )
+                        }
+                        className="absolute right-2 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center text-white/25 hover:text-white/65 transition-colors"
+                        aria-label="Next image"
+                      >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                          <path d="M9 18l6-6-6-6" />
+                        </svg>
+                      </button>
+                    </>
+                  )}
+                </div>
               </div>
 
-              {/* Back button — below photo, left-aligned outside the frame */}
+              {/* Back button — mobile only */}
               <Link
                 href="/gallery"
-                className="mt-3 inline-flex items-center gap-1.5 text-white/25 text-[10px] tracking-[0.22em] uppercase hover:text-white/55 transition-colors"
+                className="lg:hidden mt-3 inline-flex items-center gap-1.5 text-white/25 text-[10px] tracking-[0.22em] uppercase hover:text-white/55 transition-colors"
               >
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M15 18l-6-6 6-6" />
