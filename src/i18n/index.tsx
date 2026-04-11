@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from "react";
+import { createContext, useContext, useState, useCallback, type ReactNode } from "react";
 
 export type Locale = "en" | "ru" | "fr";
 
@@ -492,12 +492,7 @@ const translations: Record<Locale, Record<string, string>> = {
 };
 
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>("en");
-
-  // On mount: detect locale from localStorage or browser
-  useEffect(() => {
-    setLocaleState(detectLocale());
-  }, []);
+  const [locale, setLocaleState] = useState<Locale>(detectLocale);
 
   const setLocale = useCallback((l: Locale) => {
     setLocaleState(l);
