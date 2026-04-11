@@ -138,10 +138,10 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
         {/* Main content */}
         <div className="flex-1 max-w-6xl mx-auto px-6 md:px-10 py-12 md:py-16">
           <div
-            className={`grid items-stretch gap-16 md:gap-20 lg:gap-28 ${
+            className={`grid gap-16 md:gap-20 lg:gap-28 ${
               isWallPiece
-                ? "grid-cols-1 lg:grid-cols-[1.3fr_1fr]"
-                : "grid-cols-1 lg:grid-cols-[1.4fr_1fr]"
+                ? "items-stretch grid-cols-1 lg:grid-cols-[1.3fr_1fr]"
+                : "items-start grid-cols-1 lg:grid-cols-[1.4fr_1fr]"
             }`}
           >
 
@@ -303,7 +303,7 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
 
             ) : (
               /* ── PHYSICAL OBJECT (bottle/object): object-first, label-like right column ── */
-              <div className="flex flex-col h-full max-w-[380px] pt-3">
+              <div className="flex flex-col max-w-[380px] pt-3 lg:sticky lg:top-28 self-start">
 
                 {/* Top: meta + title + description */}
                 <div>
@@ -325,7 +325,7 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
                 <div className="mt-5">
                   <div className="h-px w-8 bg-white/8" />
 
-                  <div className="mt-4 space-y-3.5">
+                  <div className="mt-4 space-y-3">
                     {primarySpecRows.length > 0 && (
                       <div className="space-y-1.5 text-[11px] leading-[1.35] text-white/34 max-w-[336px]">
                         {primarySpecRows.map((row) => (
@@ -361,7 +361,7 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
                       </div>
                     )}
 
-                    <div className="pt-0.5">
+                    <div className="pt-0.5 space-y-2">
                       <div className="flex items-end gap-2">
                         {artwork.price && (
                           <p className="text-white text-[2rem] leading-none font-bold tracking-tight">{artwork.price}</p>
@@ -371,38 +371,29 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
                         )}
                       </div>
 
-                      <p className="mt-1 text-white/20 text-[10px] tracking-[0.18em] uppercase leading-[1.2]">
+                      <p className="text-white/20 text-[10px] tracking-[0.18em] uppercase leading-[1.2]">
                         {artwork.available ? t("artwork.original_meta") : t("artwork.claimed")}
                       </p>
+
+                      {artwork.available && (
+                        <div className="flex flex-col gap-1.5 pt-0.5">
+                          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
+                            className="border border-white/12 text-white/55 text-[11px] tracking-[0.24em] uppercase px-6 py-3 hover:border-white/28 hover:text-white/85 transition-all duration-200"
+                          >WhatsApp</a>
+                          <a href={telegramUrl} target="_blank" rel="noopener noreferrer"
+                            className="border border-white/12 text-white/55 text-[11px] tracking-[0.24em] uppercase px-6 py-3 hover:border-white/28 hover:text-white/85 transition-all duration-200"
+                          >Telegram</a>
+                          <a href={mailUrl}
+                            className="border border-white/12 text-white/55 text-[11px] tracking-[0.24em] uppercase px-6 py-3 hover:border-white/28 hover:text-white/85 transition-all duration-200"
+                          >Email</a>
+                        </div>
+                      )}
                     </div>
                   </div>
-
-                  {artwork.available && (
-                    !inquiryOpen ? (
-                      <button
-                        onClick={() => setInquiryOpen(true)}
-                        className="self-start mt-4 border border-white/20 text-white/75 text-xs tracking-[0.32em] uppercase px-8 py-3.5 hover:border-white/45 hover:text-white transition-all duration-200"
-                      >
-                        {t("artwork.inquire")}
-                    </button>
-                  ) : (
-                    <div className="mt-4 flex flex-col gap-2">
-                      <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
-                        className="border border-white/12 text-white/55 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/28 hover:text-white/85 transition-all duration-200"
-                      >WhatsApp</a>
-                      <a href={telegramUrl} target="_blank" rel="noopener noreferrer"
-                        className="border border-white/12 text-white/55 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/28 hover:text-white/85 transition-all duration-200"
-                      >Telegram</a>
-                      <a href={mailUrl}
-                        className="border border-white/12 text-white/55 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/28 hover:text-white/85 transition-all duration-200"
-                      >Email</a>
-                    </div>
-                  )
-                )}
                 </div>{/* end bottom block */}
 
                 {/* Mobile prev/next */}
-                <div className="flex justify-between mt-14 lg:hidden">
+                <div className="flex justify-between mt-10 lg:hidden">
                   <Link href={prev ? `/artwork/${prev.id}` : "/gallery"}
                     className="text-white/22 text-[10px] tracking-[0.18em] uppercase hover:text-white/50 transition-colors flex items-center gap-1.5"
                   >
