@@ -146,14 +146,14 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
           >
 
             {/* Left: object */}
-            <div className="lg:flex lg:flex-col lg:justify-center lg:min-h-[calc(100vh-9rem)]">
+            <div className="lg:flex lg:flex-col lg:justify-center lg:h-[calc(100vh-9rem)]">
               {/* Image — no container, object floats */}
               <div className="relative">
                 {activeImage && (
                   <img
                     src={activeImage}
                     alt={artwork.title}
-                    className="w-full h-auto object-contain max-h-[82vh]"
+                    className="w-full h-auto object-contain max-h-[calc(100vh-12rem)]"
                     style={{
                       boxShadow:
                         "0 40px 100px rgba(0,0,0,0.65), 0 10px 32px rgba(0,0,0,0.4)",
