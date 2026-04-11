@@ -203,15 +203,15 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
                 )}
               </div>
 
-              {/* Back button — left of column on desktop, below photo on mobile */}
+              {/* Back button — absolute left of column on desktop (no effect on height), inline below on mobile */}
               <Link
                 href="/gallery"
-                className="mt-3 lg:mt-0 lg:absolute lg:-left-10 lg:top-1/2 lg:-translate-y-1/2 inline-flex lg:flex-col items-center gap-1.5 lg:gap-0.5 text-white/22 text-[10px] tracking-[0.22em] uppercase hover:text-white/52 transition-colors"
+                className="mt-3 lg:mt-0 lg:absolute lg:-left-9 lg:top-1/2 lg:-translate-y-1/2 inline-flex lg:[writing-mode:vertical-rl] lg:rotate-180 items-center gap-1.5 text-white/25 text-[10px] tracking-[0.22em] uppercase hover:text-white/55 transition-colors"
               >
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="lg:rotate-90">
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 lg:-rotate-90">
                   <path d="M15 18l-6-6 6-6" />
                 </svg>
-                <span className="lg:hidden">{t("artwork.back")}</span>
+                {t("artwork.back")}
               </Link>
 
               {/* Slider dots */}
