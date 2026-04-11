@@ -317,7 +317,7 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
                   </h1>
 
                   {description && (
-                    <p className="max-w-[286px] text-white/40 text-sm leading-[1.52] line-clamp-4">
+                    <p className="max-w-[286px] text-white/44 text-sm leading-[1.52] line-clamp-4">
                       {description}
                     </p>
                   )}
@@ -326,32 +326,32 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
                     <div className="h-px w-8 bg-white/8" />
                     <div className="mt-4 space-y-3">
                       {primarySpecRows.length > 0 && (
-                        <div className="space-y-1.5 text-[11px] leading-[1.35] text-white/34 max-w-[336px]">
+                        <div className="space-y-1.5 text-[11px] leading-[1.35] text-white/42 max-w-[336px]">
                           {primarySpecRows.map((row) => (
                             <p key={row.label}>
-                              <span className="text-white/62 font-medium">{row.label}:</span>{" "}
+                              <span className="text-white/70 font-semibold">{row.label}:</span>{" "}
                               {row.value}
                             </p>
                           ))}
                         </div>
                       )}
-                      <div className="space-y-1.5 text-[11px] leading-[1.35] text-white/34 max-w-[336px]">
+                      <div className="space-y-1.5 text-[11px] leading-[1.35] text-white/42 max-w-[336px]">
                         {artwork.dimensions && (
                           <p>
-                            <span className="text-white/62 font-medium">{t("artwork.size")}:</span>{" "}
+                            <span className="text-white/70 font-semibold">{t("artwork.size")}:</span>{" "}
                             {artwork.dimensions}
                           </p>
                         )}
                         <p>
-                          <span className="text-white/62 font-medium">{t("artwork.status")}:</span>{" "}
+                          <span className="text-white/70 font-semibold">{t("artwork.status")}:</span>{" "}
                           {detailSpecs.status}
                         </p>
                       </div>
                       {secondarySpecRows.length > 0 && (
-                        <div className="space-y-1 text-[10px] leading-[1.28] text-white/24 max-w-[336px]">
+                        <div className="space-y-1 text-[10px] leading-[1.28] text-white/32 max-w-[336px]">
                           {secondarySpecRows.map((row) => (
                             <p key={row.label}>
-                              <span className="text-white/42 font-medium">{row.label}:</span>{" "}
+                              <span className="text-white/50 font-medium">{row.label}:</span>{" "}
                               {row.value}
                             </p>
                           ))}
@@ -371,7 +371,7 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
                       <p className="pb-0.5 text-white/45 text-[12px] tracking-[0.14em] uppercase">{artwork.edition}</p>
                     )}
                   </div>
-                  <p className="text-white/20 text-[10px] tracking-[0.18em] uppercase leading-[1.2] mb-3">
+                  <p className="text-white/32 text-[10px] tracking-[0.18em] uppercase leading-[1.2] mb-3">
                     {artwork.available ? t("artwork.original_meta") : t("artwork.claimed")}
                   </p>
                   {artwork.available && (
