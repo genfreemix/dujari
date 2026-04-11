@@ -122,7 +122,7 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
           "radial-gradient(ellipse at 20% 40%, #FF2D7B0C 0%, transparent 50%), radial-gradient(ellipse at 80% 70%, #FFE6000A 0%, transparent 45%), #0A0A0A",
       }}
     >
-      <div className="flex items-center min-h-[calc(100vh-5rem)]">
+      <div className="flex items-stretch min-h-[calc(100vh-5rem)]">
 
         {/* Desktop: prev arrow */}
         <Link
