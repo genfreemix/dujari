@@ -26,6 +26,28 @@ export const artworks: Artwork[] = [
     id: "tincture-magic-strawberry",
     title: "Tincture Magic Strawberry",
     category: "bottle",
+    detailSpecs: {
+      materials: {
+        en: "acrylic, glass, mixed media",
+        ru: "акрил, стекло, смешанная техника",
+        fr: "acrylique, verre, technique mixte",
+      },
+      technique: {
+        en: "hand-painted, artist reworked object",
+        ru: "ручная роспись, авторская переработка объекта",
+        fr: "peinture à la main, relecture d'auteur de l'objet",
+      },
+      base: {
+        en: "reworked tincture bottle, 0.7 l",
+        ru: "переработанная бутылка настойки, 0.7 л",
+        fr: "bouteille de teinture retravaillée, 0.7 l",
+      },
+      status: {
+        en: "collectible object",
+        ru: "коллекционный объект",
+        fr: "objet de collection",
+      },
+    },
     description: {
       en: "This is not just an image.\nIt is a moment that was never meant to remain.\n\nTwo faces from the past - recognizable, nearly iconic - lose their untouchability here.\n\nThey are not looking at each other, but through each other.\nAs if they already know how this ends.\n\nColor enters that moment without permission.\nRoses appear not as a symbol of love - but as a trace. As a distortion. As an error inside memory.\n\nThe black-and-white past cannot withstand the pressure.\nIt starts to melt, crack, and let meta-noise through.\n\nThis is not about romance.\nIt is about memory that has already changed.\n\nAbout an image that no longer belongs to the original.",
       ru: "Это не просто образ.\nЭто момент, который не должен был остаться.\n\nДва лица из прошлого — узнаваемые, почти культовые —\nздесь теряют свою неприкосновенность.\n\nОни смотрят не друг на друга, а сквозь.\nКак будто уже знают, чем всё закончится.\n\nЦвет вмешивается в этот момент без разрешения.\nРозы появляются не как символ любви —\nа как след. Как искажение. Как ошибка в воспоминании.\n\nЧёрно-белое прошлое не выдерживает давления.\nОно начинает течь, трескаться, пропускать мета-шум.\n\nЭто не про романтику.\nЭто про память, которая уже изменилась.\n\nПро образ, который больше не принадлежит оригиналу.",
@@ -106,6 +128,28 @@ export const artworks: Artwork[] = [
     id: "gin-andy-warhol",
     title: "Gin Andy Warhol",
     category: "bottle",
+    detailSpecs: {
+      materials: {
+        en: "acrylic, glass, mixed media",
+        ru: "акрил, стекло, смешанная техника",
+        fr: "acrylique, verre, technique mixte",
+      },
+      technique: {
+        en: "hand-painted, artist reworked object",
+        ru: "ручная роспись, авторская переработка объекта",
+        fr: "peinture à la main, relecture d'auteur de l'objet",
+      },
+      base: {
+        en: "reworked gin bottle, 0.7 l",
+        ru: "переработанная бутылка джина, 0.7 л",
+        fr: "bouteille de gin retravaillée, 0.7 l",
+      },
+      status: {
+        en: "collectible object",
+        ru: "коллекционный объект",
+        fr: "objet de collection",
+      },
+    },
     description: {
       en: "This is not just an image.\nIt is a moment that was never meant to remain.\n\nTwo faces from the past - recognizable, nearly iconic - lose their untouchability here.\n\nThey are not looking at each other, but through each other.\nAs if they already know how this ends.\n\nColor enters that moment without permission.\nRoses appear not as a symbol of love - but as a trace. As a distortion. As an error inside memory.\n\nThe black-and-white past cannot withstand the pressure.\nIt starts to melt, crack, and let meta-noise through.\n\nThis is not about romance.\nIt is about memory that has already changed.\n\nAbout an image that no longer belongs to the original.",
       ru: "Это не просто образ.\nЭто момент, который не должен был остаться.\n\nДва лица из прошлого — узнаваемые, почти культовые —\nздесь теряют свою неприкосновенность.\n\nОни смотрят не друг на друга, а сквозь.\nКак будто уже знают, чем всё закончится.\n\nЦвет вмешивается в этот момент без разрешения.\nРозы появляются не как символ любви —\nа как след. Как искажение. Как ошибка в воспоминании.\n\nЧёрно-белое прошлое не выдерживает давления.\nОно начинает течь, трескаться, пропускать мета-шум.\n\nЭто не про романтику.\nЭто про память, которая уже изменилась.\n\nПро образ, который больше не принадлежит оригиналу.",
@@ -123,6 +167,28 @@ export const artworks: Artwork[] = [
     id: "liqueur-black-monro",
     title: "Liqueur Black Monro",
     category: "bottle",
+    detailSpecs: {
+      materials: {
+        en: "acrylic, glass, mixed media",
+        ru: "акрил, стекло, смешанная техника",
+        fr: "acrylique, verre, technique mixte",
+      },
+      technique: {
+        en: "hand-painted, artist reworked object",
+        ru: "ручная роспись, авторская переработка объекта",
+        fr: "peinture à la main, relecture d'auteur de l'objet",
+      },
+      base: {
+        en: "reworked liqueur bottle, 0.7 l",
+        ru: "переработанная бутылка ликёра, 0.7 л",
+        fr: "bouteille de liqueur retravaillée, 0.7 l",
+      },
+      status: {
+        en: "collectible object",
+        ru: "коллекционный объект",
+        fr: "objet de collection",
+      },
+    },
     description: {
       en: "This is not just an image.\nIt is a moment that was never meant to remain.\n\nTwo faces from the past - recognizable, nearly iconic - lose their untouchability here.\n\nThey are not looking at each other, but through each other.\nAs if they already know how this ends.\n\nColor enters that moment without permission.\nRoses appear not as a symbol of love - but as a trace. As a distortion. As an error inside memory.\n\nThe black-and-white past cannot withstand the pressure.\nIt starts to melt, crack, and let meta-noise through.\n\nThis is not about romance.\nIt is about memory that has already changed.\n\nAbout an image that no longer belongs to the original.",
       ru: "Это не просто образ.\nЭто момент, который не должен был остаться.\n\nДва лица из прошлого — узнаваемые, почти культовые —\nздесь теряют свою неприкосновенность.\n\nОни смотрят не друг на друга, а сквозь.\nКак будто уже знают, чем всё закончится.\n\nЦвет вмешивается в этот момент без разрешения.\nРозы появляются не как символ любви —\nа как след. Как искажение. Как ошибка в воспоминании.\n\nЧёрно-белое прошлое не выдерживает давления.\nОно начинает течь, трескаться, пропускать мета-шум.\n\nЭто не про романтику.\nЭто про память, которая уже изменилась.\n\nПро образ, который больше не принадлежит оригиналу.",
@@ -140,6 +206,28 @@ export const artworks: Artwork[] = [
     id: "rum-stevie-wonder",
     title: "Rum Stevie Wonder",
     category: "bottle",
+    detailSpecs: {
+      materials: {
+        en: "acrylic, glass, mixed media",
+        ru: "акрил, стекло, смешанная техника",
+        fr: "acrylique, verre, technique mixte",
+      },
+      technique: {
+        en: "hand-painted, artist reworked object",
+        ru: "ручная роспись, авторская переработка объекта",
+        fr: "peinture à la main, relecture d'auteur de l'objet",
+      },
+      base: {
+        en: "reworked rum bottle, 0.7 l",
+        ru: "переработанная бутылка рома, 0.7 л",
+        fr: "bouteille de rhum retravaillée, 0.7 l",
+      },
+      status: {
+        en: "collectible object",
+        ru: "коллекционный объект",
+        fr: "objet de collection",
+      },
+    },
     description: {
       en: "This is not just an image.\nIt is a moment that was never meant to remain.\n\nTwo faces from the past - recognizable, nearly iconic - lose their untouchability here.\n\nThey are not looking at each other, but through each other.\nAs if they already know how this ends.\n\nColor enters that moment without permission.\nRoses appear not as a symbol of love - but as a trace. As a distortion. As an error inside memory.\n\nThe black-and-white past cannot withstand the pressure.\nIt starts to melt, crack, and let meta-noise through.\n\nThis is not about romance.\nIt is about memory that has already changed.\n\nAbout an image that no longer belongs to the original.",
       ru: "Это не просто образ.\nЭто момент, который не должен был остаться.\n\nДва лица из прошлого — узнаваемые, почти культовые —\nздесь теряют свою неприкосновенность.\n\nОни смотрят не друг на друга, а сквозь.\nКак будто уже знают, чем всё закончится.\n\nЦвет вмешивается в этот момент без разрешения.\nРозы появляются не как символ любви —\nа как след. Как искажение. Как ошибка в воспоминании.\n\nЧёрно-белое прошлое не выдерживает давления.\nОно начинает течь, трескаться, пропускать мета-шум.\n\nЭто не про романтику.\nЭто про память, которая уже изменилась.\n\nПро образ, который больше не принадлежит оригиналу.",
@@ -157,6 +245,28 @@ export const artworks: Artwork[] = [
     id: "tequila-marlene-dietrich",
     title: "Tequila Marlene Dietrich",
     category: "bottle",
+    detailSpecs: {
+      materials: {
+        en: "acrylic, glass, mixed media",
+        ru: "акрил, стекло, смешанная техника",
+        fr: "acrylique, verre, technique mixte",
+      },
+      technique: {
+        en: "hand-painted, artist reworked object",
+        ru: "ручная роспись, авторская переработка объекта",
+        fr: "peinture à la main, relecture d'auteur de l'objet",
+      },
+      base: {
+        en: "reworked tequila bottle, 0.7 l",
+        ru: "переработанная бутылка текилы, 0.7 л",
+        fr: "bouteille de tequila retravaillée, 0.7 l",
+      },
+      status: {
+        en: "collectible object",
+        ru: "коллекционный объект",
+        fr: "objet de collection",
+      },
+    },
     description: {
       en: "This is not just an image.\nIt is a moment that was never meant to remain.\n\nTwo faces from the past - recognizable, nearly iconic - lose their untouchability here.\n\nThey are not looking at each other, but through each other.\nAs if they already know how this ends.\n\nColor enters that moment without permission.\nRoses appear not as a symbol of love - but as a trace. As a distortion. As an error inside memory.\n\nThe black-and-white past cannot withstand the pressure.\nIt starts to melt, crack, and let meta-noise through.\n\nThis is not about romance.\nIt is about memory that has already changed.\n\nAbout an image that no longer belongs to the original.",
       ru: "Это не просто образ.\nЭто момент, который не должен был остаться.\n\nДва лица из прошлого — узнаваемые, почти культовые —\nздесь теряют свою неприкосновенность.\n\nОни смотрят не друг на друга, а сквозь.\nКак будто уже знают, чем всё закончится.\n\nЦвет вмешивается в этот момент без разрешения.\nРозы появляются не как символ любви —\nа как след. Как искажение. Как ошибка в воспоминании.\n\nЧёрно-белое прошлое не выдерживает давления.\nОно начинает течь, трескаться, пропускать мета-шум.\n\nЭто не про романтику.\nЭто про память, которая уже изменилась.\n\nПро образ, который больше не принадлежит оригиналу.",
