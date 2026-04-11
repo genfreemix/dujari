@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useParams } from "next/navigation";
 import { getArtwork, getAdjacentArtworks } from "@/data/artworks";
 import Link from "next/link";
@@ -58,8 +58,14 @@ const physicalSpecsByCategory: Partial<Record<"bottle" | "objects", PhysicalSpec
 
 export default function ArtworkPage() {
   const params = useParams();
+  const artworkId = params.id as string;
+
+  return <ArtworkPageContent key={artworkId} artworkId={artworkId} />;
+}
+
+function ArtworkPageContent({ artworkId }: { artworkId: string }) {
   const { locale, t } = useI18n();
-  const artwork = getArtwork(params.id as string);
+  const artwork = getArtwork(artworkId);
 
   const galleryImages = artwork?.galleryImages?.length
     ? artwork.galleryImages
@@ -70,18 +76,13 @@ export default function ArtworkPage() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [inquiryOpen, setInquiryOpen] = useState(false);
 
-  useEffect(() => {
-    setActiveIndex(0);
-    setInquiryOpen(false);
-  }, [params.id]);
-
   if (!artwork) {
     return (
       <div className="pt-40 text-center text-white/40">Artwork not found</div>
     );
   }
 
-  const { prev, next } = getAdjacentArtworks(params.id as string);
+  const { prev, next } = getAdjacentArtworks(artworkId);
   const description = artwork.description[locale] || artwork.description.en;
   const categoryLabel = t(`artwork.${artwork.category}`);
   const activeImage = galleryImages[activeIndex] ?? artwork.image;
@@ -105,6 +106,8 @@ export default function ArtworkPage() {
     { label: t("artwork.technique"), value: detailSpecs.technique },
     { label: t("artwork.base"), value: detailSpecs.base },
   ].filter((row) => Boolean(row.value));
+  const primarySpecRows = specRows.filter((row) => row.label === t("artwork.materials"));
+  const secondarySpecRows = specRows.filter((row) => row.label !== t("artwork.materials"));
 
   const whatsappText = `Hi! I'm interested in "${artwork.title}" from DUJARI.`;
   const whatsappUrl = `https://wa.me/33600000000?text=${encodeURIComponent(whatsappText)}`;
@@ -300,32 +303,32 @@ export default function ArtworkPage() {
 
             ) : (
               /* ── PHYSICAL OBJECT (bottle/object): object-first, label-like right column ── */
-              <div className="flex flex-col h-full max-w-[380px] pt-4">
+              <div className="flex flex-col h-full max-w-[380px] pt-3">
 
                 {/* Top: meta + title + description */}
                 <div>
                   <p className="text-[#FF2D7B] text-[10px] tracking-[0.52em] uppercase mb-4">
                     {categoryLabel} · {artwork.year}
                   </p>
-                  <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-black tracking-tight uppercase leading-none mb-6">
+                  <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-black tracking-tight uppercase leading-none mb-4">
                     {artwork.title}
                   </h1>
 
                   {/* Brief description — capped at ~4 lines / 60 words */}
                   {description && (
-                    <p className="max-w-[286px] text-white/40 text-sm leading-[1.65] line-clamp-4">
+                    <p className="max-w-[286px] text-white/40 text-sm leading-[1.52] line-clamp-4">
                       {description}
                     </p>
                   )}
                 </div>
 
-                <div className="mt-7">
-                  <div className="h-px w-10 bg-white/10" />
+                <div className="mt-5">
+                  <div className="h-px w-8 bg-white/8" />
 
-                  <div className="mt-6 space-y-5">
-                    {specRows.length > 0 && (
-                      <div className="space-y-2.5 text-[12px] leading-[1.55] text-white/34 max-w-[336px]">
-                        {specRows.map((row) => (
+                  <div className="mt-4 space-y-3.5">
+                    {primarySpecRows.length > 0 && (
+                      <div className="space-y-1.5 text-[11px] leading-[1.35] text-white/34 max-w-[336px]">
+                        {primarySpecRows.map((row) => (
                           <p key={row.label}>
                             <span className="text-white/62 font-medium">{row.label}:</span>{" "}
                             {row.value}
@@ -334,7 +337,7 @@ export default function ArtworkPage() {
                       </div>
                     )}
 
-                    <div className="space-y-2 text-[12px] leading-[1.55] text-white/34 max-w-[336px]">
+                    <div className="space-y-1.5 text-[11px] leading-[1.35] text-white/34 max-w-[336px]">
                       {artwork.dimensions && (
                         <p>
                           <span className="text-white/62 font-medium">{t("artwork.size")}:</span>{" "}
@@ -347,17 +350,28 @@ export default function ArtworkPage() {
                       </p>
                     </div>
 
-                    <div className="pt-1.5">
-                      <div className="flex items-end gap-3">
+                    {secondarySpecRows.length > 0 && (
+                      <div className="space-y-1 text-[10px] leading-[1.28] text-white/24 max-w-[336px]">
+                        {secondarySpecRows.map((row) => (
+                          <p key={row.label}>
+                            <span className="text-white/42 font-medium">{row.label}:</span>{" "}
+                            {row.value}
+                          </p>
+                        ))}
+                      </div>
+                    )}
+
+                    <div className="pt-0.5">
+                      <div className="flex items-end gap-2">
                         {artwork.price && (
                           <p className="text-white text-[2rem] leading-none font-bold tracking-tight">{artwork.price}</p>
                         )}
                         {artwork.edition && (
-                          <p className="pb-0.5 text-white/45 text-sm tracking-[0.18em] uppercase">{artwork.edition}</p>
+                          <p className="pb-0.5 text-white/45 text-[12px] tracking-[0.14em] uppercase">{artwork.edition}</p>
                         )}
                       </div>
 
-                      <p className="mt-2 text-white/20 text-[10px] tracking-[0.24em] uppercase">
+                      <p className="mt-1 text-white/20 text-[10px] tracking-[0.18em] uppercase leading-[1.2]">
                         {artwork.available ? t("artwork.original_meta") : t("artwork.claimed")}
                       </p>
                     </div>
@@ -367,12 +381,12 @@ export default function ArtworkPage() {
                     !inquiryOpen ? (
                       <button
                         onClick={() => setInquiryOpen(true)}
-                        className="self-start mt-6 border border-white/20 text-white/75 text-xs tracking-[0.32em] uppercase px-8 py-4 hover:border-white/45 hover:text-white transition-all duration-200"
+                        className="self-start mt-4 border border-white/20 text-white/75 text-xs tracking-[0.32em] uppercase px-8 py-3.5 hover:border-white/45 hover:text-white transition-all duration-200"
                       >
                         {t("artwork.inquire")}
                     </button>
                   ) : (
-                    <div className="mt-6 flex flex-col gap-2">
+                    <div className="mt-4 flex flex-col gap-2">
                       <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
                         className="border border-white/12 text-white/55 text-[11px] tracking-[0.28em] uppercase px-6 py-3.5 hover:border-white/28 hover:text-white/85 transition-all duration-200"
                       >WhatsApp</a>
