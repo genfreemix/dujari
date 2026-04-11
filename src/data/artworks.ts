@@ -480,13 +480,13 @@ export function getArtwork(id: string): Artwork | undefined {
 
 export function getFeatured(): Artwork[] {
   const available = artworks.filter((a) => a.available);
-  const featuredIds = ["tincture-magic-strawberry", "eyemeter-panel", "glam-skull-panel"];
+  const featuredIds = ["tincture-magic-strawberry", "eyemeter-panel", "glam-skull-panel", "liqueur-black-monro", "rum-stevie-wonder", "tequila-marlene-dietrich"];
   const prioritized = featuredIds
     .map((id) => available.find((artwork) => artwork.id === id))
     .filter((artwork): artwork is Artwork => Boolean(artwork));
   const remaining = available.filter((artwork) => !featuredIds.includes(artwork.id));
 
-  return [...prioritized, ...remaining].slice(0, 5);
+  return [...prioritized, ...remaining].slice(0, 8);
 }
 
 export function getByCategory(category: ArtworkCategory): Artwork[] {
