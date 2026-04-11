@@ -136,7 +136,7 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
         </Link>
 
         {/* Main content */}
-        <div className="flex-1 max-w-6xl mx-auto px-6 md:px-10 py-12 md:py-16">
+        <div className="flex-1 max-w-6xl mx-auto px-6 md:px-10 py-6 md:py-8">
           <div
             className={`grid gap-16 md:gap-20 lg:gap-28 ${
               isWallPiece
@@ -153,7 +153,7 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
                   <img
                     src={activeImage}
                     alt={artwork.title}
-                    className="w-full h-auto object-contain max-h-[78vh]"
+                    className="w-full h-auto object-contain max-h-[90vh]"
                     style={{
                       boxShadow:
                         "0 40px 100px rgba(0,0,0,0.65), 0 10px 32px rgba(0,0,0,0.4)",
@@ -303,7 +303,7 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
 
             ) : (
               /* ── PHYSICAL OBJECT (bottle/object): closed vertical module ── */
-              <div className="flex flex-col max-w-[380px] pt-3 lg:sticky lg:top-28 self-start lg:h-[calc(100vh-7rem)]">
+              <div className="flex flex-col max-w-[380px] pt-1 lg:sticky lg:top-28 self-start">
 
                 {/* TOP: meta + title + description + specs */}
                 <div>
@@ -359,8 +359,8 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
                   </div>
                 </div>
 
-                {/* BOTTOM CTA: price + 1/1 + contact — anchored to bottom */}
-                <div className="mt-auto pt-5">
+                {/* BOTTOM CTA: price + 1/1 + contact */}
+                <div className="mt-6">
                   <div className="flex items-end gap-2 mb-1">
                     {artwork.price && (
                       <p className="text-white text-[2rem] leading-none font-bold tracking-tight">{artwork.price}</p>
