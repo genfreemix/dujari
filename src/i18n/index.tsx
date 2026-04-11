@@ -1,8 +1,21 @@
 "use client";
 
-import { createContext, useContext, useState, useCallback, type ReactNode } from "react";
+import { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from "react";
 
 export type Locale = "en" | "ru" | "fr";
+
+const STORAGE_KEY = "site_lang";
+const SUPPORTED: Locale[] = ["en", "ru", "fr"];
+
+function detectLocale(): Locale {
+  if (typeof window === "undefined") return "en";
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved && SUPPORTED.includes(saved as Locale)) return saved as Locale;
+  const browserLang = navigator.language?.toLowerCase() ?? "";
+  if (browserLang.startsWith("ru")) return "ru";
+  if (browserLang.startsWith("fr")) return "fr";
+  return "en";
+}
 
 interface I18nContextType {
   locale: Locale;
@@ -479,7 +492,22 @@ const translations: Record<Locale, Record<string, string>> = {
 };
 
 export function I18nProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocale] = useState<Locale>("en");
+  const [locale, setLocaleState] = useState<Locale>("en");
+  const [fade, setFade] = useState(false);
+
+  // On mount: detect locale from localStorage or browser
+  useEffect(() => {
+    setLocaleState(detectLocale());
+  }, []);
+
+  const setLocale = useCallback((l: Locale) => {
+    setFade(true);
+    setTimeout(() => {
+      setLocaleState(l);
+      localStorage.setItem(STORAGE_KEY, l);
+      setFade(false);
+    }, 150);
+  }, []);
 
   const t = useCallback(
     (key: string) => {
@@ -490,7 +518,12 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 
   return (
     <I18nContext.Provider value={{ locale, setLocale, t }}>
-      {children}
+      <div
+        className="transition-opacity duration-150"
+        style={{ opacity: fade ? 0 : 1 }}
+      >
+        {children}
+      </div>
     </I18nContext.Provider>
   );
 }
