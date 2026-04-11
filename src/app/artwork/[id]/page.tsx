@@ -127,7 +127,7 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
         {/* Desktop: prev arrow */}
         <Link
           href={prev ? `/artwork/${prev.id}` : "/gallery"}
-          className="hidden lg:flex items-center justify-center w-10 shrink-0 self-center lg:sticky lg:top-[calc(50vh_+_1.875rem)] text-white/15 hover:text-white/50 transition-colors"
+          className="hidden lg:flex items-center justify-center w-10 shrink-0 self-center lg:sticky lg:top-[calc(50vh_+_0.75rem)] text-white/15 hover:text-white/50 transition-colors"
           title={prev ? prev.title : t("artwork.back")}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
@@ -411,7 +411,7 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
         {/* Desktop: next arrow */}
         <Link
           href={next ? `/artwork/${next.id}` : "/gallery"}
-          className="hidden lg:flex items-center justify-center w-10 shrink-0 self-center lg:sticky lg:top-[calc(50vh_+_1.875rem)] text-white/15 hover:text-white/50 transition-colors"
+          className="hidden lg:flex items-center justify-center w-10 shrink-0 self-center lg:sticky lg:top-[calc(50vh_+_0.75rem)] text-white/15 hover:text-white/50 transition-colors"
           title={next ? next.title : t("artwork.back")}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
