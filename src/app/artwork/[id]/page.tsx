@@ -146,7 +146,7 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
           >
 
             {/* Left: object */}
-            <div className="lg:flex lg:flex-col lg:justify-center lg:h-[calc(100vh-9rem)]">
+            <div className="relative lg:flex lg:flex-col lg:justify-center lg:h-[calc(100vh-9rem)]">
               {/* Image */}
               <div className="relative">
                 {activeImage && (
@@ -203,15 +203,15 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
                 )}
               </div>
 
-              {/* Back button — below photo */}
+              {/* Back button — left of column on desktop, below photo on mobile */}
               <Link
                 href="/gallery"
-                className="mt-3 inline-flex items-center gap-1.5 text-white/22 text-[10px] tracking-[0.22em] uppercase hover:text-white/52 transition-colors"
+                className="mt-3 lg:mt-0 lg:absolute lg:-left-10 lg:top-1/2 lg:-translate-y-1/2 inline-flex lg:flex-col items-center gap-1.5 lg:gap-0.5 text-white/22 text-[10px] tracking-[0.22em] uppercase hover:text-white/52 transition-colors"
               >
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="lg:rotate-90">
                   <path d="M15 18l-6-6 6-6" />
                 </svg>
-                {t("artwork.back")}
+                <span className="lg:hidden">{t("artwork.back")}</span>
               </Link>
 
               {/* Slider dots */}
