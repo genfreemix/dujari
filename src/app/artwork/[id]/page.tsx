@@ -146,7 +146,7 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
           >
 
             {/* Left: object */}
-            <div>
+            <div className="lg:flex lg:flex-col lg:justify-center lg:min-h-[calc(100vh-9rem)]">
               {/* Image — no container, object floats */}
               <div className="relative">
                 {activeImage && (
