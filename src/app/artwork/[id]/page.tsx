@@ -170,17 +170,6 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
                   </div>
                 )}
 
-                {/* Back button — bottom-left of photo */}
-                <Link
-                  href="/gallery"
-                  className="absolute bottom-3 left-0 inline-flex items-center gap-1.5 text-white/25 text-[10px] tracking-[0.22em] uppercase hover:text-white/55 transition-colors"
-                >
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M15 18l-6-6 6-6" />
-                  </svg>
-                  {t("artwork.back")}
-                </Link>
-
                 {/* Slider: side arrows */}
                 {hasSlider && (
                   <>
@@ -214,9 +203,20 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
                 )}
               </div>
 
+              {/* Back button — below photo, left-aligned outside the frame */}
+              <Link
+                href="/gallery"
+                className="mt-3 inline-flex items-center gap-1.5 text-white/25 text-[10px] tracking-[0.22em] uppercase hover:text-white/55 transition-colors"
+              >
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+                {t("artwork.back")}
+              </Link>
+
               {/* Slider dots */}
               {hasSlider && (
-                <div className="mt-5 flex justify-center gap-2">
+                <div className="mt-3 flex justify-center gap-2">
                   {galleryImages.map((_, i) => (
                     <button
                       key={i}
