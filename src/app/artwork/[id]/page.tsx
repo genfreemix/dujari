@@ -302,10 +302,10 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
               </div>
 
             ) : (
-              /* ── PHYSICAL OBJECT (bottle/object): object-first, label-like right column ── */
-              <div className="flex flex-col max-w-[380px] pt-3 lg:sticky lg:top-28 self-start">
+              /* ── PHYSICAL OBJECT (bottle/object): closed vertical module ── */
+              <div className="flex flex-col max-w-[380px] pt-3 lg:sticky lg:top-28 self-start lg:h-[calc(100vh-7rem)]">
 
-                {/* Top: meta + title + description */}
+                {/* TOP: meta + title + description + specs */}
                 <div>
                   <p className="text-[#FF2D7B] text-[10px] tracking-[0.52em] uppercase mb-4">
                     {categoryLabel} · {artwork.year}
@@ -314,86 +314,81 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
                     {artwork.title}
                   </h1>
 
-                  {/* Brief description — capped at ~4 lines / 60 words */}
                   {description && (
                     <p className="max-w-[286px] text-white/40 text-sm leading-[1.52] line-clamp-4">
                       {description}
                     </p>
                   )}
-                </div>
 
-                <div className="mt-5">
-                  <div className="h-px w-8 bg-white/8" />
-
-                  <div className="mt-4 space-y-3">
-                    {primarySpecRows.length > 0 && (
-                      <div className="space-y-1.5 text-[11px] leading-[1.35] text-white/34 max-w-[336px]">
-                        {primarySpecRows.map((row) => (
-                          <p key={row.label}>
-                            <span className="text-white/62 font-medium">{row.label}:</span>{" "}
-                            {row.value}
-                          </p>
-                        ))}
-                      </div>
-                    )}
-
-                    <div className="space-y-1.5 text-[11px] leading-[1.35] text-white/34 max-w-[336px]">
-                      {artwork.dimensions && (
-                        <p>
-                          <span className="text-white/62 font-medium">{t("artwork.size")}:</span>{" "}
-                          {artwork.dimensions}
-                        </p>
+                  <div className="mt-5">
+                    <div className="h-px w-8 bg-white/8" />
+                    <div className="mt-4 space-y-3">
+                      {primarySpecRows.length > 0 && (
+                        <div className="space-y-1.5 text-[11px] leading-[1.35] text-white/34 max-w-[336px]">
+                          {primarySpecRows.map((row) => (
+                            <p key={row.label}>
+                              <span className="text-white/62 font-medium">{row.label}:</span>{" "}
+                              {row.value}
+                            </p>
+                          ))}
+                        </div>
                       )}
-                      <p>
-                        <span className="text-white/62 font-medium">{t("artwork.status")}:</span>{" "}
-                        {detailSpecs.status}
-                      </p>
-                    </div>
-
-                    {secondarySpecRows.length > 0 && (
-                      <div className="space-y-1 text-[10px] leading-[1.28] text-white/24 max-w-[336px]">
-                        {secondarySpecRows.map((row) => (
-                          <p key={row.label}>
-                            <span className="text-white/42 font-medium">{row.label}:</span>{" "}
-                            {row.value}
+                      <div className="space-y-1.5 text-[11px] leading-[1.35] text-white/34 max-w-[336px]">
+                        {artwork.dimensions && (
+                          <p>
+                            <span className="text-white/62 font-medium">{t("artwork.size")}:</span>{" "}
+                            {artwork.dimensions}
                           </p>
-                        ))}
-                      </div>
-                    )}
-
-                    <div className="pt-0.5 space-y-2">
-                      <div className="flex items-end gap-2">
-                        {artwork.price && (
-                          <p className="text-white text-[2rem] leading-none font-bold tracking-tight">{artwork.price}</p>
                         )}
-                        {artwork.edition && (
-                          <p className="pb-0.5 text-white/45 text-[12px] tracking-[0.14em] uppercase">{artwork.edition}</p>
-                        )}
+                        <p>
+                          <span className="text-white/62 font-medium">{t("artwork.status")}:</span>{" "}
+                          {detailSpecs.status}
+                        </p>
                       </div>
-
-                      <p className="text-white/20 text-[10px] tracking-[0.18em] uppercase leading-[1.2]">
-                        {artwork.available ? t("artwork.original_meta") : t("artwork.claimed")}
-                      </p>
-
-                      {artwork.available && (
-                        <div className="flex flex-col gap-1.5 pt-0.5">
-                          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
-                            className="border border-white/12 text-white/55 text-[11px] tracking-[0.24em] uppercase px-6 py-3 hover:border-white/28 hover:text-white/85 transition-all duration-200"
-                          >WhatsApp</a>
-                          <a href={telegramUrl} target="_blank" rel="noopener noreferrer"
-                            className="border border-white/12 text-white/55 text-[11px] tracking-[0.24em] uppercase px-6 py-3 hover:border-white/28 hover:text-white/85 transition-all duration-200"
-                          >Telegram</a>
-                          <a href={mailUrl}
-                            className="border border-white/12 text-white/55 text-[11px] tracking-[0.24em] uppercase px-6 py-3 hover:border-white/28 hover:text-white/85 transition-all duration-200"
-                          >Email</a>
+                      {secondarySpecRows.length > 0 && (
+                        <div className="space-y-1 text-[10px] leading-[1.28] text-white/24 max-w-[336px]">
+                          {secondarySpecRows.map((row) => (
+                            <p key={row.label}>
+                              <span className="text-white/42 font-medium">{row.label}:</span>{" "}
+                              {row.value}
+                            </p>
+                          ))}
                         </div>
                       )}
                     </div>
                   </div>
-                </div>{/* end bottom block */}
+                </div>
+
+                {/* BOTTOM CTA: price + 1/1 + contact — anchored to bottom */}
+                <div className="mt-auto pt-5">
+                  <div className="flex items-end gap-2 mb-1">
+                    {artwork.price && (
+                      <p className="text-white text-[2rem] leading-none font-bold tracking-tight">{artwork.price}</p>
+                    )}
+                    {artwork.edition && (
+                      <p className="pb-0.5 text-white/45 text-[12px] tracking-[0.14em] uppercase">{artwork.edition}</p>
+                    )}
+                  </div>
+                  <p className="text-white/20 text-[10px] tracking-[0.18em] uppercase leading-[1.2] mb-3">
+                    {artwork.available ? t("artwork.original_meta") : t("artwork.claimed")}
+                  </p>
+                  {artwork.available && (
+                    <div className="flex flex-col gap-1.5">
+                      <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
+                        className="border border-white/12 text-white/55 text-[11px] tracking-[0.24em] uppercase px-6 py-3 hover:border-white/28 hover:text-white/85 transition-all duration-200"
+                      >WhatsApp</a>
+                      <a href={telegramUrl} target="_blank" rel="noopener noreferrer"
+                        className="border border-white/12 text-white/55 text-[11px] tracking-[0.24em] uppercase px-6 py-3 hover:border-white/28 hover:text-white/85 transition-all duration-200"
+                      >Telegram</a>
+                      <a href={mailUrl}
+                        className="border border-white/12 text-white/55 text-[11px] tracking-[0.24em] uppercase px-6 py-3 hover:border-white/28 hover:text-white/85 transition-all duration-200"
+                      >Email</a>
+                    </div>
+                  )}
+                </div>
 
                 {/* Mobile prev/next */}
-                <div className="flex justify-between mt-10 lg:hidden">
+                <div className="flex justify-between mt-8 lg:hidden">
                   <Link href={prev ? `/artwork/${prev.id}` : "/gallery"}
                     className="text-white/22 text-[10px] tracking-[0.18em] uppercase hover:text-white/50 transition-colors flex items-center gap-1.5"
                   >
