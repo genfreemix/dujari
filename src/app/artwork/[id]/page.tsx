@@ -138,7 +138,7 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
         {/* Main content */}
         <div className="flex-1 max-w-6xl mx-auto px-6 md:px-10 py-6 md:py-8">
           <div
-            className={`grid gap-16 md:gap-20 lg:gap-28 ${
+            className={`grid gap-10 md:gap-14 lg:gap-16 ${
               isWallPiece
                 ? "items-stretch grid-cols-1 lg:grid-cols-[1.3fr_1fr]"
                 : "items-start grid-cols-1 lg:grid-cols-[1.4fr_1fr]"
@@ -153,7 +153,7 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
                   <img
                     src={activeImage}
                     alt={artwork.title}
-                    className="w-full h-auto object-contain max-h-[90vh]"
+                    className="w-full h-auto object-contain max-h-[82vh]"
                     style={{
                       boxShadow:
                         "0 40px 100px rgba(0,0,0,0.65), 0 10px 32px rgba(0,0,0,0.4)",
@@ -169,6 +169,17 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
                     </span>
                   </div>
                 )}
+
+                {/* Back button — bottom-left of photo */}
+                <Link
+                  href="/gallery"
+                  className="absolute bottom-3 left-0 inline-flex items-center gap-1.5 text-white/25 text-[10px] tracking-[0.22em] uppercase hover:text-white/55 transition-colors"
+                >
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M15 18l-6-6 6-6" />
+                  </svg>
+                  {t("artwork.back")}
+                </Link>
 
                 {/* Slider: side arrows */}
                 {hasSlider && (
@@ -221,16 +232,7 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
                 </div>
               )}
 
-              {/* Back link */}
-              <Link
-                href="/gallery"
-                className="mt-10 inline-flex items-center gap-2 text-white/22 text-[10px] tracking-[0.28em] uppercase hover:text-white/50 transition-colors"
-              >
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M15 18l-6-6 6-6" />
-                </svg>
-                {t("artwork.back")}
-              </Link>
+
             </div>
 
             {/* Right: scene */}
@@ -380,9 +382,6 @@ function ArtworkPageContent({ artworkId }: { artworkId: string }) {
                       <a href={telegramUrl} target="_blank" rel="noopener noreferrer"
                         className="border border-white/12 text-white/55 text-[11px] tracking-[0.24em] uppercase px-6 py-3 hover:border-white/28 hover:text-white/85 transition-all duration-200"
                       >Telegram</a>
-                      <a href={mailUrl}
-                        className="border border-white/12 text-white/55 text-[11px] tracking-[0.24em] uppercase px-6 py-3 hover:border-white/28 hover:text-white/85 transition-all duration-200"
-                      >Email</a>
                     </div>
                   )}
                 </div>
