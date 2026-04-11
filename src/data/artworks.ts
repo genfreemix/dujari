@@ -24,7 +24,7 @@ export interface Artwork {
 export const artworks: Artwork[] = [
   {
     id: "tincture-magic-strawberry",
-    title: "tincture-magic-strawberry",
+    title: "Tincture Magic Strawberry",
     category: "bottle",
     description: {
       en: "",
@@ -104,7 +104,7 @@ export const artworks: Artwork[] = [
   },
   {
     id: "gin-andy-warhol",
-    title: "gin-andy-warhol",
+    title: "Gin Andy Warhol",
     category: "bottle",
     description: {
       en: "",
@@ -121,7 +121,7 @@ export const artworks: Artwork[] = [
   },
   {
     id: "liqueur-black-monro",
-    title: "liqueur-black-monro",
+    title: "Liqueur Black Monro",
     category: "bottle",
     description: {
       en: "",
@@ -138,7 +138,7 @@ export const artworks: Artwork[] = [
   },
   {
     id: "rom-stevie-wonder",
-    title: "rom-stevie-wonder",
+    title: "Rom Stevie Wonder",
     category: "bottle",
     description: {
       en: "",
@@ -155,7 +155,7 @@ export const artworks: Artwork[] = [
   },
   {
     id: "tequila-marlene-dietrich",
-    title: "tequila-marlene-dietrich",
+    title: "Tequila Marlene Dietrich",
     category: "bottle",
     description: {
       en: "",
