@@ -354,6 +354,45 @@ export const artworks: Artwork[] = [
     edition: "1/1",
   },
   {
+    id: "lips-and-more",
+    title: "Lips And More",
+    category: "bottle",
+    detailSpecs: {
+      materials: {
+        en: "acrylic, glass, mixed media",
+        ru: "акрил, стекло, смешанная техника",
+        fr: "acrylique, verre, technique mixte",
+      },
+      technique: {
+        en: "hand-painted, artist reworked object",
+        ru: "ручная роспись, авторская переработка объекта",
+        fr: "peinture à la main, relecture d'auteur de l'objet",
+      },
+      base: {
+        en: "reworked bottle, 0.7 l",
+        ru: "переработанная бутылка, 0.7 л",
+        fr: "bouteille retravaillée, 0.7 l",
+      },
+      status: {
+        en: "collectible object",
+        ru: "коллекционный объект",
+        fr: "objet de collection",
+      },
+    },
+    description: {
+      en: "This is not just an image.\nIt is a moment that was never meant to remain.\n\nTwo faces from the past - recognizable, nearly iconic - lose their untouchability here.\n\nThey are not looking at each other, but through each other.\nAs if they already know how this ends.\n\nColor enters that moment without permission.\nRoses appear not as a symbol of love - but as a trace. As a distortion. As an error inside memory.\n\nThe black-and-white past cannot withstand the pressure.\nIt starts to melt, crack, and let meta-noise through.\n\nThis is not about romance.\nIt is about memory that has already changed.\n\nAbout an image that no longer belongs to the original.",
+      ru: "Это не просто образ.\nЭто момент, который не должен был остаться.\n\nДва лица из прошлого — узнаваемые, почти культовые —\nздесь теряют свою неприкосновенность.\n\nОни смотрят не друг на друга, а сквозь.\nКак будто уже знают, чем всё закончится.\n\nЦвет вмешивается в этот момент без разрешения.\nРозы появляются не как символ любви —\nа как след. Как искажение. Как ошибка в воспоминании.\n\nЧёрно-белое прошлое не выдерживает давления.\nОно начинает течь, трескаться, пропускать мета-шум.\n\nЭто не про романтику.\nЭто про память, которая уже изменилась.\n\nПро образ, который больше не принадлежит оригиналу.",
+      fr: "Ce n'est pas simplement une image.\nC'est un instant qui n'aurait pas dû rester.\n\nDeux visages du passé - reconnaissables, presque cultes - perdent ici leur intouchabilité.\n\nIls ne se regardent pas, ils se traversent du regard.\nComme s'ils savaient déjà comment tout cela finit.\n\nLa couleur s'immisce dans ce moment sans permission.\nLes roses n'apparaissent pas comme symbole d'amour - mais comme une trace. Comme une distorsion. Comme une erreur dans le souvenir.\n\nLe passé en noir et blanc ne résiste pas à la pression.\nIl commence à couler, à se fissurer, à laisser passer le méta-bruit.\n\nCe n'est pas une histoire de romantisme.\nC'est une mémoire qui a déjà changé.\n\nUne image qui n'appartient plus à l'original.",
+    },
+    price: "350 €",
+    dimensions: "30 × 10 cm",
+    year: 2026,
+    image: "/artworks/lips-and-more.jpg",
+    color: "#FF2D7B",
+    available: true,
+    edition: "1/1",
+  },
+  {
     id: "eyemeter-panel",
     title: "Eyemeter",
     category: "panel",
