@@ -371,6 +371,23 @@ export const artworks: Artwork[] = [
     edition: "1/1",
   },
   {
+    id: "biomesh-panel",
+    title: "Biomesh",
+    category: "panel",
+    description: {
+      en: "A loud, defiant collision of imagery, texture, and mood, where glamour tears apart, beauty slips into distortion, and meaning is not explained but felt. This work does not ask permission. It hits like an overdriven guitar and stays inside you like a song you cannot shake.",
+      ru: "Громкое, дерзкое столкновение образов, фактур и настроения — где гламур разрывается на части, красота уходит в искажение, а смысл не объясняют, его чувствуют. Эта работа не спрашивает разрешения — она бьёт, как перегруженный звук гитары, и остаётся внутри, как песня, от которой не избавиться.",
+      fr: "Une collision sonore et insolente d'images, de textures et d'humeur, où le glamour se déchire, la beauté glisse vers la distortion, et le sens ne s'explique pas, il se ressent. Cette œuvre ne demande pas la permission. Elle frappe comme une guitare saturée et reste en vous comme une chanson impossible à quitter.",
+    },
+    price: "540 €",
+    dimensions: "90 × 70 cm",
+    year: 2026,
+    image: "/artworks/biomesh-panel.jpg",
+    color: "#d6c9b7",
+    available: true,
+    edition: "1/1",
+  },
+  {
     id: "concrete-dreams",
     title: "Concrete Dreams",
     category: "panel",
